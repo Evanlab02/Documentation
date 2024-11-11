@@ -1,0 +1,4538 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Azure%20204%20-%20Module%2008%20Revision/">
+      
+      
+        <link rel="next" href="../Azure%20204%20-%20Module%2010%20Revision/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>Azure 204 - Module 09 Revision - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#develop-event-based-solutions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure 204 - Module 09 Revision
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure - 204
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Azure - 204
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2001%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 01 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2002%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 02 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2003%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 03 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2004%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 04 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2005%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 05 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2006%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 06 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2007%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 07 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2008%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 08 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 09 Revision
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 09 Revision
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explore-azure-event-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Azure Event Grid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Azure Event Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concepts-in-azure-event-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts in Azure Event Grid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts in Azure Event Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publishers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publishers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-and-cloudevents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events and CloudEvents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event sources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event subscriptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event handlers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discover-event-schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discover event schemas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discover event schemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-events-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud events schema
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-event-delivery-durability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore event delivery durability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore event delivery durability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retry-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retry schedule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retry policy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-batching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output batching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delayed-delivery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delayed delivery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dead-letter-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dead-letter events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-delivery-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom delivery properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-access-to-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control access to events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control access to events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in roles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions-for-event-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions for event subscriptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-validation-with-event-grid-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint validation with Event Grid events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filter Events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filter Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-type-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event type filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subject-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subject filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced filtering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-azure-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Azure Event Hubs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Azure Event Hubs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key capabilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache-kafka-on-azure-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Kafka on Azure Event Hubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-registry-in-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Registry in Event Hubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-time-processing-of-streaming-events-with-stream-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-time processing of streaming events with Stream Analytics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key concepts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-event-hubs-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Event Hubs Capture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Event Hubs Capture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-event-hubs-capture-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Event Hubs Capture works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-windowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capture windowing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-to-throughput-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling to throughput units
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-your-processing-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale your processing application
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scale your processing application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example scenario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-processor-or-consumer-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event processor or consumer client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partition-ownership-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partition ownership tracking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Receive messages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkpointing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkpointing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thread-safety-and-processor-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thread safety and processor instances
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-access-to-events_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control access to events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control access to events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorize-access-with-managed-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorize access with managed identities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorize-access-with-microsoft-identity-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorize access with Microsoft identity platform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorize-access-to-event-hubs-publishers-with-shared-access-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorize access to Event Hubs publishers with shared access signatures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorize-access-to-event-hubs-consumers-with-shared-access-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorize access to Event Hubs consumers with shared access signatures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-common-operations-with-the-event-hubs-client-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perform common operations with the Event Hubs client library
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perform common operations with the Event Hubs client library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspect-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspect Event Hubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-events-to-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish events to Event Hubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-events-from-an-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read events from an Event Hubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-events-from-an-event-hubs-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read events from an Event Hubs partition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-events-using-an-event-processor-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process events using an Event Processor client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2010%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 10 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2011%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 11 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2012%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 12 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Frameworks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Frameworks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Laravel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Laravel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 - Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 - Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Frameworks/Laravel/01%20-%20Getting%20Started/01%20-%20Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Languages
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Languages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 - Fundamentals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 - Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - Hello World
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/02%20-%20Variables%20and%20Types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 - Variables and Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/03%20-%20Arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 - Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/04%20-%20Multidimensional%20Arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 - Multidimensional Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/05%20-%20Conditions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05 - Conditions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/06%20-%20Strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 - Strings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/07%20-%20For%20loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07 - For loops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/08%20-%20While%20loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08 - While loops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/09%20-%20Functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    09 - Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/10%20-%20Static/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10 - Static
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/11%20-%20Pointers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11 - Pointers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/12%20-%20Structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12 - Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/13%20-%20Function%20arguments%20by%20reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13 - Function arguments by reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/14%20-%20Dynamic%20allocation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14 - Dynamic allocation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/15%20-%20Arrays%20and%20pointers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15 - Arrays and pointers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/16%20-%20Recursion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16 - Recursion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/17%20-%20Linked%20Lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17 - Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/18%20-%20Binary%20Trees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18 - Binary Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/19%20-%20Unions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19 - Unions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/20%20-%20Pointer%20Arithmetics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20 - Pointer Arithmetics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/21%20-%20Function%20Pointers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21 - Function Pointers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/22%20-%20Bitmasks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22 - Bitmasks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/23%20-%20Exercism/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23 - Exercism
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_2" id="__nav_4_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 - Data Structures
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 - Data Structures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/02%20-%20Data%20Structures/1%20-%20Linked%20Lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/02%20-%20Data%20Structures/2%20-%20Binary%20Trees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Binary Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    03 - Language and Keywords
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            03 - Language and Keywords
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/03%20-%20Language%20and%20Keywords/01%20-%20define%20directives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - define directives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/03%20-%20Language%20and%20Keywords/02%20-%20ifndef%20directives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 - ifndef directives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_4" id="__nav_4_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    99 - Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            99 - Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/99%20-%20Notes/01%20-%20General/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - General
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/99%20-%20Notes/02%20-%20Strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 - Strings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/99%20-%20Notes/03%20-%20Random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 - Random
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/C/99%20-%20Notes/04%20-%20Math/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 - Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CSharp
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            CSharp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_1" id="__nav_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 - Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 - Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/CSharp/01%20-%20Getting%20Started/01%20-%20Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PHP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            PHP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_1" id="__nav_4_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    01 - Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            01 - Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/PHP/01%20-%20Getting%20Started/01%20-%20Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Languages/Python/01%20-%20Package%20Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - Package Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Package Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Package Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    uv
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            uv
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Package%20Management/uv/1%20-%20Getting%20Started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Package%20Management/uv/2%20-%20Managing%20python%20via%20uv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Managing python via uv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Package%20Management/uv/3%20-%20Scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_4" id="__nav_5_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4 - Managing Projects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            4 - Managing Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Package%20Management/uv/4%20-%20Managing%20Projects/4.1%20-%20Creating%20a%20new%20project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 - Creating a new project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Package%20Management/uv/4%20-%20Managing%20Projects/4.2%20-%20Creating%20a%20new%20library%20or%20package/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 - Creating a new library or package
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Package%20Management/uv/4%20-%20Managing%20Projects/4.3%20-%20Platform%20restrictions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 - Platform restrictions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Package%20Management/uv/5%20-%20Additional%20resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - Additional resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CSharp Project
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            CSharp Project
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projects/CSharp%20Project/01%20-%20CSharp%20Project%20Outline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - CSharp Project Outline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DockerLens
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            DockerLens
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projects/DockerLens/01%20-%20DockerLens%20Project%20outline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - DockerLens Project outline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GitTogether
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            GitTogether
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projects/GitTogether/01%20-%20GitTogether%20outline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - GitTogether outline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HomePortal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            HomePortal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_1" id="__nav_6_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    00 - Releases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            00 - Releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projects/HomePortal/00%20-%20Releases/Home%20Portal%20V0.3.2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home Portal V0.3.2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projects/HomePortal/01%20-%20Update%20the%20documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - Update the documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projects/HomePortal/02%20-%20Create%20story%20for%20card%20component/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 - Create story for card component
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ShoppingListApp
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            ShoppingListApp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projects/ShoppingListApp/01%20-%20Argon2%20Password%20Hashing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - Argon2 Password Hashing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projects/ShoppingListApp/02%20-%20Store%20Sorting%20Parameter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 - Store Sorting Parameter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explore-azure-event-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Azure Event Grid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Azure Event Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concepts-in-azure-event-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts in Azure Event Grid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts in Azure Event Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publishers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publishers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-and-cloudevents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events and CloudEvents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event sources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event subscriptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event handlers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discover-event-schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discover event schemas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discover event schemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-events-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud events schema
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-event-delivery-durability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore event delivery durability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore event delivery durability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retry-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retry schedule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retry policy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-batching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output batching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delayed-delivery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delayed delivery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dead-letter-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dead-letter events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-delivery-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom delivery properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-access-to-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control access to events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control access to events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in roles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions-for-event-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions for event subscriptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-validation-with-event-grid-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint validation with Event Grid events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filter Events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filter Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-type-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event type filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subject-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subject filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced filtering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-azure-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Azure Event Hubs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Azure Event Hubs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key capabilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache-kafka-on-azure-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Kafka on Azure Event Hubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-registry-in-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Registry in Event Hubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-time-processing-of-streaming-events-with-stream-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-time processing of streaming events with Stream Analytics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key concepts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-event-hubs-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Event Hubs Capture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Event Hubs Capture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-event-hubs-capture-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Event Hubs Capture works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-windowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capture windowing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-to-throughput-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling to throughput units
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-your-processing-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale your processing application
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scale your processing application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example scenario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-processor-or-consumer-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event processor or consumer client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partition-ownership-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partition ownership tracking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Receive messages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkpointing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkpointing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thread-safety-and-processor-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thread safety and processor instances
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-access-to-events_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control access to events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control access to events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorize-access-with-managed-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorize access with managed identities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorize-access-with-microsoft-identity-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorize access with Microsoft identity platform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorize-access-to-event-hubs-publishers-with-shared-access-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorize access to Event Hubs publishers with shared access signatures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorize-access-to-event-hubs-consumers-with-shared-access-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorize access to Event Hubs consumers with shared access signatures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perform-common-operations-with-the-event-hubs-client-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perform common operations with the Event Hubs client library
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perform common operations with the Event Hubs client library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspect-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspect Event Hubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publish-events-to-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish events to Event Hubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-events-from-an-event-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read events from an Event Hubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-events-from-an-event-hubs-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read events from an Event Hubs partition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-events-using-an-event-processor-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process events using an Event Processor client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="develop-event-based-solutions">Develop event-based solutions</h1>
+<h2 id="explore-azure-event-grid">Explore Azure Event Grid</h2>
+<p>After completing this module, you'll be able to:</p>
+<ul>
+<li>Describe how Event Grid operates and how it connects to services and event handlers.</li>
+<li>Explain how Event Grid delivers events and how it handles errors.</li>
+<li>Implement authentication and authorization.</li>
+<li>Route custom events to web endpoint by using Azure CLI.</li>
+</ul>
+<p>Azure Event Grid is a highly scalable, fully managed Pub Sub message distribution service that offers flexible message consumption patterns using the Hypertext Transfer Protocol (HTTP) and Message Queuing Telemetry Transport (MQTT) protocols. With Azure Event Grid, you can build data pipelines with device data, integrate applications, and build event-driven serverless architectures. Event Grid enables clients to publish and subscribe to messages over the MQTT v3.1.1 and v5.0 protocols to support Internet of Things (IoT) solutions. Through HTTP, Event Grid enables you to build event-driven solutions where a publisher service announces its system state changes (events) to subscriber applications. Event Grid can be configured to send events to subscribers (push delivery) or subscribers can connect to Event Grid to read events (pull delivery). Event Grid supports CloudEvents 1.0 specification to provide interoperability across systems.</p>
+<h3 id="concepts-in-azure-event-grid">Concepts in Azure Event Grid</h3>
+<h4 id="publishers">Publishers</h4>
+<p>A publisher is the application that sends events to Event Grid. It can be the same application where the events originated, the event source. Azure services publish events to Event Grid to announce an occurrence in their service. You can publish events from your own application. Organizations that host services outside of Azure can publish events through Event Grid too.</p>
+<p>A <em>partner</em> is a kind of publisher that sends events from its system to make them available to Azure customers. Partners not only can publish events to Azure Event Grid, but they can also receive events from it. These capabilities are enabled through the Partner Events feature.</p>
+<h4 id="events-and-cloudevents">Events and CloudEvents</h4>
+<p>An event is the smallest amount of information that fully describes something that happened in a system. Every event has common information like <code>source</code> of the event, the <code>time</code> the event took place, and a unique identifier. Every event also has specific information that is only relevant to the specific type of event.</p>
+<p>Event Grid conforms to Cloud Native Computing Foundation’s open standard <a href="https://github.com/cloudevents/spec">CloudEvents 1.0</a> specification using the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md">HTTP protocol binding</a> with <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md">JSON format</a>. It means that your solutions publish and consume event messages using a format like the following example:</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;specversion&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;com.yourcompany.order.created&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://yourcompany.com/orders/&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;subject&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;O-28964&quot;</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A234-1234-1234&quot;</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;time&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2018-04-05T17:31:00Z&quot;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;comexampleextension1&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;comexampleothervalue&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;datacontenttype&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">       </span><span class="nt">&quot;orderId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;O-28964&quot;</span><span class="p">,</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">       </span><span class="nt">&quot;URL&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://com.yourcompany/orders/O-28964&quot;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The maximum allowed size for an event is 1 MB. Events over 64 KB are charged in 64-KB increments.</p>
+<h4 id="event-sources">Event sources</h4>
+<p>An event source is where the event happens. Each event source is related to one or more event types. For example, Azure Storage is the event source for blob created events. IoT Hub is the event source for device created events. Your application is the event source for custom events that you define. Event sources are responsible for sending events to Event Grid.</p>
+<h4 id="topics">Topics</h4>
+<p>A topic holds events that have been published to Event Grid. You typically use a topic resource for a collection of related events. To respond to certain types of events, subscribers (an Azure service or other applications) decide which topics to subscribe to. There are several kinds of topics: custom topics, system topics, and partner topics.</p>
+<p><strong>System topics</strong> are built-in topics provided by Azure services. You don't see system topics in your Azure subscription because the publisher owns the topics, but you can subscribe to them. To subscribe, you provide information about the resource you want to receive events from. As long as you have access to the resource, you can subscribe to its events.</p>
+<p><strong>Custom topics</strong> are application and third-party topics. When you create or are assigned access to a custom topic, you see that custom topic in your subscription.</p>
+<p><strong>Partner topics</strong> are a kind of topic used to subscribe to events published by a partner. The feature that enables this type of integration is called Partner Events. Through that integration, you get a partner topic where events from a partner system are made available. Once you have a partner topic, you create an event subscription as you would do for any other type of topic.</p>
+<h4 id="event-subscriptions">Event subscriptions</h4>
+<p>A subscription tells Event Grid which events on a topic you're interested in receiving. When creating the subscription, you provide an endpoint for handling the event. You can filter the events that are sent to the endpoint. You can filter by event type, or subject pattern. Set an expiration for event subscriptions that are only needed for a limited time and you don't want to worry about cleaning up those subscriptions.</p>
+<h4 id="event-handlers">Event handlers</h4>
+<p>From an Event Grid perspective, an event handler is the place where the event is sent. The handler takes some further action to process the event. Event Grid supports several handler types. You can use a supported Azure service or your own webhook as the handler. Depending on the type of handler, Event Grid follows different mechanisms to guarantee the delivery of the event. For HTTP webhook event handlers, the event is retried until the handler returns a status code of <code>200 – OK</code>. For Azure Storage Queue, the events are retried until the Queue service successfully processes the message push into the queue.</p>
+<h4 id="security">Security</h4>
+<p>Event Grid provides security for subscribing to topics and when publishing events to topics. When subscribing, you must have adequate permissions on the Event Grid topic. If using push delivery, the event handler is an Azure service, and a managed identity is used to authenticate Event Grid, the managed identity should have an appropriate RBAC role. For example, if sending events to Event Hubs, the managed identity used in the event subscription should be a member of the Event Hubs Data Sender role.</p>
+<h3 id="discover-event-schemas">Discover event schemas</h3>
+<p>Azure Event Grid supports two types of event shemas: Event Grid event schema and Cloud event schema. Events consist of a set of four required string properties. The properties are common to all events from any publisher.</p>
+<p>The data object has properties that are specific to each publisher. For system topics, these properties are specific to the resource provider, such as Azure Storage or Azure Event Hubs.</p>
+<p>Event sources send events to Azure Event Grid in an array, which can have several event objects. When posting events to an Event Grid topic, the array can have a total size of up to 1 MB. Each event in the array is limited to 1 MB. If an event or the array is greater than the size limits, you receive the response <code>413 Payload Too Large</code>. Operations are charged in 64 KB increments though. So, events over 64 KB incur operations charges as though they were multiple events. For example, an event that is 130 KB would incur charges as though it were three separate events.</p>
+<p>Event Grid sends the events to subscribers in an array that has a single event. You can find the JSON schema for the Event Grid event and each Azure publisher's data payload in the <a href="https://github.com/Azure/azure-rest-api-specs/tree/master/specification/eventgrid/data-plane">Event Schema store</a>.</p>
+<h4 id="event-schema">Event schema</h4>
+<p>The following example shows the properties that are used by all event publishers:</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">[</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;topic&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;eventTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="err">objec</span><span class="kc">t</span><span class="mi">-</span><span class="err">u</span><span class="kc">n</span><span class="err">ique</span><span class="mi">-</span><span class="kc">t</span><span class="err">o</span><span class="mf">-e</span><span class="err">ach</span><span class="mi">-</span><span class="err">publisher</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">&quot;dataVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">&quot;metadataVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">]</span>
+</span></code></pre></div>
+<h4 id="event-properties">Event properties</h4>
+<p>All events have the same following top-level data:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>topic</td>
+<td>string</td>
+<td>No. If not included, Event Grid stamps onto the event. If included, it must match the Event Grid topic Azure Resource Manager ID exactly.</td>
+<td>Full resource path to the event source. This field isn't writeable. Event Grid provides this value.</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>string</td>
+<td>Yes</td>
+<td>Publisher-defined path to the event subject.</td>
+</tr>
+<tr>
+<td>eventType</td>
+<td>string</td>
+<td>Yes</td>
+<td>One of the registered event types for this event source.</td>
+</tr>
+<tr>
+<td>eventTime</td>
+<td>string</td>
+<td>Yes</td>
+<td>The time the event is generated based on the provider's UTC time.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Unique identifier for the event.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>No</td>
+<td>Event data specific to the resource provider.</td>
+</tr>
+<tr>
+<td>dataVersion</td>
+<td>string</td>
+<td>No. If not included, it's stamped with an empty value.</td>
+<td>The schema version of the data object. The publisher defines the schema version.</td>
+</tr>
+<tr>
+<td>metadataVersion</td>
+<td>string</td>
+<td>No. If not included, Event Grid stamps onto the event. If included, must match the Event Grid Schema <code>metadataVersion</code> exactly (currently, only <code>1</code>).</td>
+<td>The schema version of the event metadata. Event Grid defines the schema of the top-level properties. Event Grid provides this value.</td>
+</tr>
+</tbody>
+</table>
+<p>For custom topics, the event publisher determines the data object. The top-level data should have the same fields as standard resource-defined events.</p>
+<p>When publishing events to custom topics, create subjects for your events that make it easy for subscribers to know whether they're interested in the event. Subscribers use the subject to filter and route events. Consider providing the path for where the event happened, so subscribers can filter by segments of that path. The path enables subscribers to narrowly or broadly filter events. For example, if you provide a three segment path like <code>/A/B/C</code> in the subject, subscribers can filter by the first segment <code>/A</code> to get a broad set of events. Those subscribers get events with subjects like <code>/A/B/C</code> or <code>/A/D/E</code>. Other subscribers can filter by <code>/A/B</code> to get a narrower set of events.</p>
+<p>Sometimes your subject needs more detail about what happened. For example, the <strong>Storage Accounts</strong> publisher provides the subject <code>/blobServices/default/containers/&lt;container-name&gt;/blobs/&lt;file&gt;</code> when a file is added to a container. A subscriber could filter by the path <code>/blobServices/default/containers/testcontainer</code> to get all events for that container but not other containers in the storage account. A subscriber could also filter or route by the suffix <code>.txt</code> to only work with text files.</p>
+<h4 id="cloud-events-schema">Cloud events schema</h4>
+<p>In addition to its default event schema, Azure Event Grid natively supports events in the JSON implementation of CloudEvents v1.0 and HTTP protocol binding. CloudEvents is an open specification for describing event data.</p>
+<p>CloudEvents simplifies interoperability by providing a common event schema for publishing, and consuming cloud based events. This schema allows for uniform tooling, standard ways of routing &amp; handling events, and universal ways of deserializing the outer event schema. With a common schema, you can more easily integrate work across platforms.</p>
+<p>Here's an example of an Azure Blob Storage event in CloudEvents format:</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;specversion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft.Storage.BlobCreated&quot;</span><span class="p">,</span><span class="w">  </span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Storage/storageAccounts/{storage-account}&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9aeb0fdf-c01e-0131-0922-9eb54906e209&quot;</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2019-11-18T15:13:39.4589254Z&quot;</span><span class="p">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;blobServices/default/containers/{storage-container}/blobs/{new-file}&quot;</span><span class="p">,</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">&quot;dataschema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#&quot;</span><span class="p">,</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="nt">&quot;api&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PutBlockList&quot;</span><span class="p">,</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="nt">&quot;clientRequestId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4c5dd7fb-2c48-4a27-bb30-5361b5de920a&quot;</span><span class="p">,</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="nt">&quot;requestId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9aeb0fdf-c01e-0131-0922-9eb549000000&quot;</span><span class="p">,</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="nt">&quot;eTag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x8D76C39E4407333&quot;</span><span class="p">,</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="nt">&quot;contentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="nt">&quot;contentLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30699</span><span class="p">,</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="nt">&quot;blobType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BlockBlob&quot;</span><span class="p">,</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://gridtesting.blob.core.windows.net/testcontainer/{new-file}&quot;</span><span class="p">,</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="nt">&quot;sequencer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;000000000000000000000000000099240000000000c41c18&quot;</span><span class="p">,</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="nt">&quot;storageDiagnostics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">            </span><span class="nt">&quot;batchId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;681fe319-3006-00a8-0022-9e7cde000000&quot;</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A detailed description of the available fields, their types, and definitions in CloudEvents v1.0 is <a href="https://github.com/cloudevents/spec/blob/v1.0/spec.md#required-attributes">available here</a>.</p>
+<p>The headers values for events delivered in the CloudEvents schema and the Event Grid schema are the same except for <code>content-type</code>. For CloudEvents schema, that header value is <code>"content-type":"application/cloudevents+json; charset=utf-8"</code>. For Event Grid schema, that header value is <code>"content-type":"application/json; charset=utf-8"</code>.</p>
+<p>You can use Event Grid for both input and output of events in CloudEvents schema. You can use CloudEvents for system events, like Blob Storage events and IoT Hub events, and custom events. It can also transform those events on the wire back and forth.</p>
+<h3 id="explore-event-delivery-durability">Explore event delivery durability</h3>
+<p>Event Grid provides durable delivery. It tries to deliver each event at least once for each matching subscription immediately. If a subscriber's endpoint doesn't acknowledge receipt of an event or if there's a failure, Event Grid retries delivery based on a fixed retry schedule and retry policy. By default, Event Grid delivers one event at a time to the subscriber, and the payload is an array with a single event.</p>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240824144339.png" /></p>
+<h4 id="retry-schedule">Retry schedule</h4>
+<p>When Event Grid receives an error for an event delivery attempt, Event Grid decides whether it should: retry the delivery, dead-letter the event, or drop the event based on the type of the error.</p>
+<p>If the error returned by the subscribed endpoint is a configuration-related error that can't be fixed with retries, Event Grid will either: perform dead-lettering on the event, or drop the event if dead-letter isn't configured.</p>
+<p>The following table describes the types of endpoints and errors for which retry doesn't happen:</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint Type</th>
+<th>Error codes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Azure Resources</td>
+<td>400 (Bad request), 413 (Request entity is too large)</td>
+</tr>
+<tr>
+<td>Webhook</td>
+<td>400 (Bad request), 413 (Request entity is too large), 401 (Unauthorized)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240824144515.png" /></p>
+<p>If the error returned by the subscribed endpoint isn't among the previous list, Event Grid waits 30 seconds for a response after delivering a message. After 30 seconds, if the endpoint hasn’t responded, the message is queued for retry. Event Grid uses an exponential backoff retry policy for event delivery.</p>
+<p>If the endpoint responds within 3 minutes, Event Grid attempts to remove the event from the retry queue on a best effort basis but duplicates might still be received. Event Grid adds a small randomization to all retry steps and might opportunistically skip certain retries if an endpoint is consistently unhealthy, down for a long period, or appears to be overwhelmed.</p>
+<h4 id="retry-policy">Retry policy</h4>
+<p>You can customize the retry policy when creating an event subscription by using the following two configurations. An event is dropped if either of the limits of the retry policy is reached.</p>
+<ul>
+<li><strong>Maximum number of attempts</strong> - The value must be an integer between 1 and 30. The default value is 30.</li>
+<li><strong>Event time-to-live (TTL)</strong> - The value must be an integer between 1 and 1440. The default value is 1440 minutes</li>
+</ul>
+<p>The following example shows setting the maximum number of attempts to 18 by using the Azure CLI.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>az<span class="w"> </span>eventgrid<span class="w"> </span>event-subscription<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>-g<span class="w"> </span>gridResourceGroup<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>--topic-name<span class="w"> </span>&lt;topic_name&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>--name<span class="w"> </span>&lt;event_subscription_name&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span>--endpoint<span class="w"> </span>&lt;endpoint_URL&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span>--max-delivery-attempts<span class="w"> </span><span class="m">18</span>
+</span></code></pre></div>
+<h4 id="output-batching">Output batching</h4>
+<p>You can configure Event Grid to batch events for delivery for improved HTTP performance in high-throughput scenarios. Batching is turned off by default and can be turned on by subscription via the portal, CLI, PowerShell, or SDKs.</p>
+<p>Batched delivery has two settings:</p>
+<ul>
+<li><strong>Max events per batch</strong> - Maximum number of events Event Grid delivers per batch. This number won't be exceeded, however fewer events might be delivered if no other events are available at the time of publish. Event Grid doesn't delay events to create a batch if fewer events are available. Must be between 1 and 5,000.</li>
+<li><strong>Preferred batch size in kilobytes</strong> - Target ceiling for batch size in kilobytes. Similar to max events, the batch size might be smaller if more events aren't available at the time of publish. It's possible that a batch is larger than the preferred batch size <em>if</em> a single event is larger than the preferred size. For example, if the preferred size is 4 KB and a 10-KB event is pushed to Event Grid, the 10-KB event is delivered in its own batch rather than being dropped.</li>
+</ul>
+<h4 id="delayed-delivery">Delayed delivery</h4>
+<p>As an endpoint experiences delivery failures, Event Grid begins to delay the delivery and retry of events to that endpoint. For example, if the first 10 events published to an endpoint fail, Event Grid assumes that the endpoint is experiencing issues and delays all subsequent retries, and new deliveries, for some time - in some cases up to several hours.</p>
+<p>The functional purpose of delayed delivery is to protect unhealthy endpoints and the Event Grid system. Without back-off and delay of delivery to unhealthy endpoints, Event Grid's retry policy and volume capabilities can easily overwhelm a system.</p>
+<h4 id="dead-letter-events">Dead-letter events</h4>
+<p>When Event Grid can't deliver an event within a certain time period or after trying to deliver the event a specific number of times, it can send the undelivered event to a storage account. This process is known as <strong>dead-lettering</strong>. Event Grid dead-letters an event when <strong>one of the following</strong> conditions is met.</p>
+<ul>
+<li>Event isn't delivered within the <strong>time-to-live</strong> period.</li>
+<li>The <strong>number of tries</strong> to deliver the event exceeds the limit.</li>
+</ul>
+<p>If either of the conditions is met, the event is dropped or dead-lettered. By default, Event Grid doesn't turn on dead-lettering. To enable it, you must specify a storage account to hold undelivered events when creating the event subscription. You pull events from this storage account to resolve deliveries.</p>
+<p>If Event Grid receives a 400 (Bad Request) or 413 (Request Entity Too Large) response code, it immediately schedules the event for dead-lettering. These response codes indicate delivery of the event failed.</p>
+<p>There's a five-minute delay between the last attempt to deliver an event and delivery to the dead-letter location. This delay is intended to reduce the number of Blob storage operations. If the dead-letter location is unavailable for four hours, the event is dropped.</p>
+<h4 id="custom-delivery-properties">Custom delivery properties</h4>
+<p>Event subscriptions allow you to set up HTTP headers that are included in delivered events. This capability allows you to set custom headers that are required by a destination. You can set up to 10 headers when creating an event subscription. Each header value shouldn't be greater than 4,096 bytes. You can set custom headers on the events that are delivered to the following destinations:</p>
+<ul>
+<li>Webhooks</li>
+<li>Azure Service Bus topics and queues</li>
+<li>Azure Event Hubs</li>
+<li>Relay Hybrid Connections</li>
+</ul>
+<p>Before setting the dead-letter location, you must have a storage account with a container. You provide the endpoint for this container when creating the event subscription.</p>
+<h3 id="control-access-to-events">Control access to events</h3>
+<p>Azure Event Grid allows you to control the level of access given to different users to do various management operations such as list event subscriptions, create new ones, and generate keys. Event Grid uses Azure role-based access control (Azure RBAC).</p>
+<h4 id="built-in-roles">Built-in roles</h4>
+<p>Event Grid provides the following built-in roles:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event Grid Subscription Reader</td>
+<td>Lets you read Event Grid event subscriptions.</td>
+</tr>
+<tr>
+<td>Event Grid Subscription Contributor</td>
+<td>Lets you manage Event Grid event subscription operations.</td>
+</tr>
+<tr>
+<td>Event Grid Contributor</td>
+<td>Lets you create and manage Event Grid resources.</td>
+</tr>
+<tr>
+<td>Event Grid Data Sender</td>
+<td>Lets you send events to Event Grid topics.</td>
+</tr>
+</tbody>
+</table>
+<p>The Event Grid Subscription Reader and Event Grid Subscription Contributor roles are for managing event subscriptions. They're important when implementing event domains because they give users the permissions they need to subscribe to topics in your event domain. These roles are focused on event subscriptions and don't grant access for actions such as creating topics.</p>
+<p>The Event Grid Contributor role allows you to create and manage Event Grid resources.</p>
+<h4 id="permissions-for-event-subscriptions">Permissions for event subscriptions</h4>
+<p>If you're using an event handler that isn't a WebHook (such as an event hub or queue storage), you need write access to that resource. This permissions check prevents an unauthorized user from sending events to your resource.</p>
+<p>You must have the <strong>Microsoft.EventGrid/EventSubscriptions/Write</strong> permission on the resource that is the event source. You need this permission because you're writing a new subscription at the scope of the resource. The required resource differs based on whether you're subscribing to a system topic or custom topic. Both types are described in this section.</p>
+<table>
+<thead>
+<tr>
+<th>Topic Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System topics</td>
+<td>Need permission to write a new event subscription at the scope of the resource publishing the event. The format of the resource is: <code>/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}</code></td>
+</tr>
+<tr>
+<td>Custom topics</td>
+<td>Need permission to write a new event subscription at the scope of the event grid topic. The format of the resource is: <code>/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.EventGrid/topics/{topic-name}</code></td>
+</tr>
+<tr>
+<td>### Receive events by using webhooks</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Webhooks are one of the many ways to receive events from Azure Event Grid. When a new event is ready, Event Grid service POSTs an HTTP request to the configured endpoint with the event in the request body.</p>
+<p>Like many other services that support webhooks, Event Grid requires you to prove ownership of your Webhook endpoint before it starts delivering events to that endpoint. This requirement prevents a malicious user from flooding your endpoint with events.</p>
+<p>When you use any of the following three Azure services, the Azure infrastructure automatically handles this validation:</p>
+<ul>
+<li>Azure Logic Apps with Event Grid Connector</li>
+<li>Azure Automation via webhook</li>
+<li>Azure Functions with Event Grid Trigger</li>
+</ul>
+<h4 id="endpoint-validation-with-event-grid-events">Endpoint validation with Event Grid events</h4>
+<p>If you're using any other type of endpoint, such as an HTTP trigger based Azure function, your endpoint code needs to participate in a validation handshake with Event Grid. Event Grid supports two ways of validating the subscription.</p>
+<ul>
+<li><strong>Synchronous handshake</strong>: At the time of event subscription creation, Event Grid sends a subscription validation event to your endpoint. The schema of this event is similar to any other Event Grid event. The data portion of this event includes a <code>validationCode</code> property. Your application verifies that the validation request is for an expected event subscription, and returns the validation code in the response synchronously. This handshake mechanism is supported in all Event Grid versions.</li>
+<li><strong>Asynchronous handshake</strong>: In certain cases, you can't return the ValidationCode in response synchronously. For example, if you use a third-party service (like <a href="https://zapier.com/">Zapier</a> or <a href="https://ifttt.com/">IFTTT</a>), you can't programmatically respond with the validation code.</li>
+</ul>
+<p>Starting with version 2018-05-01-preview, Event Grid supports a manual validation handshake. If you're creating an event subscription with an SDK or tool that uses API version 2018-05-01-preview or later, Event Grid sends a <code>validationUrl</code> property in the data portion of the subscription validation event. To complete the handshake, find that URL in the event data and do a GET request to it. You can use either a REST client or your web browser.</p>
+<p>The provided URL is valid for <strong>5 minutes</strong>. During that time, the provisioning state of the event subscription is <code>AwaitingManualAction</code>. If you don't complete the manual validation within 5 minutes, the provisioning state is set to <code>Failed</code>. You have to create the event subscription again before starting the manual validation.</p>
+<p>This authentication mechanism also requires the webhook endpoint to return an HTTP status code of 200 so that it knows that the POST for the validation event was accepted before it can be put in the manual validation mode. In other words, if the endpoint returns 200 but doesn't return back a validation response synchronously, the mode is transitioned to the manual validation mode. If there's a GET on the validation URL within 5 minutes, the validation handshake is considered to be successful.</p>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240824190024.png" /></p>
+<h3 id="filter-events">Filter Events</h3>
+<p>When creating an event subscription, you have three options for filtering:</p>
+<ul>
+<li>Event types</li>
+<li>Subject begins with or ends with</li>
+<li>Advanced fields and operators</li>
+</ul>
+<h4 id="event-type-filtering">Event type filtering</h4>
+<p>By default, all event types for the event source are sent to the endpoint. You can decide to send only certain event types to your endpoint. For example, you can get notified of updates to your resources, but not notified for other operations like deletions. In that case, filter by the <code>Microsoft.Resources.ResourceWriteSuccess</code> event type. Provide an array with the event types, or specify <code>All</code> to get all event types for the event source.</p>
+<p>The JSON syntax for filtering by event type is:</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&quot;filter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;includedEventTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="s2">&quot;Microsoft.Resources.ResourceWriteFailure&quot;</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="s2">&quot;Microsoft.Resources.ResourceWriteSuccess&quot;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="subject-filtering">Subject filtering</h4>
+<p>For simple filtering by subject, specify a starting or ending value for the subject. For example, you can specify the subject ends with <code>.txt</code> to only get events related to uploading a text file to storage account. Or, you can filter the subject begins with <code>/blobServices/default/containers/testcontainer</code> to get all events for that container but not other containers in the storage account.</p>
+<p>The JSON syntax for filtering by subject is:</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&quot;filter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;subjectBeginsWith&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/blobServices/default/containers/mycontainer/log&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;subjectEndsWith&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.jpg&quot;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="advanced-filtering">Advanced filtering</h4>
+<p>To filter by values in the data fields and specify the comparison operator, use the advanced filtering option. In advanced filtering, you specify the:</p>
+<ul>
+<li>operator type - The type of comparison.</li>
+<li>key - The field in the event data that you're using for filtering. It can be a number, boolean, or string.</li>
+<li>value or values - The value or values to compare to the key.</li>
+</ul>
+<p>The JSON syntax for using advanced filters is:</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&quot;filter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;advancedFilters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">&quot;operatorType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NumberGreaterThanOrEquals&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">      </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data.Key1&quot;</span><span class="p">,</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">      </span><span class="nt">&quot;operatorType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StringContains&quot;</span><span class="p">,</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">      </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Subject&quot;</span><span class="p">,</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;container1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;container2&quot;</span><span class="p">]</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="explore-azure-event-hubs">Explore Azure Event Hubs</h2>
+<p>Azure Event Hubs is a big data streaming platform and event ingestion service. It can receive and process millions of events per second. Data sent to an event hub can be transformed and stored by using any real-time analytics provider or batching/storage adapters.</p>
+<p>After completing this module, you'll be able to:</p>
+<ul>
+<li>Describe the benefits of using Event Hubs and how it captures streaming data.</li>
+<li>Explain how to process events.</li>
+<li>Perform common operations with the Event Hubs client library.</li>
+</ul>
+<p>Azure Event Hubs is a native data-streaming service in the cloud that can stream millions of events per second, with low latency, from any source to any destination. Event Hubs is compatible with Apache Kafka. It enables you to run existing Kafka workloads without any code changes.</p>
+<p>With Event Hubs, you can ingest, buffer, store, and process your stream in real time to get actionable insights. Event Hubs uses a partitioned consumer model. It enables multiple applications to process the stream concurrently and lets you control the speed of processing. Event Hubs also integrates with Azure Functions for serverless architectures.</p>
+<p>A broad ecosystem is available for the industry-standard AMQP 1.0 protocol. SDKs are available in languages like .NET, Java, Python, and JavaScript, so you can start processing your streams from Event Hubs. All supported client languages provide low-level integration.</p>
+<h3 id="key-capabilities">Key capabilities</h3>
+<p>Learn about the key capabilities of Azure Event Hubs in the following sections.</p>
+<h4 id="apache-kafka-on-azure-event-hubs">Apache Kafka on Azure Event Hubs</h4>
+<p>Event Hubs is a multi-protocol event streaming engine that natively supports Advanced Message Queuing Protocol (AMQP), Apache Kafka, and HTTPS protocols. Because it supports Apache Kafka, you can bring Kafka workloads to Event Hubs without making any code changes. You don't need to set up, configure, or manage your own Kafka clusters or use a Kafka-as-a-service offering that's not native to Azure.</p>
+<h4 id="schema-registry-in-event-hubs">Schema Registry in Event Hubs</h4>
+<p>Azure Schema Registry in Event Hubs provides a centralized repository for managing schemas of event streaming applications. Schema Registry comes free with every Event Hubs namespace. It integrates with your Kafka applications or Event Hubs SDK-based applications.</p>
+<h4 id="real-time-processing-of-streaming-events-with-stream-analytics">Real-time processing of streaming events with Stream Analytics</h4>
+<p>Event Hubs integrates with Azure Stream Analytics to enable real-time stream processing. With the built-in no-code editor, you can develop a Stream Analytics job by using drag-and-drop functionality, without writing any code.</p>
+<p>Alternatively, developers can use the SQL-based Stream Analytics query language to perform real-time stream processing and take advantage of a wide range of functions for analyzing streaming data.</p>
+<h3 id="key-concepts">Key concepts</h3>
+<p>Event Hubs contains the following key components:</p>
+<ul>
+<li><strong>Producer applications</strong>: These applications can ingest data to an event hub by using Event Hubs SDKs or any Kafka producer client.</li>
+<li><strong>Namespace</strong>: The management container for one or more event hubs or Kafka topics. The management tasks such as allocating streaming capacity, configuring network security, and enabling geo-disaster recovery are handled at the namespace level.</li>
+<li><strong>Event Hubs/Kafka topic</strong>: In Event Hubs, you can organize events into an event hub or a Kafka topic. It's an append-only distributed log, which can comprise one or more partitions.</li>
+<li><strong>Partitions</strong>: They're used to scale an event hub. They're like lanes in a freeway. If you need more streaming throughput, you can add more partitions.</li>
+<li><strong>Consumer applications</strong>: These applications can consume data by seeking through the event log and maintaining consumer offset. Consumers can be Kafka consumer clients or Event Hubs SDK clients.</li>
+<li><strong>Consumer group</strong>: This logical group of consumer instances reads data from an event hub or Kafka topic. It enables multiple consumers to read the same streaming data in an event hub independently at their own pace and with their own offsets.</li>
+</ul>
+<h3 id="explore-event-hubs-capture">Explore Event Hubs Capture</h3>
+<p>Azure Event Hubs enables you to automatically capture the streaming data in Event Hubs in an Azure Blob storage or Azure Data Lake Storage account of your choice, with the added flexibility of specifying a time or size interval. Setting up Capture is fast, there are no administrative costs to run it, and it scales automatically with Event Hubs throughput units in the standard tier or processing units in the premium tier.</p>
+<p><img alt="Image showing capturing of Event Hubs data into Azure Storage or Azure Data Lake Storage" src="https://learn.microsoft.com/en-gb/training/wwl-azure/azure-event-hubs/media/event-hubs-capture.png" /></p>
+<p>Event Hubs Capture enables you to process real-time and batch-based pipelines on the same stream. This means you can build solutions that grow with your needs over time.</p>
+<h4 id="how-event-hubs-capture-works">How Event Hubs Capture works</h4>
+<p>Event Hubs is a time-retention durable buffer for telemetry ingress, similar to a distributed log. The key to scaling in Event Hubs is the partitioned consumer model. Each partition is an independent segment of data and is consumed independently. Over time this data ages off, based on the configurable retention period. As a result, a given event hub never gets "too full."</p>
+<p>Event Hubs Capture enables you to specify your own Azure Blob storage account and container, or Azure Data Lake Store account, which are used to store the captured data. These accounts can be in the same region as your event hub or in another region, adding to the flexibility of the Event Hubs Capture feature.</p>
+<p>Captured data is written in Apache Avro format: a compact, fast, binary format that provides rich data structures with inline schema. This format is widely used in the Hadoop ecosystem, Stream Analytics, and Azure Data Factory. More information about working with Avro is available later in this article.</p>
+<h4 id="capture-windowing">Capture windowing</h4>
+<p>Event Hubs Capture enables you to set up a window to control capturing. This window is a minimum size and time configuration with a "first wins policy," meaning that the first trigger encountered causes a capture operation. Each partition captures independently and writes a completed block blob at the time of capture, named for the time at which the capture interval was encountered. The storage naming convention is as follows:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}
+</span></code></pre></div>
+<p>Note the date values are padded with zeroes; an example filename might be:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>https://mystorageaccount.blob.core.windows.net/mycontainer/mynamespace/myeventhub/0/2017/12/08/03/03/17.avro
+</span></code></pre></div>
+<h4 id="scaling-to-throughput-units">Scaling to throughput units</h4>
+<p>Event Hubs traffic is controlled by throughput units. A single throughput unit allows 1 MB per second or 1,000 events per second of ingress and twice that amount of egress. Standard Event Hubs can be configured with 1-20 throughput units, and you can purchase more with a quota increase support request. Usage beyond your purchased throughput units is throttled. Event Hubs Capture copies data directly from the internal Event Hubs storage, bypassing throughput unit egress quotas and saving your egress for other processing readers, such as Stream Analytics or Spark.</p>
+<p>Once configured, Event Hubs Capture runs automatically when you send your first event, and continues running. To make it easier for your downstream processing to know that the process is working, Event Hubs writes empty files when there's no data. This process provides a predictable cadence and marker that can feed your batch processors.</p>
+<h3 id="scale-your-processing-application">Scale your processing application</h3>
+<p>To scale your event processing application, you can run multiple instances of the application and have it balance the load among themselves. In the older versions, <strong>EventProcessorHost</strong> allowed you to balance the load between multiple instances of your program and checkpoint events when receiving. In the newer versions (5.0 onwards), <strong>EventProcessorClient</strong> (.NET and Java), or <strong>EventHubConsumerClient</strong> (Python and JavaScript) allows you to do the same.</p>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240824191529.png" /></p>
+<h4 id="example-scenario">Example scenario</h4>
+<p>As an example scenario, consider a home security company that monitors 100,000 homes. Every minute, it gets data from various sensors such as a motion detector, door/window open sensor, glass break detector, and so on, installed in each home. The company provides a web site for residents to monitor the activity of their home in near real time.</p>
+<p>Each sensor pushes data to an event hub. The event hub is configured with 16 partitions. On the consuming end, you need a mechanism that can read these events, consolidate them, and dump the aggregate to a storage blob, which is then projected to a user-friendly web page.</p>
+<p>When designing the consumer in a distributed environment, the scenario must handle the following requirements:</p>
+<ul>
+<li><strong>Scale:</strong> Create multiple consumers, with each consumer taking ownership of reading from a few Event Hubs partitions.</li>
+<li><strong>Load balance:</strong> Increase or reduce the consumers dynamically. For example, when a new sensor type (for example, a carbon monoxide detector) is added to each home, the number of events increases. In that case, the operator (a human) increases the number of consumer instances. Then, the pool of consumers can rebalance the number of partitions they own, to share the load with the newly added consumers.</li>
+<li><strong>Seamless resume on failures:</strong> If a consumer (<strong>consumer A</strong>) fails (for example, the virtual machine hosting the consumer suddenly crashes), then other consumers can pick up the partitions owned by <strong>consumer A</strong> and continue. Also, the continuation point, called a <em>checkpoint</em> or <em>offset</em>, should be at the exact point at which <strong>consumer A</strong> failed, or slightly before that.</li>
+<li><strong>Consume events:</strong> While the previous three points deal with the management of the consumer, there must be code to consume the events and do something useful with it. For example, aggregate it and upload it to blob storage.</li>
+</ul>
+<h4 id="event-processor-or-consumer-client">Event processor or consumer client</h4>
+<p>You don't need to build your own solution to meet these requirements. The Azure Event Hubs SDKs provide this functionality. In .NET or Java SDKs, you use an event processor client (<code>EventProcessorClient</code>), and in Python and JavaScript SDKs, you use <code>EventHubConsumerClient</code>.</p>
+<p>For most production scenarios, we recommend that you use the event processor client for reading and processing events. Event processor clients can work cooperatively within the context of a consumer group for a given event hub. Clients will automatically manage distribution and balancing of work as instances become available or unavailable for the group.</p>
+<h4 id="partition-ownership-tracking">Partition ownership tracking</h4>
+<p>An event processor instance typically owns and processes events from one or more partitions. Ownership of partitions is evenly distributed among all the active event processor instances associated with an event hub and consumer group combination.</p>
+<p>Each event processor is given a unique identifier and claims ownership of partitions by adding or updating an entry in a checkpoint store. All event processor instances communicate with this store periodically to update its own processing state and to learn about other active instances. This data is then used to balance the load among the active processors.</p>
+<h4 id="receive-messages">Receive messages</h4>
+<p>When you create an event processor, you specify the functions that process events and errors. Each call to the function that processes events delivers a single event from a specific partition. It's your responsibility to handle this event. If you want to make sure the consumer processes every message at least once, you need to write your own code with retry logic. But be cautious about poisoned messages.</p>
+<p>We recommend that you do things relatively fast. That is, do as little processing as possible. If you need to write to storage and do some routing, it's better to use two consumer groups and have two event processors.</p>
+<h4 id="checkpointing">Checkpointing</h4>
+<p><em>Checkpointing</em> is a process by which an event processor marks or commits the position of the last successfully processed event within a partition. Marking a checkpoint is typically done within the function that processes the events and occurs on a per-partition basis within a consumer group.</p>
+<p>If an event processor disconnects from a partition, another instance can resume processing the partition at the checkpoint that was previously committed by the last processor of that partition in that consumer group. When the processor connects, it passes the offset to the event hub to specify the location at which to start reading. In this way, you can use checkpointing to both mark events as "complete" by downstream applications and to provide resiliency when an event processor goes down. It's possible to return to older data by specifying a lower offset from this checkpointing process.</p>
+<h4 id="thread-safety-and-processor-instances">Thread safety and processor instances</h4>
+<p>By default, the function that processes the events is called sequentially for a given partition. Subsequent events and calls to this function from the same partition queue up behind the scenes as the event pump continues to run in the background on other threads. Events from different partitions can be processed concurrently and any shared state that is accessed across partitions have to be synchronized.</p>
+<h3 id="control-access-to-events_1">Control access to events</h3>
+<p>Azure Event Hubs supports both Microsoft Entra ID and shared access signatures (SAS) to handle both authentication and authorization. Azure provides the following Azure built-in roles for authorizing access to Event Hubs data using Microsoft Entra ID and OAuth:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#azure-event-hubs-data-owner">Azure Event Hubs Data Owner</a>: Use this role to give <em>complete access</em> to Event Hubs resources.</li>
+<li><a href="https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#azure-event-hubs-data-sender">Azure Event Hubs Data Sender</a>: Use this role to give <em>send access</em> to Event Hubs resources.</li>
+<li><a href="https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#azure-event-hubs-data-receiver">Azure Event Hubs Data Receiver</a>: Use this role to give <em>receiving access</em> to Event Hubs resources.</li>
+</ul>
+<h4 id="authorize-access-with-managed-identities">Authorize access with managed identities</h4>
+<p>To authorize a request to Event Hubs service from a managed identity in your application, you need to configure Azure role-based access control settings for that managed identity. Azure Event Hubs defines Azure roles that encompass permissions for sending and reading from Event Hubs. When the Azure role is assigned to a managed identity, the managed identity is granted access to Event Hubs data at the appropriate scope.</p>
+<h4 id="authorize-access-with-microsoft-identity-platform">Authorize access with Microsoft identity platform</h4>
+<p>A key advantage of using Microsoft Entra ID with Event Hubs is that your credentials no longer need to be stored in your code. Instead, you can request an OAuth 2.0 access token from Microsoft identity platform. Microsoft Entra authenticates the security principal (a user, a group, or service principal) running the application. If authentication succeeds, Microsoft Entra ID returns the access token to the application, and the application can then use the access token to authorize requests to Azure Event Hubs.</p>
+<h4 id="authorize-access-to-event-hubs-publishers-with-shared-access-signatures">Authorize access to Event Hubs publishers with shared access signatures</h4>
+<p>An event publisher defines a virtual endpoint for an Event Hubs. The publisher can only be used to send messages to an event hub and not receive messages. Typically, an event hub employs one publisher per client. All messages that are sent to any of the publishers of an event hub are enqueued within that event hub. Publishers enable fine-grained access control.</p>
+<p>Each Event Hubs client is assigned a unique token that is uploaded to the client. A client that holds a token can only send to one publisher, and no other publisher. If multiple clients share the same token, then each of them shares the publisher.</p>
+<p>All tokens are assigned with shared access signature keys. Typically, all tokens are signed with the same key. Clients aren't aware of the key, which prevents clients from manufacturing tokens. Clients operate on the same tokens until they expire.</p>
+<h4 id="authorize-access-to-event-hubs-consumers-with-shared-access-signatures">Authorize access to Event Hubs consumers with shared access signatures</h4>
+<p>To authenticate back-end applications that consume from the data generated by Event Hubs producers, Event Hubs token authentication requires its clients to either have the <strong>manage</strong> rights or the <strong>listen</strong> privileges assigned to its Event Hubs namespace or event hub instance or topic. Data is consumed from Event Hubs using consumer groups. While SAS policy gives you granular scope, this scope is defined only at the entity level and not at the consumer level. It means that the privileges defined at the namespace level or the event hub instance or topic level are to the consumer groups of that entity.</p>
+<h3 id="perform-common-operations-with-the-event-hubs-client-library">Perform common operations with the Event Hubs client library</h3>
+<p>This unit contains examples of common operations you can perform with the Event Hubs client library (<code>Azure.Messaging.EventHubs</code>) to interact with an Event Hubs.</p>
+<h4 id="inspect-event-hubs">Inspect Event Hubs</h4>
+<p>Many Event Hubs operations take place within the scope of a specific partition. Because Event Hubs owns the partitions, their names are assigned at the time of creation. To understand what partitions are available, you query the Event Hubs using one of the Event Hubs clients. For illustration, the <code>EventHubProducerClient</code> is demonstrated in these examples, but the concept and form are common across clients.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">connectionString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; CONNECTION STRING FOR THE EVENT HUBS NAMESPACE &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kt">var</span><span class="w"> </span><span class="n">eventHubName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; NAME OF THE EVENT HUB &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">await</span><span class="w"> </span><span class="nf">using</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">producer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventHubProducerClient</span><span class="p">(</span><span class="n">connectionString</span><span class="p">,</span><span class="w"> </span><span class="n">eventHubName</span><span class="p">))</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">partitionIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">producer</span><span class="p">.</span><span class="n">GetPartitionIdsAsync</span><span class="p">();</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="publish-events-to-event-hubs">Publish events to Event Hubs</h4>
+<p>In order to publish events, you need to create an <code>EventHubProducerClient</code>. Producers publish events in batches and might request a specific partition, or allow the Event Hubs service to decide which partition events should be published to. We recommended using automatic routing when the publishing of events needs to be highly available or when event data should be distributed evenly among the partitions. Our example takes advantage of automatic routing.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">connectionString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; CONNECTION STRING FOR THE EVENT HUBS NAMESPACE &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kt">var</span><span class="w"> </span><span class="n">eventHubName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; NAME OF THE EVENT HUB &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">await</span><span class="w"> </span><span class="nf">using</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">producer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventHubProducerClient</span><span class="p">(</span><span class="n">connectionString</span><span class="p">,</span><span class="w"> </span><span class="n">eventHubName</span><span class="p">))</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">{</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="nn">EventDataBatch</span><span class="w"> </span><span class="n">eventBatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">producer</span><span class="p">.</span><span class="n">CreateBatchAsync</span><span class="p">();</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="n">eventBatch</span><span class="p">.</span><span class="n">TryAdd</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EventData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BinaryData</span><span class="p">(</span><span class="s">&quot;First&quot;</span><span class="p">)));</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="n">eventBatch</span><span class="p">.</span><span class="n">TryAdd</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EventData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BinaryData</span><span class="p">(</span><span class="s">&quot;Second&quot;</span><span class="p">)));</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">producer</span><span class="p">.</span><span class="n">SendAsync</span><span class="p">(</span><span class="n">eventBatch</span><span class="p">);</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="read-events-from-an-event-hubs">Read events from an Event Hubs</h4>
+<p>In order to read events from an Event Hubs, you need to create an <code>EventHubConsumerClient</code> for a given consumer group. When an Event Hubs is created, it provides a default consumer group that can be used to get started with exploring Event Hubs. In our example, we focus on reading all events published to the Event Hubs using an iterator.</p>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240824192611.png" /></p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">connectionString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; CONNECTION STRING FOR THE EVENT HUBS NAMESPACE &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kt">var</span><span class="w"> </span><span class="n">eventHubName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; NAME OF THE EVENT HUB &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="kt">string</span><span class="w"> </span><span class="n">consumerGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EventHubConsumerClient</span><span class="p">.</span><span class="n">DefaultConsumerGroupName</span><span class="p">;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">await</span><span class="w"> </span><span class="nf">using</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">consumer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventHubConsumerClient</span><span class="p">(</span><span class="n">consumerGroup</span><span class="p">,</span><span class="w"> </span><span class="n">connectionString</span><span class="p">,</span><span class="w"> </span><span class="n">eventHubName</span><span class="p">))</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p">{</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">cancellationSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CancellationTokenSource</span><span class="p">();</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="n">cancellationSource</span><span class="p">.</span><span class="n">CancelAfter</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="m">45</span><span class="p">));</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nf">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">PartitionEvent</span><span class="w"> </span><span class="n">receivedEvent</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">consumer</span><span class="p">.</span><span class="n">ReadEventsAsync</span><span class="p">(</span><span class="n">cancellationSource</span><span class="p">.</span><span class="n">Token</span><span class="p">))</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="c1">// At this point, the loop will wait for events to be available in the Event Hub. When an event</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">        </span><span class="c1">// is available, the loop will iterate with the event that was received. Because we did not</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">        </span><span class="c1">// specify a maximum wait time, the loop will wait forever unless cancellation is requested using</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">        </span><span class="c1">// the cancellation token.</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="read-events-from-an-event-hubs-partition">Read events from an Event Hubs partition</h4>
+<p>To read from a specific partition, the consumer needs to specify where in the event stream to begin receiving events. In our example, we focus on reading all published events for the first partition of the Event Hubs.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">connectionString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; CONNECTION STRING FOR THE EVENT HUBS NAMESPACE &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kt">var</span><span class="w"> </span><span class="n">eventHubName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; NAME OF THE EVENT HUB &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="kt">string</span><span class="w"> </span><span class="n">consumerGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EventHubConsumerClient</span><span class="p">.</span><span class="n">DefaultConsumerGroupName</span><span class="p">;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">await</span><span class="w"> </span><span class="nf">using</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">consumer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventHubConsumerClient</span><span class="p">(</span><span class="n">consumerGroup</span><span class="p">,</span><span class="w"> </span><span class="n">connectionString</span><span class="p">,</span><span class="w"> </span><span class="n">eventHubName</span><span class="p">))</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">{</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="n">EventPosition</span><span class="w"> </span><span class="n">startingPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EventPosition</span><span class="p">.</span><span class="n">Earliest</span><span class="p">;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">partitionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="n">consumer</span><span class="p">.</span><span class="n">GetPartitionIdsAsync</span><span class="p">()).</span><span class="n">First</span><span class="p">();</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">cancellationSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CancellationTokenSource</span><span class="p">();</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">    </span><span class="n">cancellationSource</span><span class="p">.</span><span class="n">CancelAfter</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="m">45</span><span class="p">));</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nf">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">PartitionEvent</span><span class="w"> </span><span class="n">receivedEvent</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">consumer</span><span class="p">.</span><span class="n">ReadEventsFromPartitionAsync</span><span class="p">(</span><span class="n">partitionId</span><span class="p">,</span><span class="w"> </span><span class="n">startingPosition</span><span class="p">,</span><span class="w"> </span><span class="n">cancellationSource</span><span class="p">.</span><span class="n">Token</span><span class="p">))</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">        </span><span class="c1">// At this point, the loop will wait for events to be available in the partition. When an event</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">        </span><span class="c1">// is available, the loop will iterate with the event that was received. Because we did not</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">        </span><span class="c1">// specify a maximum wait time, the loop will wait forever unless cancellation is requested using</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">        </span><span class="c1">// the cancellation token.</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="process-events-using-an-event-processor-client">Process events using an Event Processor client</h4>
+<p>For most production scenarios, the recommendation is to use <code>EventProcessorClient</code> for reading and processing events. Since the <code>EventProcessorClient</code> has a dependency on Azure Storage blobs for persistence of its state, you need to provide a <code>BlobContainerClient</code> for the processor, which has been configured for the storage account and container that should be used.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">cancellationSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CancellationTokenSource</span><span class="p">();</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">cancellationSource</span><span class="p">.</span><span class="n">CancelAfter</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="m">45</span><span class="p">));</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kt">var</span><span class="w"> </span><span class="n">storageConnectionString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; CONNECTION STRING FOR THE STORAGE ACCOUNT &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="kt">var</span><span class="w"> </span><span class="n">blobContainerName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; NAME OF THE BLOB CONTAINER &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="kt">var</span><span class="w"> </span><span class="n">eventHubsConnectionString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; CONNECTION STRING FOR THE EVENT HUBS NAMESPACE &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="kt">var</span><span class="w"> </span><span class="n">eventHubName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; NAME OF THE EVENT HUB &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="kt">var</span><span class="w"> </span><span class="n">consumerGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;&lt; NAME OF THE EVENT HUB CONSUMER GROUP &gt;&gt;&quot;</span><span class="p">;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="n">Task</span><span class="w"> </span><span class="nf">processEventHandler</span><span class="p">(</span><span class="n">ProcessEventArgs</span><span class="w"> </span><span class="n">eventArgs</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="n">Task</span><span class="w"> </span><span class="nf">processErrorHandler</span><span class="p">(</span><span class="n">ProcessErrorEventArgs</span><span class="w"> </span><span class="n">eventArgs</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="kt">var</span><span class="w"> </span><span class="n">storageClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BlobContainerClient</span><span class="p">(</span><span class="n">storageConnectionString</span><span class="p">,</span><span class="w"> </span><span class="n">blobContainerName</span><span class="p">);</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="kt">var</span><span class="w"> </span><span class="n">processor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventProcessorClient</span><span class="p">(</span><span class="n">storageClient</span><span class="p">,</span><span class="w"> </span><span class="n">consumerGroup</span><span class="p">,</span><span class="w"> </span><span class="n">eventHubsConnectionString</span><span class="p">,</span><span class="w"> </span><span class="n">eventHubName</span><span class="p">);</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="n">processor</span><span class="p">.</span><span class="n">ProcessEventAsync</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">processEventHandler</span><span class="p">;</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="n">processor</span><span class="p">.</span><span class="n">ProcessErrorAsync</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">processErrorHandler</span><span class="p">;</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="k">await</span><span class="w"> </span><span class="n">processor</span><span class="p">.</span><span class="n">StartProcessingAsync</span><span class="p">();</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="k">try</span>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="p">{</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">    </span><span class="c1">// The processor performs its work in the background; block until cancellation</span>
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w">    </span><span class="c1">// to allow processing to take place.</span>
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">,</span><span class="w"> </span><span class="n">cancellationSource</span><span class="p">.</span><span class="n">Token</span><span class="p">);</span>
+</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="p">}</span>
+</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">TaskCanceledException</span><span class="p">)</span>
+</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="p">{</span>
+</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">    </span><span class="c1">// This is expected when the delay is canceled.</span>
+</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="p">}</span>
+</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>
+</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="k">try</span>
+</span><span id="__span-13-35"><a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="p">{</span>
+</span><span id="__span-13-36"><a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">processor</span><span class="p">.</span><span class="n">StopProcessingAsync</span><span class="p">();</span>
+</span><span id="__span-13-37"><a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a><span class="p">}</span>
+</span><span id="__span-13-38"><a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="k">finally</span>
+</span><span id="__span-13-39"><a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a><span class="p">{</span>
+</span><span id="__span-13-40"><a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a><span class="w">    </span><span class="c1">// To prevent leaks, the handlers should be removed when processing is complete.</span>
+</span><span id="__span-13-41"><a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>
+</span><span id="__span-13-42"><a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a><span class="w">    </span><span class="n">processor</span><span class="p">.</span><span class="n">ProcessEventAsync</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">processEventHandler</span><span class="p">;</span>
+</span><span id="__span-13-43"><a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a><span class="w">    </span><span class="n">processor</span><span class="p">.</span><span class="n">ProcessErrorAsync</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">processErrorHandler</span><span class="p">;</span>
+</span><span id="__span-13-44"><a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a><span class="p">}</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

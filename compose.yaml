@@ -1,0 +1,7 @@
+services:
+  web:
+    container_name: docs
+    build:
+      context: .
+    ports:
+      - 80:80
