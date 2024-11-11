@@ -50,36 +50,44 @@ update:
 
 .PHONY: build-gt
 build-gt:
-	@echo "--- [GitTogether] Setting up for build... ---"
+	@echo "--- [GitTogether] Clean up previous build... ---"
+	@rm -rf web/gt
+	@echo "--- [GitTogether] Setting up for build...    ---"
 	@cd Projects/GitTogether/docs && pipenv install --dev
-	@echo "--- [GitTogether] Building...             ---"
+	@echo "--- [GitTogether] Building...                ---"
 	@cd Projects/GitTogether/docs && pipenv run mkdocs build
-	@echo "--- [GitTogether] Copying...              ---"
+	@echo "--- [GitTogether] Copying...                 ---"
 	@mv Projects/GitTogether/docs/site web/gt
-	@echo "--- [GitTogether] Done.                   ---"
+	@echo "--- [GitTogether] Done.                      ---"
 
 .PHONY: build-dl
 build-dl:
-	@echo "--- [DockerLens] Setting up for build... ---"
+	@echo "--- [DockerLens] Clean up previous build... ---"
+	@rm -rf web/dl
+	@echo "--- [DockerLens] Setting up for build...    ---"
 	@cd Projects/DockerLens/docs && pipenv install --dev
-	@echo "--- [DockerLens] Building...             ---"
+	@echo "--- [DockerLens] Building...                ---"
 	@cd Projects/DockerLens/docs && pipenv run mkdocs build
-	@echo "--- [DockerLens] Copying...              ---"
+	@echo "--- [DockerLens] Copying...                 ---"
 	@mv Projects/DockerLens/docs/site web/dl
-	@echo "--- [DockerLens] Done.                   ---"
+	@echo "--- [DockerLens] Done.                      ---"
 
 .PHONY: build-shopping
 build-shopping:
-	@echo "--- [ShoppingListApp] Setting up for build... ---"
+	@echo "--- [ShoppingListApp] Clean up previous build... ---"
+	@rm -rf web/shopping
+	@echo "--- [ShoppingListApp] Setting up for build...    ---"
 	@cd Projects/ShoppingListApp/docs && pipenv install --dev
-	@echo "--- [ShoppingListApp] Building...             ---"
+	@echo "--- [ShoppingListApp] Building...                ---"
 	@cd Projects/ShoppingListApp/docs && pipenv run mkdocs build
-	@echo "--- [ShoppingListApp] Copying...              ---"
+	@echo "--- [ShoppingListApp] Copying...                 ---"
 	@mv Projects/ShoppingListApp/docs/site web/shopping
-	@echo "--- [ShoppingListApp] Done.                   ---"
+	@echo "--- [ShoppingListApp] Done.                      ---"
 
 .PHONY: build-hp
 build-hp:
+	@echo "--- [HomePortal] Clean up previous build... ---"
+	@rm -rf web/hp
 	@echo "--- [HomePortal] Setting up for build... ---"
 	@cd Projects/HomePortal/docs && pipenv install --dev
 	@echo "--- [HomePortal] Building...             ---"
@@ -90,6 +98,8 @@ build-hp:
 
 .PHONY: build-my-docs
 build-my-docs:
+	@echo "--- [My-Docs] Clean up previous build... ---"
+	@rm -rf web/my-docs
 	@echo "--- [My-Docs] Setting up for build... ---"
 	@cd Projects/My-Docs && pipenv install --dev
 	@echo "--- [My-Docs] Building...             ---"
