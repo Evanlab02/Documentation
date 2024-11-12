@@ -23,6 +23,11 @@ Projects/My-Docs:
 	@git clone git@github.com:Evanlab02/My-Docs.git Projects/My-Docs
 	@echo "--- [DOCUMENTATION] Installed My-Docs.    ---"
 
+Projects/WoW:
+	@echo "--- [DOCUMENTATION] Installing WoWScout... ---"
+	@git clone git@github.com:Evanlab02/WoWScout.git Projects/WoW
+	@echo "--- [DOCUMENTATION] Installed WowScout.    ---"
+
 .PHONY: uninstall
 uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalling all projects... ---"
@@ -30,7 +35,7 @@ uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalled all projects.  ---"
 
 .PHONY: install
-install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs
+install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW
 	@echo "[DOCUMENTATION] Installed all projects."
 
 .PHONY: update
@@ -46,6 +51,8 @@ update:
 	@cd Projects/HomePortal && git pull
 	@echo "--- [DOCUMENTATION] Updating My-Docs...         ---"
 	@cd Projects/My-Docs && git pull
+	@echo "--- [DOCUMENTATION] Updating WoWScout...        ---"
+	@cd Projects/WoW/ && git pull
 	@echo "--- [DOCUMENTATION] Updated all projects.       ---"
 
 .PHONY: build-gt
@@ -107,3 +114,15 @@ build-my-docs:
 	@echo "--- [My-Docs] Copying...              ---"
 	@mv Projects/My-Docs/site web/my-docs
 	@echo "--- [My-Docs] Done.                   ---"
+
+.PHONY: build-wow
+build-wow:
+	@echo "--- [WoWScout] Clean up previous build... ---"
+	@rm -rf web/WoW
+	@echo "--- [WoWScout] Setting up for build... ---"
+	@cd Projects/WoW/Docs && pipenv install --dev
+	@echo "--- [WoWScout] Building...             ---"
+	@cd Projects/WoW/Docs && pipenv run mkdocs build
+	@echo "--- [WoWScout] Copying...              ---"
+	@mv Projects/WoW/Docs/site web/wow
+	@echo "--- [WoWScout] Done.                   ---"
