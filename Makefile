@@ -118,7 +118,7 @@ build-my-docs:
 .PHONY: build-wow
 build-wow:
 	@echo "--- [WoWScout] Clean up previous build... ---"
-	@rm -rf web/WoW
+	@rm -rf web/wow
 	@echo "--- [WoWScout] Setting up for build... ---"
 	@cd Projects/WoW/Docs && pipenv install --dev
 	@echo "--- [WoWScout] Building...             ---"
