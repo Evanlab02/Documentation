@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#getting-started-with-c" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1652,6 +1657,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    01 - Getting Started
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1662,6 +1680,76 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-dependencies-for-the-net-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install dependencies for the .NET runtime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-net-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing the .NET SDK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-a-simple-c-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting a simple C# project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-an-aspnet-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting an ASP.NET project
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting an ASP.NET project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-docker-with-an-aspnet-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using docker with an ASP.NET project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2699,6 +2787,67 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-dependencies-for-the-net-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install dependencies for the .NET runtime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-net-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing the .NET SDK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-a-simple-c-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting a simple C# project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-an-aspnet-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting an ASP.NET project
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting an ASP.NET project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-docker-with-an-aspnet-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using docker with an ASP.NET project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2713,9 +2862,52 @@
                   
 
 
-  <h1>01 - Getting Started</h1>
-
-
+<h1 id="getting-started-with-c">Getting Started with C#</h1>
+<p>To get started with C#, I would highly recommend using docker as it is much simpler to setup then C# itself on your local machine unless you are using visual studio on windows.</p>
+<h2 id="install-dependencies-for-the-net-runtime">Install dependencies for the .NET runtime</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ca-certificates<span class="w"> </span>libc6<span class="w"> </span>libgcc-s1<span class="w"> </span>libicu74<span class="w"> </span>liblttng-ust1<span class="w"> </span>libssl3<span class="w"> </span>libstdc++6<span class="w"> </span>libunwind8<span class="w"> </span>zlib1g
+</span></code></pre></div>
+<h2 id="installing-the-net-sdk">Installing the .NET SDK</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>dotnet-sdk-8.0
+</span></code></pre></div>
+<h2 id="starting-a-simple-c-project">Starting a simple C# project</h2>
+<p>Start a simple console application with C#.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dotnet<span class="w"> </span>new<span class="w"> </span>console<span class="w"> </span>-o<span class="w"> </span>Project
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>dotnet<span class="w"> </span>restore<span class="w"> </span><span class="c1"># For dependency installation</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>dotnet<span class="w"> </span>run<span class="w"> </span><span class="c1"># To run the application (without build)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>dotnet<span class="w"> </span>build<span class="w"> </span><span class="c1"># For building the application</span>
+</span></code></pre></div>
+<h2 id="starting-an-aspnet-project">Starting an ASP.NET project</h2>
+<p>Start API project with C# using the following command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>dotnet<span class="w"> </span>new<span class="w"> </span>webapi<span class="w"> </span>-o<span class="w"> </span>Play
+</span></code></pre></div>
+<h3 id="using-docker-with-an-aspnet-project">Using docker with an ASP.NET project</h3>
+<div class="language-Dockerfile highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">mcr.microsoft.com/dotnet/sdk:8.0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/src</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">COPY</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;Program.cs&quot;</span>,<span class="w"> </span><span class="s2">&quot;Play.csproj&quot;</span>,<span class="w"> </span><span class="s2">&quot;appsettings.json&quot;</span>,<span class="w"> </span><span class="s2">&quot;/src/&quot;</span><span class="o">]</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">RUN</span><span class="w"> </span>dotnet<span class="w"> </span>restore<span class="w"> </span><span class="s2">&quot;./Play.csproj&quot;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">ARG</span><span class="w"> </span><span class="nv">BUILD_CONFIGURATION</span><span class="o">=</span>Release
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">RUN</span><span class="w"> </span>dotnet<span class="w"> </span>build<span class="w"> </span><span class="s2">&quot;./Play.csproj&quot;</span><span class="w"> </span>-c<span class="w"> </span><span class="nv">$BUILD_CONFIGURATION</span><span class="w"> </span>-o<span class="w"> </span>/app/build/
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">RUN</span><span class="w"> </span>dotnet<span class="w"> </span>publish<span class="w"> </span><span class="s2">&quot;./Play.csproj&quot;</span><span class="w"> </span>-c<span class="w"> </span><span class="nv">$BUILD_CONFIGURATION</span><span class="w"> </span>-o<span class="w"> </span>/app/publish<span class="w"> </span>/p:UseAppHost<span class="o">=</span>false
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">FROM</span><span class="w"> </span><span class="s">mcr.microsoft.com/dotnet/aspnet:8.0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">final</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8080</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>build<span class="w"> </span>/app/publish<span class="w"> </span>.
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;dotnet&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Play.dll&quot;</span><span class="w"> </span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">server</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000:8080</span>
+</span></code></pre></div>
 
 
 
