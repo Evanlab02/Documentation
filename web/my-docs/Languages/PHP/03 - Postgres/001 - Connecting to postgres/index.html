@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../02%20-%20Fundamentals/01%20-%20Hello%20World/">
+        <link rel="prev" href="../../02%20-%20Fundamentals/04%20-%20Arrays%20with%20Keys/">
       
       
         <link rel="next" href="../../../Python/01%20-%20Getting%20started/">
@@ -20,7 +20,7 @@
     
     
       
-        <title>001 - PHP Tags - My Docs</title>
+        <title>001 - Connecting to postgres - My Docs</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#connecting-to-postgres-with-php" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              001 - PHP Tags
+              001 - Connecting to postgres
             
           </span>
         </div>
@@ -2270,6 +2275,69 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02%20-%20Fundamentals/02%20-%20Variables%20and%20Types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 - Variables and Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02%20-%20Fundamentals/03%20-%20Simple%20arrays/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 - Simple arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02%20-%20Fundamentals/04%20-%20Arrays%20with%20Keys/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 - Arrays with Keys
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2301,7 +2369,7 @@
             
   
   <span class="md-ellipsis">
-    03 - Language
+    03 - Postgres
   </span>
   
 
@@ -2311,7 +2379,7 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3_3">
             <span class="md-nav__icon md-icon"></span>
-            03 - Language
+            03 - Postgres
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2328,16 +2396,96 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    001 - Connecting to postgres
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    001 - PHP Tags
+    001 - Connecting to postgres
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connection_string" class="md-nav__link">
+    <span class="md-ellipsis">
+      connection_string
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3078,11 +3226,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/GitTogether/01%20-%20GitTogether%20outline/" class="md-nav__link">
+      <a href="../../../../Projects/GitTogether/00%20-%20GitTogether%20outline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    01 - GitTogether outline
+    00 - GitTogether outline
   </span>
   
 
@@ -3528,6 +3676,64 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connection_string" class="md-nav__link">
+    <span class="md-ellipsis">
+      connection_string
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3542,9 +3748,46 @@
                   
 
 
-  <h1>001 - PHP Tags</h1>
-
-
+<h1 id="connecting-to-postgres-with-php">Connecting to postgres with PHP</h1>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="x">pg_connect(string $connection_string): PgSql\Connection | False</span>
+</span></code></pre></div>
+<p><strong><code>pg_connect()</code></strong> opens a connection to a PostgreSQL database specified by the <code>connection_string</code>.</p>
+<p>If a second call is made to <strong><code>pg_connect()</code></strong> with the same <code>connection_string</code> as an existing connection, the existing connection will be returned unless you pass <strong><code>PGSQL_CONNECT_FORCE_NEW</code></strong> as <code>flags</code>.</p>
+<p>The old syntax with multiple parameters <strong><code>$conn = pg_connect("host", "port", "options", "tty", "dbname")</code></strong> has been deprecated.</p>
+<h2 id="parameters">Parameters</h2>
+<h3 id="connection_string"><code>connection_string</code></h3>
+<p>The <code>connection_string</code> can be empty to use all default parameters, or it can contain one or more parameter settings separated by whitespace. Each parameter setting is in the form <code>keyword = value</code>. Spaces around the equal sign are optional. To write an empty value or a value containing spaces, surround it with single quotes, e.g., <code>keyword = 'a value'</code>. Single quotes and backslashes within the value must be escaped with a backslash.</p>
+<p>The currently recognized parameter keywords are: <code>host</code>, <code>hostaddr</code>, <code>port</code>, <code>dbname</code> (defaults to value of <code>user</code>), <code>user</code>, <code>password</code>, <code>connect_timeout</code>, <code>options</code>, <code>tty</code> (ignored), <code>sslmode</code>, <code>requiressl</code> (deprecated in favor of <code>sslmode</code>), and <code>service</code>. Which of these arguments exist depends on your PostgreSQL version.</p>
+<p>The <code>options</code> parameter can be used to set command line parameters to be invoked by the server.</p>
+<h2 id="examples">Examples</h2>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">$dbconn</span> <span class="o">=</span> <span class="nb">pg_connect</span><span class="p">(</span><span class="s2">&quot;dbname=mary&quot;</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">//connect to a database named &quot;mary&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">$dbconn2</span> <span class="o">=</span> <span class="nb">pg_connect</span><span class="p">(</span><span class="s2">&quot;host=localhost port=5432 dbname=mary&quot;</span><span class="p">);</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">// connect to a database named &quot;mary&quot; on &quot;localhost&quot; at port &quot;5432&quot;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nv">$dbconn3</span> <span class="o">=</span> <span class="nb">pg_connect</span><span class="p">(</span><span class="s2">&quot;host=sheep port=5432 dbname=mary user=lamb password=foo&quot;</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">//connect to a database named &quot;mary&quot; on the host &quot;sheep&quot; with a username and password</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nv">$conn_string</span> <span class="o">=</span> <span class="s2">&quot;host=sheep port=5432 dbname=test user=lamb password=bar&quot;</span><span class="p">;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nv">$dbconn4</span> <span class="o">=</span> <span class="nb">pg_connect</span><span class="p">(</span><span class="nv">$conn_string</span><span class="p">);</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">//connect to a database named &quot;test&quot; on the host &quot;sheep&quot; with a username and password</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nv">$dbconn5</span> <span class="o">=</span> <span class="nb">pg_connect</span><span class="p">(</span><span class="s2">&quot;host=localhost options=&#39;--client_encoding=UTF8&#39;&quot;</span><span class="p">);</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1">//connect to a database on &quot;localhost&quot; and set the command line parameter which tells the encoding is in UTF-8</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="cp">?&gt;</span>
+</span></code></pre></div>
+<h3 id="see-also">See Also</h3>
+<ul>
+<li><a href="https://devdocs.io/php/function.pg-pconnect">pg_pconnect()</a> - Open a persistent PostgreSQL connection</li>
+<li><a href="https://devdocs.io/php/function.pg-close">pg_close()</a> - Closes a PostgreSQL connection</li>
+<li><a href="https://devdocs.io/php/function.pg-host">pg_host()</a> - Returns the host name associated with the connection</li>
+<li><a href="https://devdocs.io/php/function.pg-port">pg_port()</a> - Return the port number associated with the connection</li>
+<li><a href="https://devdocs.io/php/function.pg-tty">pg_tty()</a> - Return the TTY name associated with the connection</li>
+<li><a href="https://devdocs.io/php/function.pg-options">pg_options()</a> - Get the options associated with the connection</li>
+<li><a href="https://devdocs.io/php/function.pg-dbname">pg_dbname()</a> - Get the database name</li>
+</ul>
 
 
 
