@@ -28,6 +28,11 @@ Projects/WoW:
 	@git clone git@github.com:Evanlab02/WoWScout.git Projects/WoW
 	@echo "--- [DOCUMENTATION] Installed WowScout.    ---"
 
+Projects/Lyzer:
+	@echo "--- [DOCUMENTATION] Installing Lyzer... ---"
+	@git clone git@github.com:LittleClumsy/Lyzer.git Projects/Lyzer
+	@echo "--- [DOCUMENTATION] Installed Lyzer.    ---"
+
 .PHONY: uninstall
 uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalling all projects... ---"
@@ -35,7 +40,7 @@ uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalled all projects.  ---"
 
 .PHONY: install
-install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW
+install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW Projects/Lyzer
 	@echo "[DOCUMENTATION] Installed all projects."
 
 .PHONY: update
@@ -53,6 +58,8 @@ update:
 	@cd Projects/My-Docs && git pull
 	@echo "--- [DOCUMENTATION] Updating WoWScout...        ---"
 	@cd Projects/WoW/ && git pull
+	@echo "--- [DOCUMENTATION] Updating Lyzer...        ---"
+	@cd Projects/Lyzer/ && git pull
 	@echo "--- [DOCUMENTATION] Updated all projects.       ---"
 
 .PHONY: build-gt
@@ -126,3 +133,15 @@ build-wow:
 	@echo "--- [WoWScout] Copying...              ---"
 	@mv Projects/WoW/Docs/site web/wow
 	@echo "--- [WoWScout] Done.                   ---"
+
+.PHONY: build-lyzer
+build-lyzer:
+	@echo "--- [Lyzer] Clean up previous build... ---"
+	@rm -rf web/lyzer
+	@echo "--- [Lyzer] Setting up for build... ---"
+	@cd Projects/Lyzer/Docs && uv sync
+	@echo "--- [Lyzer] Building...             ---"
+	@cd Projects/Lyzer/Docs && uv run mkdocs build
+	@echo "--- [Lyzer] Copying...              ---"
+	@mv Projects/Lyzer/Docs/site web/lyzer
+	@echo "--- [Lyzer] Done."
