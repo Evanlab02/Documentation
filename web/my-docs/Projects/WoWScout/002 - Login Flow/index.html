@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../Smith/02%20-%20Testing%20Pipelines/">
+        <link rel="prev" href="../001%20-%20WoWScout%20Project%20Outline/">
       
       
-        <link rel="next" href="../02%20-%20Login%20Flow/">
+        <link rel="next" href="../003%20-%20Login%20Page/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>01 - WoWScout Project Outline - My Docs</title>
+        <title>002 - Login Flow - My Docs</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wowscout" class="md-skip">
+        <a href="#background" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              01 - WoWScout Project Outline
+              002 - Login Flow
             
           </span>
         </div>
@@ -3874,6 +3874,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../001%20-%20WoWScout%20Project%20Outline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    001 - WoWScout Project Outline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -3890,7 +3911,7 @@
           
   
   <span class="md-ellipsis">
-    01 - WoWScout Project Outline
+    002 - Login Flow
   </span>
   
 
@@ -3901,7 +3922,7 @@
         
   
   <span class="md-ellipsis">
-    01 - WoWScout Project Outline
+    002 - Login Flow
   </span>
   
 
@@ -3923,9 +3944,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-the-blizzard-apis" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the Blizzard APIs
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceptance Criteria
     </span>
   </a>
   
@@ -3947,11 +3977,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../02%20-%20Login%20Flow/" class="md-nav__link">
+      <a href="../003%20-%20Login%20Page/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    02 - Login Flow
+    003 - Login Page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../004%20-%20Overview%20Page%20-%20Skeleton%20Filters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    004 - Overview Page - Skeleton Filters
   </span>
   
 
@@ -4003,9 +4054,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-the-blizzard-apis" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the Blizzard APIs
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceptance Criteria
     </span>
   </a>
   
@@ -4026,39 +4086,35 @@
                   
 
 
-<h1 id="wowscout">WoWScout</h1>
-<p><img alt="Wireframes" src="https://evanlab-gme8r.ondigitalocean.app/wow/project/assets/v1.png" /></p>
-<p>The project will should allow users to do the following things in the V1 release:</p>
+<h1 id="background">Background</h1>
 <ul>
-<li>List all game characters for the user.<ul>
-<li>They will have the following fields shown:<ul>
-<li>Name</li>
-<li>Realm</li>
-<li>Class</li>
-<li>Race</li>
-<li>Faction</li>
-<li>Level</li>
+<li><a href="https://github.com/Evanlab02/WoWScout/issues/1">Issue</a></li>
+<li><a href="https://github.com/Evanlab02/WoWScout/tree/1-create-api-login-flow">Branch</a></li>
+<li><a href="https://github.com/Evanlab02/WoWScout/pull/13">PR</a></li>
 </ul>
-</li>
-<li>The user will be able to view the total characters, total alliance characters and total horde characters on the cards.</li>
-<li>The user will be allowed to filter characters based on region.</li>
-</ul>
-</li>
-<li>View the details of a character.<ul>
-<li>Cards with various different information.</li>
-<li>Equipment pane.</li>
-<li>Charts highlighting stat changes for character.</li>
-</ul>
-</li>
-</ul>
-<h2 id="using-the-blizzard-apis">Using the Blizzard APIs</h2>
-<p>To use the blizzard APIs, we need to setup OAuth client flows.</p>
-<p>This will entail</p>
+<h2 id="description">Description</h2>
+<p>Before we can access the Blizzard APIs for WoW data, we need to create a login flow using OAuth to get a JWT to access them. This will enable the API to query on behalf of the user for the data.</p>
+<p>This requires 3 steps:
+- Hit the APIs dedicated login endpoint, that will redirect.
+- The redirect should lead to the blizzard oauth service.
+- Once logged in, we should be redirected to the service, to be able to retrieve the JWT on behalf of the user using the code.</p>
+<p>We will need to cache the results of the JWT.</p>
+<p>For caching options there are:
+- Redis
+- Memcached</p>
+<p>We will also need to return a cookie to the user for the session ID that belongs to them.</p>
+<p><strong>It is important we do not store the JWT in the cookies as we would be allowing attackers to grab blizzard JWTs, causing harm. So instead we use a session ID that allows you to do only things with our API, which all are non-destructive actions and since this is a hobby project, will not be publicly available regardless, so the harm should be for the most part avoided.</strong></p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
 <ul>
-<li>Having a login page.</li>
-<li>Login page takes you to Blizzard OAuth.</li>
-<li>Blizzard OAuth redirects to local with auth code.</li>
-<li>We retrieve token for user, and pass it back to be stored in cookie storage.</li>
+<li>Create <code>/api/v1/auth/login</code> endpoint.<ul>
+<li>Which redirects users to blizzard and creates the tokens in the cache.</li>
+</ul>
+</li>
+<li>Create <code>/api/v1/auth/status</code> endpoint.<ul>
+<li>Which indicates whether the user does still have access or not. Will be used to determine if we need to recreate the token.</li>
+</ul>
+</li>
+<li>Update documentation with local development guide.</li>
 </ul>
 
 

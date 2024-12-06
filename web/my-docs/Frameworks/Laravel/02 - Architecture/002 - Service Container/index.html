@@ -1150,6 +1150,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#container-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Container Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rebinding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rebinding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#psr-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSR-11
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4138,11 +4171,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/WoWScout/01%20-%20WoWScout%20Project%20Outline/" class="md-nav__link">
+      <a href="../../../../Projects/WoWScout/001%20-%20WoWScout%20Project%20Outline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    01 - WoWScout Project Outline
+    001 - WoWScout Project Outline
   </span>
   
 
@@ -4159,11 +4192,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/WoWScout/02%20-%20Login%20Flow/" class="md-nav__link">
+      <a href="../../../../Projects/WoWScout/002%20-%20Login%20Flow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    02 - Login Flow
+    002 - Login Flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Projects/WoWScout/003%20-%20Login%20Page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    003 - Login Page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Projects/WoWScout/004%20-%20Overview%20Page%20-%20Skeleton%20Filters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    004 - Overview Page - Skeleton Filters
   </span>
   
 
@@ -4428,6 +4503,39 @@
   <a href="#method-invocation-and-injection" class="md-nav__link">
     <span class="md-ellipsis">
       Method Invocation and Injection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Events
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Container Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rebinding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rebinding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#psr-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSR-11
     </span>
   </a>
   
@@ -4860,6 +4968,85 @@
 </span><span id="__span-33-23"><a id="__codelineno-33-23" name="__codelineno-33-23" href="#__codelineno-33-23"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="method-invocation-and-injection">Method Invocation and Injection</h2>
+<p>Sometimes you may wish to invoke a method on an object instance while allowing the container to automatically inject that method's dependencies. For example, given the following class:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="cp">&lt;?php</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="k">namespace</span> <span class="nx">App</span><span class="p">;</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="k">use</span> <span class="nx">App\Services\AppleMusic</span><span class="p">;</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="k">class</span> <span class="nc">PodcastStats</span>
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="p">{</span>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>    <span class="sd">/**</span>
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="sd">     * Generate a new podcast stats report.</span>
+</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="sd">     */</span>
+</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">generate</span><span class="p">(</span><span class="nx">AppleMusic</span> <span class="nv">$apple</span><span class="p">)</span><span class="o">:</span> <span class="k">array</span>
+</span><span id="__span-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a>    <span class="p">{</span>
+</span><span id="__span-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a>        <span class="k">return</span> <span class="p">[</span>
+</span><span id="__span-34-15"><a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a>            <span class="c1">// ...</span>
+</span><span id="__span-34-16"><a id="__codelineno-34-16" name="__codelineno-34-16" href="#__codelineno-34-16"></a>        <span class="p">];</span>
+</span><span id="__span-34-17"><a id="__codelineno-34-17" name="__codelineno-34-17" href="#__codelineno-34-17"></a>    <span class="p">}</span>
+</span><span id="__span-34-18"><a id="__codelineno-34-18" name="__codelineno-34-18" href="#__codelineno-34-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>You may invoke the <code>generate</code> method via the container like so:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="x">use App\PodcastStats;</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="x">use Illuminate\Support\Facades\App;</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="x">$stats = App::call([new PodcastStats, &#39;generate&#39;]);</span>
+</span></code></pre></div>
+<p>The <code>call</code> method accepts any PHP callable. The container's <code>call</code> method may even be used to invoke a closure while automatically injecting its dependencies:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="x">use App\Services\AppleMusic;</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="x">use Illuminate\Support\Facades\App;</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="x">$result = App::call(function (AppleMusic $apple) {</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="x">    // ...</span>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="x">});</span>
+</span></code></pre></div>
+<h2 id="container-events">Container Events</h2>
+<p>The service container fires an event each time it resolves an object. You may listen to this event using the <code>resolving</code> method:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="x">use App\Services\Transistor;</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="x">use Illuminate\Contracts\Foundation\Application;</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="x">$this-&gt;app-&gt;resolving(Transistor::class, function (Transistor $transistor, Application $app) {</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="x">    // Called when container resolves objects of type &quot;Transistor&quot;...</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="x">});</span>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="x">$this-&gt;app-&gt;resolving(function (mixed $object, Application $app) {</span>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="x">    // Called when container resolves object of any type...</span>
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="x">});</span>
+</span></code></pre></div>
+<p>As you can see, the object being resolved will be passed to the callback, allowing you to set any additional properties on the object before it is given to its consumer.</p>
+<h3 id="rebinding">Rebinding</h3>
+<p>The <code>rebinding</code> method allows you to listen for when a service is re-bound to the container, meaning it is registered again or overridden after its initial binding. This can be useful when you need to update dependencies or modify behavior each time a specific binding is updated:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="x">use App\Contracts\PodcastPublisher;</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="x">use App\Services\SpotifyPublisher;</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="x">use App\Services\TransistorPublisher;</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="x">use Illuminate\Contracts\Foundation\Application;</span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>
+</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="x">$this-&gt;app-&gt;bind(PodcastPublisher::class, SpotifyPublisher::class);</span>
+</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>
+</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="x">$this-&gt;app-&gt;rebinding(</span>
+</span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="x">    PodcastPublisher::class,</span>
+</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="x">    function (Application $app, PodcastPublisher $newInstance) {</span>
+</span><span id="__span-38-11"><a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a><span class="x">        //</span>
+</span><span id="__span-38-12"><a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a><span class="x">    },</span>
+</span><span id="__span-38-13"><a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a><span class="x">);</span>
+</span><span id="__span-38-14"><a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a>
+</span><span id="__span-38-15"><a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a><span class="x">// New binding will trigger rebinding closure...</span>
+</span><span id="__span-38-16"><a id="__codelineno-38-16" name="__codelineno-38-16" href="#__codelineno-38-16"></a><span class="x">$this-&gt;app-&gt;bind(PodcastPublisher::class, TransistorPublisher::class);</span>
+</span></code></pre></div>
+<h2 id="psr-11">PSR-11</h2>
+<p>Laravel's service container implements the <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md">PSR-11</a> interface. Therefore, you may type-hint the PSR-11 container interface to obtain an instance of the Laravel container:</p>
+<div class="language-php highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="x">use App\Services\Transistor;</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="x">use Psr\Container\ContainerInterface;</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="x">Route::get(&#39;/&#39;, function (ContainerInterface $container) {</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="x">    $service = $container-&gt;get(Transistor::class);</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="x">    // ...</span>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="x">});</span>
+</span></code></pre></div>
+<p>An exception is thrown if the given identifier can't be resolved. The exception will be an instance of <code>Psr\Container\NotFoundExceptionInterface</code> if the identifier was never bound. If the identifier was bound but was unable to be resolved, an instance of <code>Psr\Container\ContainerExceptionInterface</code> will be thrown.</p>
 
 
 
