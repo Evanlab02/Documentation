@@ -33,6 +33,11 @@ Projects/Lyzer:
 	@git clone git@github.com:LittleClumsy/Lyzer.git Projects/Lyzer
 	@echo "--- [DOCUMENTATION] Installed Lyzer.    ---"
 
+Projects/TaskManager:
+	@echo "--- [DOCUMENTATION] Installing TaskManager... ---"
+	@git clone git@github.com:Evanlab02/TaskManager.git Projects/TaskManager
+	@echo "--- [DOCUMENTATION] Installed TaskManager.    ---"
+
 .PHONY: uninstall
 uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalling all projects... ---"
@@ -40,11 +45,11 @@ uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalled all projects.  ---"
 
 .PHONY: install
-install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW Projects/Lyzer
-	@echo "[DOCUMENTATION] Installed all projects."
+install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW Projects/Lyzer Projects/TaskManager
+	@echo "--- [DOCUMENTATION] Installed all projects."
 
 .PHONY: update
-update:
+update: install
 	@echo "--- [DOCUMENTATION] Updating all projects...    ---"
 	@echo "--- [DOCUMENTATION] Updating GitTogether...     ---"
 	@cd Projects/GitTogether && git pull
@@ -58,8 +63,10 @@ update:
 	@cd Projects/My-Docs && git pull
 	@echo "--- [DOCUMENTATION] Updating WoWScout...        ---"
 	@cd Projects/WoW/ && git pull
-	@echo "--- [DOCUMENTATION] Updating Lyzer...        ---"
+	@echo "--- [DOCUMENTATION] Updating Lyzer...           ---"
 	@cd Projects/Lyzer/ && git pull
+	@echo "--- [DOCUMENTATION] Updating TaskManager...     ---"
+	@cd Projects/TaskManager/ && git pull
 	@echo "--- [DOCUMENTATION] Updated all projects.       ---"
 
 .PHONY: build-gt
@@ -145,3 +152,15 @@ build-lyzer:
 	@echo "--- [Lyzer] Copying...              ---"
 	@mv Projects/Lyzer/Docs/site web/lyzer
 	@echo "--- [Lyzer] Done."
+
+.PHONY: build-tm
+build-tm:
+	@echo "--- [TaskManager] Clean up previous build... ---"
+	@rm -rf web/tm
+	@echo "--- [TaskManager] Setting up for build... ---"
+	@cd Projects/TaskManager/docs && uv sync
+	@echo "--- [TaskManager] Building...             ---"
+	@cd Projects/TaskManager/docs && uv run mkdocs build
+	@echo "--- [TaskManager] Copying...              ---"
+	@mv Projects/TaskManager/docs/site web/tm
+	@echo "--- [TaskManager] Done."
