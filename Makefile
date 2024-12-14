@@ -38,6 +38,11 @@ Projects/TaskManager:
 	@git clone git@github.com:Evanlab02/TaskManager.git Projects/TaskManager
 	@echo "--- [DOCUMENTATION] Installed TaskManager.    ---"
 
+Projects/Smith:
+	@echo "--- [DOCUMENTATION] Installing Smith... ---"
+	@git clone git@github.com:Evanlab02/Smith.git Projects/Smith
+	@echo "--- [DOCUMENTATION] Installed Smith.    ---"
+
 .PHONY: uninstall
 uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalling all projects... ---"
@@ -45,7 +50,7 @@ uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalled all projects.  ---"
 
 .PHONY: install
-install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW Projects/Lyzer Projects/TaskManager
+install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW Projects/Lyzer Projects/TaskManager Projects/Smith
 	@echo "--- [DOCUMENTATION] Installed all projects."
 
 .PHONY: update
@@ -67,6 +72,8 @@ update: install
 	@cd Projects/Lyzer/ && git pull
 	@echo "--- [DOCUMENTATION] Updating TaskManager...     ---"
 	@cd Projects/TaskManager/ && git pull
+	@echo "--- [DOCUMENTATION] Updating Smith...           ---"
+	@cd Projects/Smith/ && git pull
 	@echo "--- [DOCUMENTATION] Updated all projects.       ---"
 
 .PHONY: build-gt
@@ -164,3 +171,15 @@ build-tm:
 	@echo "--- [TaskManager] Copying...              ---"
 	@mv Projects/TaskManager/docs/site web/tm
 	@echo "--- [TaskManager] Done."
+
+.PHONY: build-smith
+build-smith:
+	@echo "--- [Smith] Clean up previous build... ---"
+	@rm -rf web/smith
+	@echo "--- [Smith] Setting up for build...    ---"
+	@cd Projects/Smith/docs && uv sync
+	@echo "--- [Smith] Building...                ---"
+	@cd Projects/Smith/docs && uv run mkdocs build
+	@echo "--- [Smith] Copying...                 ---"
+	@mv Projects/Smith/docs/site web/smith
+	@echo "--- [Smith] Done."
