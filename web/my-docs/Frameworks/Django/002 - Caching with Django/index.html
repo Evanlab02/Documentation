@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../../001%20-%20Custom%20Admin%20Configuration/">
+        <link rel="prev" href="../001%20-%20Custom%20Admin%20Configuration/">
       
       
-        <link rel="next" href="../../../Django%20Ninja/001%20-%20Parsing%20Input/001%20-%20HTTP%20Methods/">
+        <link rel="next" href="../../Django%20Ninja/001%20-%20Parsing%20Input/001%20-%20HTTP%20Methods/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
     
     
       
-        <title>001 - Introduction - My Docs</title>
+        <title>002 - Caching with Django - My Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#caching-with-django" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              001 - Introduction
+              002 - Caching with Django
             
           </span>
         </div>
@@ -204,7 +209,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -222,7 +227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -312,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2001%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2001%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -333,7 +338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2002%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2002%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -354,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2003%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2003%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -375,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2004%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2004%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -396,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2005%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2005%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -417,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2006%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2006%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -438,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2007%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2007%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -459,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2008%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2008%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -480,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2009%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2009%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -501,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2010%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2010%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -522,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2011%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2011%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -543,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2012%20Revision/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2012%20Revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -564,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Cloud/Azure%20-%20204/Exam%20Notes/" class="md-nav__link">
+      <a href="../../../Cloud/Azure%20-%20204/Exam%20Notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ASP.NET/01%20-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../ASP.NET/01%20-%20Getting%20Started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -736,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Angular/01%20-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../Angular/01%20-%20Getting%20Started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -802,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../001%20-%20Custom%20Admin%20Configuration/" class="md-nav__link">
+      <a href="../001%20-%20Custom%20Admin%20Configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -824,66 +829,89 @@
   
   
   
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    002 - Caching
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            002 - Caching
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    002 - Caching with Django
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    001 - Introduction
+    002 - Caching with Django
   </span>
   
 
       </a>
       
-    </li>
-  
+        
 
-              
-            
-          </ul>
-        </nav>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#redis-python-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redis python package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-up-caching-in-django-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup up caching in django settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-view-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per view caching
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-cache-framework-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the cache framework directly
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -975,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Django%20Ninja/001%20-%20Parsing%20Input/001%20-%20HTTP%20Methods/" class="md-nav__link">
+      <a href="../../Django%20Ninja/001%20-%20Parsing%20Input/001%20-%20HTTP%20Methods/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1047,7 +1075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Laravel/01%20-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../Laravel/01%20-%20Getting%20Started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1103,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Laravel/02%20-%20Architecture/001%20-%20Request%20lifecycle/" class="md-nav__link">
+      <a href="../../Laravel/02%20-%20Architecture/001%20-%20Request%20lifecycle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1124,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Laravel/02%20-%20Architecture/002%20-%20Service%20Container/" class="md-nav__link">
+      <a href="../../Laravel/02%20-%20Architecture/002%20-%20Service%20Container/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1196,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../NestJS/001%20-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../NestJS/001%20-%20Getting%20Started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1337,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1358,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/02%20-%20Variables%20and%20Types/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/02%20-%20Variables%20and%20Types/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1379,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/03%20-%20Arrays/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/03%20-%20Arrays/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1400,7 +1428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/04%20-%20Multidimensional%20Arrays/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/04%20-%20Multidimensional%20Arrays/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1421,7 +1449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/05%20-%20Conditions/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/05%20-%20Conditions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1442,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/06%20-%20Strings/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/06%20-%20Strings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1463,7 +1491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/07%20-%20For%20loops/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/07%20-%20For%20loops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1484,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/08%20-%20While%20loops/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/08%20-%20While%20loops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1505,7 +1533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/09%20-%20Functions/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/09%20-%20Functions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1526,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/10%20-%20Static/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/10%20-%20Static/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1547,7 +1575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/11%20-%20Pointers/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/11%20-%20Pointers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1568,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/12%20-%20Structures/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/12%20-%20Structures/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1589,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/13%20-%20Function%20arguments%20by%20reference/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/13%20-%20Function%20arguments%20by%20reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1610,7 +1638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/14%20-%20Dynamic%20allocation/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/14%20-%20Dynamic%20allocation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1631,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/15%20-%20Arrays%20and%20pointers/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/15%20-%20Arrays%20and%20pointers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1652,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/16%20-%20Recursion/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/16%20-%20Recursion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1673,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/17%20-%20Linked%20Lists/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/17%20-%20Linked%20Lists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1694,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/18%20-%20Binary%20Trees/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/18%20-%20Binary%20Trees/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1715,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/19%20-%20Unions/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/19%20-%20Unions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1736,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/20%20-%20Pointer%20Arithmetics/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/20%20-%20Pointer%20Arithmetics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1757,7 +1785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/21%20-%20Function%20Pointers/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/21%20-%20Function%20Pointers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1778,7 +1806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/22%20-%20Bitmasks/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/22%20-%20Bitmasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1799,7 +1827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/01%20-%20Fundamentals/23%20-%20Exercism/" class="md-nav__link">
+      <a href="../../../Languages/C/01%20-%20Fundamentals/23%20-%20Exercism/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1863,7 +1891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/02%20-%20Data%20Structures/1%20-%20Linked%20Lists/" class="md-nav__link">
+      <a href="../../../Languages/C/02%20-%20Data%20Structures/1%20-%20Linked%20Lists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1884,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/02%20-%20Data%20Structures/2%20-%20Binary%20Trees/" class="md-nav__link">
+      <a href="../../../Languages/C/02%20-%20Data%20Structures/2%20-%20Binary%20Trees/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1948,7 +1976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/03%20-%20Pre-processor/01%20-%20define%20directives/" class="md-nav__link">
+      <a href="../../../Languages/C/03%20-%20Pre-processor/01%20-%20define%20directives/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1969,7 +1997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/03%20-%20Pre-processor/02%20-%20Conditional%20inclusion/" class="md-nav__link">
+      <a href="../../../Languages/C/03%20-%20Pre-processor/02%20-%20Conditional%20inclusion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2033,7 +2061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/98%20-%20Exercises/Binary%20Search/" class="md-nav__link">
+      <a href="../../../Languages/C/98%20-%20Exercises/Binary%20Search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2054,7 +2082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/98%20-%20Exercises/Isograms/" class="md-nav__link">
+      <a href="../../../Languages/C/98%20-%20Exercises/Isograms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2075,7 +2103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/98%20-%20Exercises/Robot%20Simulator/" class="md-nav__link">
+      <a href="../../../Languages/C/98%20-%20Exercises/Robot%20Simulator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2139,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/99%20-%20Notes/01%20-%20General/" class="md-nav__link">
+      <a href="../../../Languages/C/99%20-%20Notes/01%20-%20General/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2160,7 +2188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/99%20-%20Notes/02%20-%20Strings/" class="md-nav__link">
+      <a href="../../../Languages/C/99%20-%20Notes/02%20-%20Strings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2181,7 +2209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/99%20-%20Notes/03%20-%20Random/" class="md-nav__link">
+      <a href="../../../Languages/C/99%20-%20Notes/03%20-%20Random/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2202,7 +2230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/C/99%20-%20Notes/04%20-%20Math/" class="md-nav__link">
+      <a href="../../../Languages/C/99%20-%20Notes/04%20-%20Math/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2274,7 +2302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/CSharp/01%20-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../../Languages/CSharp/01%20-%20Getting%20Started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2330,7 +2358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/CSharp/02%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
+      <a href="../../../Languages/CSharp/02%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2351,7 +2379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/CSharp/02%20-%20Fundamentals/02%20-%20Variables%20and%20Types/" class="md-nav__link">
+      <a href="../../../Languages/CSharp/02%20-%20Fundamentals/02%20-%20Variables%20and%20Types/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2372,7 +2400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/CSharp/02%20-%20Fundamentals/03%20-%20Type%20Conversion/" class="md-nav__link">
+      <a href="../../../Languages/CSharp/02%20-%20Fundamentals/03%20-%20Type%20Conversion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2393,7 +2421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/CSharp/02%20-%20Fundamentals/04%20-%20Conditionals/" class="md-nav__link">
+      <a href="../../../Languages/CSharp/02%20-%20Fundamentals/04%20-%20Conditionals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2414,7 +2442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/CSharp/02%20-%20Fundamentals/05%20-%20Arrays/" class="md-nav__link">
+      <a href="../../../Languages/CSharp/02%20-%20Fundamentals/05%20-%20Arrays/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2435,7 +2463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/CSharp/02%20-%20Fundamentals/06%20-%20Lists/" class="md-nav__link">
+      <a href="../../../Languages/CSharp/02%20-%20Fundamentals/06%20-%20Lists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2456,7 +2484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/CSharp/02%20-%20Fundamentals/07%20-%20Dictionaries/" class="md-nav__link">
+      <a href="../../../Languages/CSharp/02%20-%20Fundamentals/07%20-%20Dictionaries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2520,7 +2548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/CSharp/03%20-%20Redis/01%20-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../../Languages/CSharp/03%20-%20Redis/01%20-%20Getting%20Started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2541,7 +2569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/CSharp/03%20-%20Redis/02%20-%20PubSub%20with%20redis/" class="md-nav__link">
+      <a href="../../../Languages/CSharp/03%20-%20Redis/02%20-%20PubSub%20with%20redis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2613,7 +2641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/PHP/01%20-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../../Languages/PHP/01%20-%20Getting%20Started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2669,7 +2697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/PHP/02%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
+      <a href="../../../Languages/PHP/02%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2690,7 +2718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/PHP/02%20-%20Fundamentals/02%20-%20Variables%20and%20Types/" class="md-nav__link">
+      <a href="../../../Languages/PHP/02%20-%20Fundamentals/02%20-%20Variables%20and%20Types/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2711,7 +2739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/PHP/02%20-%20Fundamentals/03%20-%20Simple%20arrays/" class="md-nav__link">
+      <a href="../../../Languages/PHP/02%20-%20Fundamentals/03%20-%20Simple%20arrays/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2732,7 +2760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/PHP/02%20-%20Fundamentals/04%20-%20Arrays%20with%20Keys/" class="md-nav__link">
+      <a href="../../../Languages/PHP/02%20-%20Fundamentals/04%20-%20Arrays%20with%20Keys/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2753,7 +2781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/PHP/02%20-%20Fundamentals/05%20-%20Multidimensional%20Arrays/" class="md-nav__link">
+      <a href="../../../Languages/PHP/02%20-%20Fundamentals/05%20-%20Multidimensional%20Arrays/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2774,7 +2802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/PHP/02%20-%20Fundamentals/06%20-%20Strings/" class="md-nav__link">
+      <a href="../../../Languages/PHP/02%20-%20Fundamentals/06%20-%20Strings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2795,7 +2823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/PHP/02%20-%20Fundamentals/07%20-%20For%20Loops/" class="md-nav__link">
+      <a href="../../../Languages/PHP/02%20-%20Fundamentals/07%20-%20For%20Loops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2859,7 +2887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/PHP/03%20-%20Postgres/001%20-%20Connecting%20to%20postgres/" class="md-nav__link">
+      <a href="../../../Languages/PHP/03%20-%20Postgres/001%20-%20Connecting%20to%20postgres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2880,7 +2908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/PHP/03%20-%20Postgres/002%20-%20Create%20a%20prepared%20statement/" class="md-nav__link">
+      <a href="../../../Languages/PHP/03%20-%20Postgres/002%20-%20Create%20a%20prepared%20statement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2952,7 +2980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/Python/001%20-%20Getting%20started/" class="md-nav__link">
+      <a href="../../../Languages/Python/001%20-%20Getting%20started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2973,7 +3001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Languages/Python/002%20-%20Package%20Management/" class="md-nav__link">
+      <a href="../../../Languages/Python/002%20-%20Package%20Management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3079,7 +3107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Package%20Management/uv/001%20-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../../Package%20Management/uv/001%20-%20Getting%20Started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3100,7 +3128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Package%20Management/uv/002%20-%20Managing%20python%20via%20uv/" class="md-nav__link">
+      <a href="../../../Package%20Management/uv/002%20-%20Managing%20python%20via%20uv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3121,7 +3149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Package%20Management/uv/003%20-%20Scripts/" class="md-nav__link">
+      <a href="../../../Package%20Management/uv/003%20-%20Scripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3177,7 +3205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Package%20Management/uv/004%20-%20Managing%20Projects/4.1%20-%20Creating%20a%20new%20project/" class="md-nav__link">
+      <a href="../../../Package%20Management/uv/004%20-%20Managing%20Projects/4.1%20-%20Creating%20a%20new%20project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3198,7 +3226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Package%20Management/uv/004%20-%20Managing%20Projects/4.2%20-%20Creating%20a%20new%20library%20or%20package/" class="md-nav__link">
+      <a href="../../../Package%20Management/uv/004%20-%20Managing%20Projects/4.2%20-%20Creating%20a%20new%20library%20or%20package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3219,7 +3247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Package%20Management/uv/004%20-%20Managing%20Projects/4.3%20-%20Platform%20restrictions/" class="md-nav__link">
+      <a href="../../../Package%20Management/uv/004%20-%20Managing%20Projects/4.3%20-%20Platform%20restrictions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3248,7 +3276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Package%20Management/uv/005%20-%20pip%20compile/" class="md-nav__link">
+      <a href="../../../Package%20Management/uv/005%20-%20pip%20compile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3269,7 +3297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Package%20Management/uv/999%20-%20Additional%20resources/" class="md-nav__link">
+      <a href="../../../Package%20Management/uv/999%20-%20Additional%20resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3375,7 +3403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/00%20-%20DockerLens%20outline/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/00%20-%20DockerLens%20outline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3396,7 +3424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/01%20-%20Repository%20Clean-up/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/01%20-%20Repository%20Clean-up/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3417,7 +3445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/02%20-%20Overview%20page%20wireframes/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/02%20-%20Overview%20page%20wireframes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3438,7 +3466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/03%20-%20Documentation%20on%20initial%20implementation/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/03%20-%20Documentation%20on%20initial%20implementation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3459,7 +3487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/04%20-%20Initial%20test%20suite/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/04%20-%20Initial%20test%20suite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3480,7 +3508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/05%20-%20General%20Pipelines/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/05%20-%20General%20Pipelines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3501,7 +3529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/06%20-%20Release%20pipelines/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/06%20-%20Release%20pipelines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3522,7 +3550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/07%20-%20Create%20more%20modular%20twig%20templates/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/07%20-%20Create%20more%20modular%20twig%20templates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3543,7 +3571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/08%20-%20Update%20container%20query%20endpoint%20to%20include%20all%20containers/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/08%20-%20Update%20container%20query%20endpoint%20to%20include%20all%20containers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3564,7 +3592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/09%20-%20Update%20table%20to%20display%20the%20state%20in%20different%20colours/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/09%20-%20Update%20table%20to%20display%20the%20state%20in%20different%20colours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3585,7 +3613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/10%20-%20Cards%20for%20different%20states/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/10%20-%20Cards%20for%20different%20states/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3606,7 +3634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/11%20-%20Container%20Detail%20Page%20-%20React%20FE%20Setup/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/11%20-%20Container%20Detail%20Page%20-%20React%20FE%20Setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3627,7 +3655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/DockerLens/12%20-%20Container%20detail%20page%20-%20State%20card/" class="md-nav__link">
+      <a href="../../../Projects/DockerLens/12%20-%20Container%20detail%20page%20-%20State%20card/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3691,7 +3719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/GitTogether/000%20-%20GitTogether%20outline/" class="md-nav__link">
+      <a href="../../../Projects/GitTogether/000%20-%20GitTogether%20outline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3712,7 +3740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/GitTogether/001%20-%20Repository%20clean-up/" class="md-nav__link">
+      <a href="../../../Projects/GitTogether/001%20-%20Repository%20clean-up/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3733,7 +3761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/GitTogether/002%20-%20Profile%20Creation%20Page/" class="md-nav__link">
+      <a href="../../../Projects/GitTogether/002%20-%20Profile%20Creation%20Page/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3754,7 +3782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/GitTogether/003%20-%20Add%20PgAdmin%20to%20compose%20file/" class="md-nav__link">
+      <a href="../../../Projects/GitTogether/003%20-%20Add%20PgAdmin%20to%20compose%20file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3853,7 +3881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/HomePortal/00%20-%20Releases/Home%20Portal%20V0.3.2/" class="md-nav__link">
+      <a href="../../../Projects/HomePortal/00%20-%20Releases/Home%20Portal%20V0.3.2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3882,7 +3910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/HomePortal/01%20-%20Update%20the%20documentation/" class="md-nav__link">
+      <a href="../../../Projects/HomePortal/01%20-%20Update%20the%20documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3903,7 +3931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/HomePortal/02%20-%20Create%20story%20for%20card%20component/" class="md-nav__link">
+      <a href="../../../Projects/HomePortal/02%20-%20Create%20story%20for%20card%20component/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4002,7 +4030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/ShoppingListApp/000%20-%20V2%20FE/001%20-%20Outline/" class="md-nav__link">
+      <a href="../../../Projects/ShoppingListApp/000%20-%20V2%20FE/001%20-%20Outline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4031,7 +4059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/ShoppingListApp/001%20-%20Argon2%20Password%20Hashing/" class="md-nav__link">
+      <a href="../../../Projects/ShoppingListApp/001%20-%20Argon2%20Password%20Hashing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4052,7 +4080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/ShoppingListApp/002%20-%20Store%20Sorting%20Parameter/" class="md-nav__link">
+      <a href="../../../Projects/ShoppingListApp/002%20-%20Store%20Sorting%20Parameter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4073,7 +4101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/ShoppingListApp/003%20-%20Stores%20Custom%20Admin%20Configuration/" class="md-nav__link">
+      <a href="../../../Projects/ShoppingListApp/003%20-%20Stores%20Custom%20Admin%20Configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4094,7 +4122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/ShoppingListApp/004%20-%20Item%20Sorting%20Parameter/" class="md-nav__link">
+      <a href="../../../Projects/ShoppingListApp/004%20-%20Item%20Sorting%20Parameter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4115,7 +4143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/ShoppingListApp/005%20-%20Items%20Custom%20Admin%20Configuration/" class="md-nav__link">
+      <a href="../../../Projects/ShoppingListApp/005%20-%20Items%20Custom%20Admin%20Configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4136,7 +4164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/ShoppingListApp/006%20-%20Add%20filtering%20to%20store%20aggregation%20API/" class="md-nav__link">
+      <a href="../../../Projects/ShoppingListApp/006%20-%20Add%20filtering%20to%20store%20aggregation%20API/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4200,7 +4228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/Smith/01%20-%20Create%20faker%20module/" class="md-nav__link">
+      <a href="../../../Projects/Smith/01%20-%20Create%20faker%20module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4221,7 +4249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/Smith/02%20-%20Testing%20Pipelines/" class="md-nav__link">
+      <a href="../../../Projects/Smith/02%20-%20Testing%20Pipelines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4285,7 +4313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/TaskManager/001%20-%20BE%20Testing/" class="md-nav__link">
+      <a href="../../../Projects/TaskManager/001%20-%20BE%20Testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4306,7 +4334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/TaskManager/002%20-%20FE%20Navigation/" class="md-nav__link">
+      <a href="../../../Projects/TaskManager/002%20-%20FE%20Navigation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4370,7 +4398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/WoWScout/001%20-%20WoWScout%20Project%20Outline/" class="md-nav__link">
+      <a href="../../../Projects/WoWScout/001%20-%20WoWScout%20Project%20Outline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4391,7 +4419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/WoWScout/002%20-%20Login%20Flow/" class="md-nav__link">
+      <a href="../../../Projects/WoWScout/002%20-%20Login%20Flow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4412,7 +4440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/WoWScout/003%20-%20Login%20Page/" class="md-nav__link">
+      <a href="../../../Projects/WoWScout/003%20-%20Login%20Page/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4433,7 +4461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Projects/WoWScout/004%20-%20Overview%20Page%20-%20Skeleton%20Filters/" class="md-nav__link">
+      <a href="../../../Projects/WoWScout/004%20-%20Overview%20Page%20-%20Skeleton%20Filters/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4479,6 +4507,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#redis-python-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redis python package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-up-caching-in-django-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup up caching in django settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-view-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per view caching
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-cache-framework-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the cache framework directly
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -4493,9 +4567,37 @@
                   
 
 
-  <h1>001 - Introduction</h1>
-
-
+<h1 id="caching-with-django">Caching with django</h1>
+<p>You can use django's cache framework to utilize various different caching techniques. The below will just cover a basic setup with redis.</p>
+<h2 id="redis-python-package">Redis python package</h2>
+<p>Ensure you have the python redis package installed that django requires.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>redis<span class="o">[</span>hiredis<span class="o">]</span>
+</span></code></pre></div>
+<h2 id="setup-up-caching-in-django-settings">Setup up caching in django settings</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">CACHES</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;django.core.cache.backends.redis.RedisCache&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="s2">&quot;LOCATION&quot;</span><span class="p">:</span> <span class="s2">&quot;redis://127.0.0.1:6379&quot;</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="p">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="per-view-caching">Per view caching</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">django.views.decorators.cache</span> <span class="kn">import</span> <span class="n">cache_page</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nd">@cache_page</span><span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">15</span><span class="p">)</span> <span class="c1"># Seconds to cache for, in this example 15 minutes</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span> <span class="o">...</span>
+</span></code></pre></div>
+<h2 id="using-the-cache-framework-directly">Using the cache framework directly</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">django.core.cache</span> <span class="kn">import</span> <span class="n">cache</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">cache</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;my_key&quot;</span><span class="p">,</span> <span class="s2">&quot;hello, world!&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;my_key&quot;</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">cache</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">cache</span><span class="o">.</span><span class="n">touch</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">cache</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;my_key&quot;</span><span class="p">,</span> <span class="s2">&quot;hello world!&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></code></pre></div>
 
 
 
@@ -4542,10 +4644,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
