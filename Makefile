@@ -129,9 +129,9 @@ build-my-docs:
 	@echo "--- [My-Docs] Clean up previous build... ---"
 	@rm -rf web/my-docs
 	@echo "--- [My-Docs] Setting up for build... ---"
-	@cd Projects/My-Docs && pipenv install --dev
+	@cd Projects/My-Docs && uv sync
 	@echo "--- [My-Docs] Building...             ---"
-	@cd Projects/My-Docs && pipenv run make build
+	@cd Projects/My-Docs && make build
 	@echo "--- [My-Docs] Copying...              ---"
 	@mv Projects/My-Docs/site web/my-docs
 	@echo "--- [My-Docs] Done.                   ---"
