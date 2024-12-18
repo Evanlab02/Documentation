@@ -4797,12 +4797,14 @@ Then we can use metric system prefixes for writing large numbers of seconds in m
 <li>Perhaps you and your family would travel to somewhere exotic for two megaseconds (that's two million seconds).</li>
 <li>And if you and your spouse were married for <em>a thousand million</em> seconds, you would celebrate your one gigasecond anniversary.</li>
 </ul>
-<p>~~~~exercism/note
-If we ever colonize Mars or some other planet, measuring time is going to get even messier.
-If someone says "year" do they mean a year on Earth or a year on Mars?</p>
-<p>The idea for this exercise came from the science fiction novel <a href="https://www.tor.com/2017/08/03/science-fiction-with-something-for-everyone-a-deepness-in-the-sky-by-vernor-vinge/">"A Deepness in the Sky"</a> by author Vernor Vinge.
-In it the author uses the metric system as the basis for time measurements.</p>
-<p>~~~~</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>If we ever colonize Mars or some other planet, measuring time is going to get even messier.
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>If someone says &quot;year&quot; do they mean a year on Earth or a year on Mars?
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>The idea for this exercise came from the science fiction novel [&quot;A Deepness in the Sky&quot;][vinge-novel] by author Vernor Vinge.
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>In it the author uses the metric system as the basis for time measurements.
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[vinge-novel]: https://www.tor.com/2017/08/03/science-fiction-with-something-for-everyone-a-deepness-in-the-sky-by-vernor-vinge/
+</span></code></pre></div>
 <h2 id="instructions">Instructions</h2>
 <p>Your task is to determine the date and time one gigasecond after a certain date.</p>
 <p>A gigasecond is one thousand million seconds.
@@ -4810,27 +4812,29 @@ That is a one with nine zeros after it.</p>
 <p>If you were born on <em>January 24th, 2015 at 22:00 (10:00:00pm)</em>, then you would be a gigasecond old on <em>October 2nd, 2046 at 23:46:40 (11:46:40pm)</em>.</p>
 <h2 id="use-utc">Use UTC</h2>
 <p>To solve this problem, you'll need to convert a <code>time_t</code> value into a <code>struct tm</code> value.
-The <a href="https://en.cppreference.com/w/c/chrono"><code>time.h</code></a> library gives you two functions to do this.
+The [<code>time.h</code>][https://en.cppreference.com/w/c/chrono] library gives you two functions to do this.
 Make sure you use the one that results in a calendar time expressed in <strong>UTC</strong>.</p>
 <h2 id="solution">Solution</h2>
-<p>```c
-// giga_second.h</p>
-<h1 id="ifndef-gigasecond_h">ifndef GIGASECOND_H</h1>
-<h1 id="define-gigasecond_h">define GIGASECOND_H</h1>
-<h1 id="define-one_giga_second-1000000000">define ONE_GIGA_SECOND 1000000000;</h1>
-<h1 id="include">include <time.h></h1>
-<p>void gigasecond(time_t input, char *output, size_t size);</p>
-<h1 id="endif">endif</h1>
-<p>```</p>
-<p>```c</p>
-<h1 id="include-gigasecondh">include "gigasecond.h"</h1>
-<p>void gigasecond(time_t input, char <em>output, size_t size)
-{
-    time_t giga_second_after_input = input + ONE_GIGA_SECOND;
-    struct tm </em>new_time = gmtime(&amp;giga_second_after_input);
-    strftime(output, size, "%Y-%m-%d %H:%M:%S", new_time);
-}
-```</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// giga_second.h</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#ifndef GIGASECOND_H</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">#define GIGASECOND_H</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cp">#define ONE_GIGA_SECOND 1000000000;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;time.h&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">gigasecond</span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cp">#endif</span>
+</span></code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gigasecond.h&quot;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">gigasecond</span><span class="p">(</span><span class="kt">time_t</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">time_t</span><span class="w"> </span><span class="n">giga_second_after_input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ONE_GIGA_SECOND</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">tm</span><span class="w"> </span><span class="o">*</span><span class="n">new_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gmtime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">giga_second_after_input</span><span class="p">);</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">strftime</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%Y-%m-%d %H:%M:%S&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">new_time</span><span class="p">);</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</span></code></pre></div>
 
 
 
