@@ -43,6 +43,11 @@ Projects/Smith:
 	@git clone git@github.com:Evanlab02/Smith.git Projects/Smith
 	@echo "--- [DOCUMENTATION] Installed Smith.    ---"
 
+Projects/RedisPubSub:
+	@echo "--- [DOCUMENTATION] Installing RedisPubSub... ---"
+	@git clone git@github.com:Evanlab02/RedisPubSub.git Projects/RedisPubSub
+	@echo "--- [DOCUMENTATION] Installed RedisPubSub.    ---"
+
 .PHONY: uninstall
 uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalling all projects... ---"
@@ -50,7 +55,7 @@ uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalled all projects.  ---"
 
 .PHONY: install
-install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW Projects/Lyzer Projects/TaskManager Projects/Smith
+install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW Projects/Lyzer Projects/TaskManager Projects/Smith Projects/RedisPubSub
 	@echo "--- [DOCUMENTATION] Installed all projects."
 
 .PHONY: update
@@ -74,6 +79,8 @@ update: install
 	@cd Projects/TaskManager/ && git pull
 	@echo "--- [DOCUMENTATION] Updating Smith...           ---"
 	@cd Projects/Smith/ && git pull
+	@echo "--- [DOCUMENTATION] Updating RedisPubSub...     ---"
+	@cd Projects/RedisPubSub/ && git pull
 	@echo "--- [DOCUMENTATION] Updated all projects.       ---"
 
 .PHONY: build-gt
@@ -183,3 +190,15 @@ build-smith:
 	@echo "--- [Smith] Copying...                 ---"
 	@mv Projects/Smith/docs/site web/smith
 	@echo "--- [Smith] Done."
+
+.PHONY: build-redisps
+build-redisps:
+	@echo "--- [RedisPubSub] Clean up previous build... ---"
+	@rm -rf web/redisps
+	@echo "--- [RedisPubSub] Setting up for build...    ---"
+	@cd Projects/RedisPubSub/docs && uv sync
+	@echo "--- [RedisPubSub] Building...                ---"
+	@cd Projects/RedisPubSub/docs && uv run mkdocs build
+	@echo "--- [RedisPubSub] Copying...                 ---"
+	@mv Projects/RedisPubSub/docs/site web/redisps
+	@echo "--- [RedisPubSub] Done."
