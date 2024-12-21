@@ -48,6 +48,11 @@ Projects/RedisPubSub:
 	@git clone git@github.com:Evanlab02/RedisPubSub.git Projects/RedisPubSub
 	@echo "--- [DOCUMENTATION] Installed RedisPubSub.    ---"
 
+Projects/RCL:
+	@echo "--- [DOCUMENTATION] Installing RCL... ---"
+	@git clone git@github.com:Evanlab02/react-components.git Projects/RCL
+	@echo "--- [DOCUMENTATION] Installed RCL.    ---"
+
 .PHONY: uninstall
 uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalling all projects... ---"
@@ -55,7 +60,7 @@ uninstall:
 	@echo "--- [DOCUMENTATION] Uninstalled all projects.  ---"
 
 .PHONY: install
-install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW Projects/Lyzer Projects/TaskManager Projects/Smith Projects/RedisPubSub
+install: Projects/GitTogether Projects/DockerLens Projects/ShoppingListApp Projects/HomePortal Projects/My-Docs Projects/WoW Projects/Lyzer Projects/TaskManager Projects/Smith Projects/RedisPubSub Projects/RCL
 	@echo "--- [DOCUMENTATION] Installed all projects."
 
 .PHONY: update
@@ -81,6 +86,8 @@ update: install
 	@cd Projects/Smith/ && git pull
 	@echo "--- [DOCUMENTATION] Updating RedisPubSub...     ---"
 	@cd Projects/RedisPubSub/ && git pull
+	@echo "--- [DOCUMENTATION] Updating RCL...             ---"
+	@cd Projects/RCL/ && git pull
 	@echo "--- [DOCUMENTATION] Updated all projects.       ---"
 
 .PHONY: build-gt
@@ -202,3 +209,23 @@ build-redisps:
 	@echo "--- [RedisPubSub] Copying...                 ---"
 	@mv Projects/RedisPubSub/docs/site web/redisps
 	@echo "--- [RedisPubSub] Done."
+
+.PHONY: build-rcl
+build-rcl:
+	@echo "--- [RCL] Clean up previous build...             ---"
+	@rm -rf web/rcl
+	@echo "--- [RCL] Setting up for build...                ---"
+	@cd Projects/RCL/docs && uv sync
+	@echo "--- [RCL] Building...                            ---"
+	@cd Projects/RCL/docs && uv run mkdocs build
+	@echo "--- [RCL] Copying...                             ---"
+	@mv Projects/RCL/docs/site web/rcl
+	@echo "--- [RCL - Storybook] Clean up previous build... ---"
+	@rm -rf web/rclsb
+	@echo "--- [RCL - Storybook] Setting up for build...        ---"
+	@cd Projects/RCL/ && npm install
+	@echo "--- [RCL - Storybook] Building...                ---"
+	@cd Projects/RCL/ && npm run build:storybook
+	@echo "--- [RCL - Storybook] Copying...                 ---"
+	@mv Projects/RCL/storybook-static web/rclsb
+	@echo "--- [RCL - Storybook] Done."

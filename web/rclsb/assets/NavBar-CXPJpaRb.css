@@ -1,0 +1,1 @@
+.lab-navigation-bar{display:flex;justify-content:space-between;align-items:center;background-color:var(--lab-nav-bg-color);color:var(--lab-text-color-1)}.lab-navigation-bar .lab-nav-item{padding:8px 12px;display:flex;flex-direction:row;align-items:center}.lab-navigation-bar .lab-nav-header{padding-left:16px}
