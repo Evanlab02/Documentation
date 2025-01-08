@@ -220,12 +220,6 @@ nav:
         Detail Page - React FE Setup.md
     - 12 - Container detail page - State card: Projects/DockerLens/12 - Container
         detail page - State card.md
-  - GitTogether:
-    - 000 - GitTogether outline: Projects/GitTogether/000 - GitTogether outline.md
-    - 001 - Repository clean-up: Projects/GitTogether/001 - Repository clean-up.md
-    - 002 - Profile Creation Page: Projects/GitTogether/002 - Profile Creation Page.md
-    - 003 - Add PgAdmin to compose file: Projects/GitTogether/003 - Add PgAdmin to
-        compose file.md
   - HomePortal:
     - 000 - Releases:
       - Home Portal V0.3.2: Projects/HomePortal/000 - Releases/Home Portal V0.3.2.md
@@ -261,20 +255,6 @@ nav:
         Custom Admin Configuration.md
     - 006 - Add filtering to store aggregation API: Projects/ShoppingListApp/006 -
         Add filtering to store aggregation API.md
-  - Smith:
-    - 001 - Create faker module: Projects/Smith/001 - Create faker module.md
-    - 002 - Testing Pipelines: Projects/Smith/002 - Testing Pipelines.md
-    - 003 - Faker Basic Array: Projects/Smith/003 - Faker Basic Array.md
-    - 004 - ClangFormat: Projects/Smith/004 - ClangFormat.md
-  - TaskManager:
-    - 001 - BE Testing: Projects/TaskManager/001 - BE Testing.md
-    - 002 - FE Navigation: Projects/TaskManager/002 - FE Navigation.md
-  - WoWScout:
-    - 001 - WoWScout Project Outline: Projects/WoWScout/001 - WoWScout Project Outline.md
-    - 002 - Login Flow: Projects/WoWScout/002 - Login Flow.md
-    - 003 - Login Page: Projects/WoWScout/003 - Login Page.md
-    - 004 - Overview Page - Skeleton Filters: Projects/WoWScout/004 - Overview Page
-        - Skeleton Filters.md
   - mkdocs-template:
     - 000 - Placeholder: Projects/mkdocs-template/000 - Placeholder.md
   - react-remplate:
