@@ -1,0 +1,11 @@
+[project]
+name = "my-docs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs==1.6.1",
+    "mkdocs-material==9.5.41",
+    "pyyaml==6.0.2"
+]

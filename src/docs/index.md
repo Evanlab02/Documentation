@@ -1,0 +1,1 @@
+Home for all my documentation on several different things. Honestly just a info dump in a private repository.

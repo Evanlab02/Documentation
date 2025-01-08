@@ -1,0 +1,291 @@
+site_name: My Docs
+plugins:
+- search
+markdown_extensions:
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+    pygments_lang_class: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- pymdownx.superfences
+- admonition
+- pymdownx.details
+- pymdownx.superfences
+theme:
+  name: material
+  features:
+  - content.code.copy
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.prune
+  - navigation.path
+  - navigation.top
+  palette:
+  - scheme: default
+    primary: red
+    accent: red
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - scheme: slate
+    primary: red
+    accent: red
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+nav:
+- Home: index.md
+- Build Tools:
+  - Vite:
+    - 001 - CLI: Build Tools/Vite/001 - CLI.md
+- CI-CD:
+  - GitHub:
+    - 001 - Events:
+      - 001 - Pull Request: CI-CD/GitHub/001 - Events/001 - Pull Request.md
+- Caching:
+  - Redis:
+    - 001 - Getting Started: Caching/Redis/001 - Getting Started.md
+- Cloud:
+  - Azure - 204:
+    - Azure 204 - Module 01 Revision: Cloud/Azure - 204/Azure 204 - Module 01 Revision.md
+    - Azure 204 - Module 02 Revision: Cloud/Azure - 204/Azure 204 - Module 02 Revision.md
+    - Azure 204 - Module 03 Revision: Cloud/Azure - 204/Azure 204 - Module 03 Revision.md
+    - Azure 204 - Module 04 Revision: Cloud/Azure - 204/Azure 204 - Module 04 Revision.md
+    - Azure 204 - Module 05 Revision: Cloud/Azure - 204/Azure 204 - Module 05 Revision.md
+    - Azure 204 - Module 06 Revision: Cloud/Azure - 204/Azure 204 - Module 06 Revision.md
+    - Azure 204 - Module 07 Revision: Cloud/Azure - 204/Azure 204 - Module 07 Revision.md
+    - Azure 204 - Module 08 Revision: Cloud/Azure - 204/Azure 204 - Module 08 Revision.md
+    - Azure 204 - Module 09 Revision: Cloud/Azure - 204/Azure 204 - Module 09 Revision.md
+    - Azure 204 - Module 10 Revision: Cloud/Azure - 204/Azure 204 - Module 10 Revision.md
+    - Azure 204 - Module 11 Revision: Cloud/Azure - 204/Azure 204 - Module 11 Revision.md
+    - Azure 204 - Module 12 Revision: Cloud/Azure - 204/Azure 204 - Module 12 Revision.md
+    - Exam Notes: Cloud/Azure - 204/Exam Notes.md
+- Containerization:
+  - Docker:
+    - 001 - Dockerfiles:
+      - 001 - Reference: Containerization/Docker/001 - Dockerfiles/001 - Reference.md
+  - Docker Compose:
+    - 001 - Version and name top-level elements: Containerization/Docker Compose/001
+        - Version and name top-level elements.md
+- Databases:
+  - Postgres:
+    - 001 - Getting Started: Databases/Postgres/001 - Getting Started.md
+- Frameworks:
+  - ASP.NET:
+    - 01 - Getting Started: Frameworks/ASP.NET/01 - Getting Started.md
+  - Angular:
+    - 001 - Quick start: Frameworks/Angular/001 - Quick start.md
+  - Django:
+    - 001 - Custom Admin Configuration: Frameworks/Django/001 - Custom Admin Configuration.md
+    - 002 - Caching with Django: Frameworks/Django/002 - Caching with Django.md
+  - Django Ninja:
+    - 001 - Parsing Input:
+      - 001 - HTTP Methods: Frameworks/Django Ninja/001 - Parsing Input/001 - HTTP
+          Methods.md
+  - Laravel:
+    - 01 - Getting Started: Frameworks/Laravel/01 - Getting Started.md
+    - 02 - Architecture:
+      - 001 - Request lifecycle: Frameworks/Laravel/02 - Architecture/001 - Request
+          lifecycle.md
+      - 002 - Service Container: Frameworks/Laravel/02 - Architecture/002 - Service
+          Container.md
+  - NestJS:
+    - 001 - Getting Started: Frameworks/NestJS/001 - Getting Started.md
+  - React:
+    - 001 - Quick start: Frameworks/React/001 - Quick start.md
+- Languages:
+  - C:
+    - 01 - Fundamentals:
+      - 01 - Hello World: Languages/C/01 - Fundamentals/01 - Hello World.md
+      - 02 - Variables and Types: Languages/C/01 - Fundamentals/02 - Variables and
+          Types.md
+      - 03 - Arrays: Languages/C/01 - Fundamentals/03 - Arrays.md
+      - 04 - Multidimensional Arrays: Languages/C/01 - Fundamentals/04 - Multidimensional
+          Arrays.md
+      - 05 - Conditions: Languages/C/01 - Fundamentals/05 - Conditions.md
+      - 06 - Strings: Languages/C/01 - Fundamentals/06 - Strings.md
+      - 07 - For loops: Languages/C/01 - Fundamentals/07 - For loops.md
+      - 08 - While loops: Languages/C/01 - Fundamentals/08 - While loops.md
+      - 09 - Functions: Languages/C/01 - Fundamentals/09 - Functions.md
+      - 10 - Static: Languages/C/01 - Fundamentals/10 - Static.md
+      - 11 - Pointers: Languages/C/01 - Fundamentals/11 - Pointers.md
+      - 12 - Structures: Languages/C/01 - Fundamentals/12 - Structures.md
+      - 13 - Function arguments by reference: Languages/C/01 - Fundamentals/13 - Function
+          arguments by reference.md
+      - 14 - Dynamic allocation: Languages/C/01 - Fundamentals/14 - Dynamic allocation.md
+      - 15 - Arrays and pointers: Languages/C/01 - Fundamentals/15 - Arrays and pointers.md
+      - 16 - Recursion: Languages/C/01 - Fundamentals/16 - Recursion.md
+      - 17 - Linked Lists: Languages/C/01 - Fundamentals/17 - Linked Lists.md
+      - 18 - Binary Trees: Languages/C/01 - Fundamentals/18 - Binary Trees.md
+      - 19 - Unions: Languages/C/01 - Fundamentals/19 - Unions.md
+      - 20 - Pointer Arithmetics: Languages/C/01 - Fundamentals/20 - Pointer Arithmetics.md
+      - 21 - Function Pointers: Languages/C/01 - Fundamentals/21 - Function Pointers.md
+      - 22 - Bitmasks: Languages/C/01 - Fundamentals/22 - Bitmasks.md
+      - 23 - Exercism: Languages/C/01 - Fundamentals/23 - Exercism.md
+    - 02 - Data Structures:
+      - 1 - Linked Lists: Languages/C/02 - Data Structures/1 - Linked Lists.md
+      - 2 - Binary Trees: Languages/C/02 - Data Structures/2 - Binary Trees.md
+    - 03 - Pre-processor:
+      - 01 - define directives: Languages/C/03 - Pre-processor/01 - define directives.md
+      - 02 - Conditional inclusion: Languages/C/03 - Pre-processor/02 - Conditional
+          inclusion.md
+    - 98 - Exercises:
+      - Easy:
+        - Binary Search: Languages/C/98 - Exercises/Easy/Binary Search.md
+        - Gigasecond: Languages/C/98 - Exercises/Easy/Gigasecond.md
+        - Isograms: Languages/C/98 - Exercises/Easy/Isograms.md
+        - Robot Simulator: Languages/C/98 - Exercises/Easy/Robot Simulator.md
+        - Triangle: Languages/C/98 - Exercises/Easy/Triangle.md
+      - Medium:
+        - Luhn: Languages/C/98 - Exercises/Medium/Luhn.md
+    - 99 - Notes:
+      - 01 - General: Languages/C/99 - Notes/01 - General.md
+      - 02 - Strings: Languages/C/99 - Notes/02 - Strings.md
+      - 03 - Random: Languages/C/99 - Notes/03 - Random.md
+      - 04 - Math: Languages/C/99 - Notes/04 - Math.md
+  - CSharp:
+    - 01 - Getting Started: Languages/CSharp/01 - Getting Started.md
+    - 02 - Fundamentals:
+      - 01 - Hello World: Languages/CSharp/02 - Fundamentals/01 - Hello World.md
+      - 02 - Variables and Types: Languages/CSharp/02 - Fundamentals/02 - Variables
+          and Types.md
+      - 03 - Type Conversion: Languages/CSharp/02 - Fundamentals/03 - Type Conversion.md
+      - 04 - Conditionals: Languages/CSharp/02 - Fundamentals/04 - Conditionals.md
+      - 05 - Arrays: Languages/CSharp/02 - Fundamentals/05 - Arrays.md
+      - 06 - Lists: Languages/CSharp/02 - Fundamentals/06 - Lists.md
+      - 07 - Dictionaries: Languages/CSharp/02 - Fundamentals/07 - Dictionaries.md
+    - 03 - Redis:
+      - 01 - Getting Started: Languages/CSharp/03 - Redis/01 - Getting Started.md
+      - 02 - PubSub with redis: Languages/CSharp/03 - Redis/02 - PubSub with redis.md
+  - PHP:
+    - 01 - Getting Started: Languages/PHP/01 - Getting Started.md
+    - 02 - Fundamentals:
+      - 01 - Hello World: Languages/PHP/02 - Fundamentals/01 - Hello World.md
+      - 02 - Variables and Types: Languages/PHP/02 - Fundamentals/02 - Variables and
+          Types.md
+      - 03 - Simple arrays: Languages/PHP/02 - Fundamentals/03 - Simple arrays.md
+      - 04 - Arrays with Keys: Languages/PHP/02 - Fundamentals/04 - Arrays with Keys.md
+      - 05 - Multidimensional Arrays: Languages/PHP/02 - Fundamentals/05 - Multidimensional
+          Arrays.md
+      - 06 - Strings: Languages/PHP/02 - Fundamentals/06 - Strings.md
+      - 07 - For Loops: Languages/PHP/02 - Fundamentals/07 - For Loops.md
+    - 03 - Postgres:
+      - 001 - Connecting to postgres: Languages/PHP/03 - Postgres/001 - Connecting
+          to postgres.md
+      - 002 - Create a prepared statement: Languages/PHP/03 - Postgres/002 - Create
+          a prepared statement.md
+  - Python:
+    - 001 - Getting started: Languages/Python/001 - Getting started.md
+    - 002 - Package Management: Languages/Python/002 - Package Management.md
+- Libraries:
+  - JS-TS-Node:
+    - htmx:
+      - 001 - AJAX:
+        - 001 - Introduction: Libraries/JS-TS-Node/htmx/001 - AJAX/001 - Introduction.md
+- Package Management:
+  - uv:
+    - 001 - Getting Started: Package Management/uv/001 - Getting Started.md
+    - 002 - Managing python via uv: Package Management/uv/002 - Managing python via
+        uv.md
+    - 003 - Scripts: Package Management/uv/003 - Scripts.md
+    - 004 - Managing Projects:
+      - 4.1 - Creating a new project: Package Management/uv/004 - Managing Projects/4.1
+          - Creating a new project.md
+      - 4.2 - Creating a new library or package: Package Management/uv/004 - Managing
+          Projects/4.2 - Creating a new library or package.md
+      - 4.3 - Platform restrictions: Package Management/uv/004 - Managing Projects/4.3
+          - Platform restrictions.md
+    - 005 - pip compile: Package Management/uv/005 - pip compile.md
+    - 999 - Additional resources: Package Management/uv/999 - Additional resources.md
+- Projects:
+  - DockerLens:
+    - 00 - DockerLens outline: Projects/DockerLens/00 - DockerLens outline.md
+    - 01 - Repository Clean-up: Projects/DockerLens/01 - Repository Clean-up.md
+    - 02 - Overview page wireframes: Projects/DockerLens/02 - Overview page wireframes.md
+    - 03 - Documentation on initial implementation: Projects/DockerLens/03 - Documentation
+        on initial implementation.md
+    - 04 - Initial test suite: Projects/DockerLens/04 - Initial test suite.md
+    - 05 - General Pipelines: Projects/DockerLens/05 - General Pipelines.md
+    - 06 - Release pipelines: Projects/DockerLens/06 - Release pipelines.md
+    - 07 - Create more modular twig templates: Projects/DockerLens/07 - Create more
+        modular twig templates.md
+    - 08 - Update container query endpoint to include all containers: Projects/DockerLens/08
+        - Update container query endpoint to include all containers.md
+    - 09 - Update table to display the state in different colours: Projects/DockerLens/09
+        - Update table to display the state in different colours.md
+    - 10 - Cards for different states: Projects/DockerLens/10 - Cards for different
+        states.md
+    - 11 - Container Detail Page - React FE Setup: Projects/DockerLens/11 - Container
+        Detail Page - React FE Setup.md
+    - 12 - Container detail page - State card: Projects/DockerLens/12 - Container
+        detail page - State card.md
+  - GitTogether:
+    - 000 - GitTogether outline: Projects/GitTogether/000 - GitTogether outline.md
+    - 001 - Repository clean-up: Projects/GitTogether/001 - Repository clean-up.md
+    - 002 - Profile Creation Page: Projects/GitTogether/002 - Profile Creation Page.md
+    - 003 - Add PgAdmin to compose file: Projects/GitTogether/003 - Add PgAdmin to
+        compose file.md
+  - HomePortal:
+    - 000 - Releases:
+      - Home Portal V0.3.2: Projects/HomePortal/000 - Releases/Home Portal V0.3.2.md
+    - 001 - Update the documentation: Projects/HomePortal/001 - Update the documentation.md
+    - 002 - Create story for card component: Projects/HomePortal/002 - Create story
+        for card component.md
+    - 003 - Investigate running shopping app on the same host: Projects/HomePortal/003
+        - Investigate running shopping app on the same host.md
+    - 004 - Remove development applications: Projects/HomePortal/004 - Remove development
+        applications.md
+    - 005 - Add your_spotify to home portal: Projects/HomePortal/005 - Add your_spotify
+        to home portal.md
+  - RCL:
+    - 001 - Documentation: Projects/RCL/001 - Documentation.md
+    - 002 - Side Menu Component: Projects/RCL/002 - Side Menu Component.md
+  - RedisPubSub:
+    - 001 - Linting: Projects/RedisPubSub/001 - Linting.md
+    - 002 - Master - API endpoint to set cache value: Projects/RedisPubSub/002 - Master
+        - API endpoint to set cache value.md
+  - ShoppingListApp:
+    - 000 - V2 FE:
+      - 001 - Linting: Projects/ShoppingListApp/000 - V2 FE/001 - Linting.md
+      - 002 - Navigation Bar: Projects/ShoppingListApp/000 - V2 FE/002 - Navigation
+          Bar.md
+    - 001 - Argon2 Password Hashing: Projects/ShoppingListApp/001 - Argon2 Password
+        Hashing.md
+    - 002 - Store Sorting Parameter: Projects/ShoppingListApp/002 - Store Sorting
+        Parameter.md
+    - 003 - Stores Custom Admin Configuration: Projects/ShoppingListApp/003 - Stores
+        Custom Admin Configuration.md
+    - 004 - Item Sorting Parameter: Projects/ShoppingListApp/004 - Item Sorting Parameter.md
+    - 005 - Items Custom Admin Configuration: Projects/ShoppingListApp/005 - Items
+        Custom Admin Configuration.md
+    - 006 - Add filtering to store aggregation API: Projects/ShoppingListApp/006 -
+        Add filtering to store aggregation API.md
+  - Smith:
+    - 001 - Create faker module: Projects/Smith/001 - Create faker module.md
+    - 002 - Testing Pipelines: Projects/Smith/002 - Testing Pipelines.md
+    - 003 - Faker Basic Array: Projects/Smith/003 - Faker Basic Array.md
+    - 004 - ClangFormat: Projects/Smith/004 - ClangFormat.md
+  - TaskManager:
+    - 001 - BE Testing: Projects/TaskManager/001 - BE Testing.md
+    - 002 - FE Navigation: Projects/TaskManager/002 - FE Navigation.md
+  - WoWScout:
+    - 001 - WoWScout Project Outline: Projects/WoWScout/001 - WoWScout Project Outline.md
+    - 002 - Login Flow: Projects/WoWScout/002 - Login Flow.md
+    - 003 - Login Page: Projects/WoWScout/003 - Login Page.md
+    - 004 - Overview Page - Skeleton Filters: Projects/WoWScout/004 - Overview Page
+        - Skeleton Filters.md
+  - mkdocs-template:
+    - 000 - Placeholder: Projects/mkdocs-template/000 - Placeholder.md
+  - react-remplate:
+    - 001 - Update documentation: Projects/react-remplate/001 - Update documentation.md
+    - 002 - Add documentation on workflows: Projects/react-remplate/002 - Add documentation
+        on workflows.md
+- Proxies:
+  - Caddy:
+    - 001 - Getting Started: Proxies/Caddy/001 - Getting Started.md
+- Roles:
+  - Backend:
+    - 001 - Internet:
+      - 001 - How does the internet work: Roles/Backend/001 - Internet/001 - How does
+          the internet work.md
