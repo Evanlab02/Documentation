@@ -1,6 +1,5 @@
 # Background
 
-- Branch (Pending)
 - [Issue](https://github.com/Evanlab02/DockerLens/issues/3)
 - PR (Pending)
 

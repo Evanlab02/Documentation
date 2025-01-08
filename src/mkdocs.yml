@@ -200,26 +200,28 @@ nav:
     - 999 - Additional resources: Package Management/uv/999 - Additional resources.md
 - Projects:
   - DockerLens:
-    - 00 - DockerLens outline: Projects/DockerLens/00 - DockerLens outline.md
-    - 01 - Repository Clean-up: Projects/DockerLens/01 - Repository Clean-up.md
-    - 02 - Overview page wireframes: Projects/DockerLens/02 - Overview page wireframes.md
-    - 03 - Documentation on initial implementation: Projects/DockerLens/03 - Documentation
+    - 000 - DockerLens outline: Projects/DockerLens/000 - DockerLens outline.md
+    - 001 - Repository Clean-up: Projects/DockerLens/001 - Repository Clean-up.md
+    - 002 - Overview page wireframes: Projects/DockerLens/002 - Overview page wireframes.md
+    - 003 - Documentation on initial implementation: Projects/DockerLens/003 - Documentation
         on initial implementation.md
-    - 04 - Initial test suite: Projects/DockerLens/04 - Initial test suite.md
-    - 05 - General Pipelines: Projects/DockerLens/05 - General Pipelines.md
-    - 06 - Release pipelines: Projects/DockerLens/06 - Release pipelines.md
-    - 07 - Create more modular twig templates: Projects/DockerLens/07 - Create more
+    - 004 - Initial test suite: Projects/DockerLens/004 - Initial test suite.md
+    - 005 - General Pipelines: Projects/DockerLens/005 - General Pipelines.md
+    - 006 - Release pipelines: Projects/DockerLens/006 - Release pipelines.md
+    - 007 - Create more modular twig templates: Projects/DockerLens/007 - Create more
         modular twig templates.md
-    - 08 - Update container query endpoint to include all containers: Projects/DockerLens/08
+    - 008 - Update container query endpoint to include all containers: Projects/DockerLens/008
         - Update container query endpoint to include all containers.md
-    - 09 - Update table to display the state in different colours: Projects/DockerLens/09
+    - 009 - Update table to display the state in different colours: Projects/DockerLens/009
         - Update table to display the state in different colours.md
-    - 10 - Cards for different states: Projects/DockerLens/10 - Cards for different
+    - 010 - Cards for different states: Projects/DockerLens/010 - Cards for different
         states.md
-    - 11 - Container Detail Page - React FE Setup: Projects/DockerLens/11 - Container
+    - 011 - Container Detail Page - React FE Setup: Projects/DockerLens/011 - Container
         Detail Page - React FE Setup.md
-    - 12 - Container detail page - State card: Projects/DockerLens/12 - Container
+    - 012 - Container detail page - State card: Projects/DockerLens/012 - Container
         detail page - State card.md
+    - 013 - Documentation - Deploy and Update: Projects/DockerLens/013 - Documentation
+        - Deploy and Update.md
   - HomePortal:
     - 000 - Releases:
       - Home Portal V0.3.2: Projects/HomePortal/000 - Releases/Home Portal V0.3.2.md
