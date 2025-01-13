@@ -222,6 +222,16 @@ nav:
         detail page - State card.md
     - 013 - Documentation - Deploy and Update: Projects/DockerLens/013 - Documentation
         - Deploy and Update.md
+    - 014 - Container detail page - Restart count card: Projects/DockerLens/014 -
+        Container detail page - Restart count card.md
+    - 015 - Container detail page - Number of mounts: Projects/DockerLens/015 - Container
+        detail page - Number of mounts.md
+    - 016 - Container resources endpoint: Projects/DockerLens/016 - Container resources
+        endpoint.md
+    - 017 - Container resources CPU card: Projects/DockerLens/017 - Container resources
+        CPU card.md
+    - 018 - Container resources Memory card: Projects/DockerLens/018 - Container resources
+        Memory card.md
   - HomePortal:
     - 000 - Releases:
       - Home Portal V0.3.2: Projects/HomePortal/000 - Releases/Home Portal V0.3.2.md

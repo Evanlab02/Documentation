@@ -1,7 +1,7 @@
 # Background
 
 - [Issue](https://github.com/Evanlab02/DockerLens/issues/3)
-- PR (Pending)
+- [PR](https://github.com/Evanlab02/DockerLens/pull/20)
 
 ## Description
 
@@ -10,6 +10,3 @@ We should add documentation on the initial code pattern and architecture that is
 ### Acceptance Criteria
 
 AC1 - Documentation on the initial code pattern and architecture that is being used
-
-## Outcome
-

@@ -15,4 +15,3 @@ Given: User is on the containers detail page,
 When: User is at the top of the page,  
 Then: User should be able to see the state of the container in a card.
 
-## Outcome
