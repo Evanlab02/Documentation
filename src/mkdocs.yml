@@ -164,27 +164,32 @@ nav:
       - 10 - Objects: Languages/PHP/02 - Fundamentals/10 - Objects.md
   - Python:
     - 001 - Getting started: Languages/Python/001 - Getting started.md
-    - 002 - Package Management: Languages/Python/002 - Package Management.md
 - Libraries:
   - JS-TS-Node:
     - htmx:
       - 001 - AJAX:
         - 001 - Introduction: Libraries/JS-TS-Node/htmx/001 - AJAX/001 - Introduction.md
+  - PHP:
+    - Symfony:
+      - HTTP Client:
+        - 001 - Quick start: Libraries/PHP/Symfony/HTTP Client/001 - Quick start.md
 - Package Management:
-  - uv:
-    - 001 - Getting Started: Package Management/uv/001 - Getting Started.md
-    - 002 - Managing python via uv: Package Management/uv/002 - Managing python via
-        uv.md
-    - 003 - Scripts: Package Management/uv/003 - Scripts.md
-    - 004 - Managing Projects:
-      - 4.1 - Creating a new project: Package Management/uv/004 - Managing Projects/4.1
-          - Creating a new project.md
-      - 4.2 - Creating a new library or package: Package Management/uv/004 - Managing
-          Projects/4.2 - Creating a new library or package.md
-      - 4.3 - Platform restrictions: Package Management/uv/004 - Managing Projects/4.3
-          - Platform restrictions.md
-    - 005 - pip compile: Package Management/uv/005 - pip compile.md
-    - 999 - Additional resources: Package Management/uv/999 - Additional resources.md
+  - Python:
+    - uv:
+      - 001 - Getting Started: Package Management/Python/uv/001 - Getting Started.md
+      - 002 - Managing python via uv: Package Management/Python/uv/002 - Managing
+          python via uv.md
+      - 003 - Scripts: Package Management/Python/uv/003 - Scripts.md
+      - 004 - Managing Projects:
+        - 4.1 - Creating a new project: Package Management/Python/uv/004 - Managing
+            Projects/4.1 - Creating a new project.md
+        - 4.2 - Creating a new library or package: Package Management/Python/uv/004
+            - Managing Projects/4.2 - Creating a new library or package.md
+        - 4.3 - Platform restrictions: Package Management/Python/uv/004 - Managing
+            Projects/4.3 - Platform restrictions.md
+      - 005 - pip compile: Package Management/Python/uv/005 - pip compile.md
+      - 999 - Additional resources: Package Management/Python/uv/999 - Additional
+          resources.md
 - Projects:
   - DockerLens:
     - 000 - DockerLens outline: Projects/DockerLens/000 - DockerLens outline.md
@@ -219,18 +224,6 @@ nav:
         CPU card.md
     - 018 - Container resources Memory card: Projects/DockerLens/018 - Container resources
         Memory card.md
-  - HomePortal:
-    - 000 - Releases:
-      - Home Portal V0.3.2: Projects/HomePortal/000 - Releases/Home Portal V0.3.2.md
-    - 001 - Update the documentation: Projects/HomePortal/001 - Update the documentation.md
-    - 002 - Create story for card component: Projects/HomePortal/002 - Create story
-        for card component.md
-    - 003 - Investigate running shopping app on the same host: Projects/HomePortal/003
-        - Investigate running shopping app on the same host.md
-    - 004 - Remove development applications: Projects/HomePortal/004 - Remove development
-        applications.md
-    - 005 - Add your_spotify to home portal: Projects/HomePortal/005 - Add your_spotify
-        to home portal.md
   - RCL:
     - 001 - Documentation: Projects/RCL/001 - Documentation.md
     - 002 - Side Menu Component: Projects/RCL/002 - Side Menu Component.md
@@ -239,10 +232,6 @@ nav:
     - 002 - Master - API endpoint to set cache value: Projects/RedisPubSub/002 - Master
         - API endpoint to set cache value.md
   - ShoppingListApp:
-    - 000 - V2 FE:
-      - 001 - Linting: Projects/ShoppingListApp/000 - V2 FE/001 - Linting.md
-      - 002 - Navigation Bar: Projects/ShoppingListApp/000 - V2 FE/002 - Navigation
-          Bar.md
     - 001 - Argon2 Password Hashing: Projects/ShoppingListApp/001 - Argon2 Password
         Hashing.md
     - 002 - Store Sorting Parameter: Projects/ShoppingListApp/002 - Store Sorting
