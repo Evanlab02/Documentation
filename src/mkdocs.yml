@@ -170,6 +170,9 @@ nav:
           Arrays.md
       - 06 - Strings: Languages/PHP/02 - Fundamentals/06 - Strings.md
       - 07 - For Loops: Languages/PHP/02 - Fundamentals/07 - For Loops.md
+      - 08 - While loops: Languages/PHP/02 - Fundamentals/08 - While loops.md
+      - 09 - Functions: Languages/PHP/02 - Fundamentals/09 - Functions.md
+      - 10 - Objects: Languages/PHP/02 - Fundamentals/10 - Objects.md
     - 03 - Postgres:
       - 001 - Connecting to postgres: Languages/PHP/03 - Postgres/001 - Connecting
           to postgres.md
