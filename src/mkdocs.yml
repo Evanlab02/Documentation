@@ -74,24 +74,13 @@ nav:
 - Frameworks:
   - ASP.NET:
     - 01 - Getting Started: Frameworks/ASP.NET/01 - Getting Started.md
-  - Angular:
-    - 001 - Quick start: Frameworks/Angular/001 - Quick start.md
   - Django:
-    - 001 - Custom Admin Configuration: Frameworks/Django/001 - Custom Admin Configuration.md
-    - 002 - Caching with Django: Frameworks/Django/002 - Caching with Django.md
+    - 998 - Custom Admin Configuration: Frameworks/Django/998 - Custom Admin Configuration.md
+    - 999 - Caching with Django: Frameworks/Django/999 - Caching with Django.md
   - Django Ninja:
-    - 001 - Parsing Input:
-      - 001 - HTTP Methods: Frameworks/Django Ninja/001 - Parsing Input/001 - HTTP
+    - 002- Parsing Input:
+      - 001 - HTTP Methods: Frameworks/Django Ninja/002- Parsing Input/001 - HTTP
           Methods.md
-  - Laravel:
-    - 01 - Getting Started: Frameworks/Laravel/01 - Getting Started.md
-    - 02 - Architecture:
-      - 001 - Request lifecycle: Frameworks/Laravel/02 - Architecture/001 - Request
-          lifecycle.md
-      - 002 - Service Container: Frameworks/Laravel/02 - Architecture/002 - Service
-          Container.md
-  - NestJS:
-    - 001 - Getting Started: Frameworks/NestJS/001 - Getting Started.md
   - React:
     - 001 - Quick start: Frameworks/React/001 - Quick start.md
 - Languages:
@@ -173,11 +162,6 @@ nav:
       - 08 - While loops: Languages/PHP/02 - Fundamentals/08 - While loops.md
       - 09 - Functions: Languages/PHP/02 - Fundamentals/09 - Functions.md
       - 10 - Objects: Languages/PHP/02 - Fundamentals/10 - Objects.md
-    - 03 - Postgres:
-      - 001 - Connecting to postgres: Languages/PHP/03 - Postgres/001 - Connecting
-          to postgres.md
-      - 002 - Create a prepared statement: Languages/PHP/03 - Postgres/002 - Create
-          a prepared statement.md
   - Python:
     - 001 - Getting started: Languages/Python/001 - Getting started.md
     - 002 - Package Management: Languages/Python/002 - Package Management.md
