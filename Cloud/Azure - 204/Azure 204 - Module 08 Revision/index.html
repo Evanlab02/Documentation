@@ -1,0 +1,3059 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Azure%20204%20-%20Module%2007%20Revision/">
+      
+      
+        <link rel="next" href="../Azure%20204%20-%20Module%2009%20Revision/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>Azure 204 - Module 08 Revision - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implement-api-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure 204 - Module 08 Revision
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Build%20Tools/Vite/001%20-%20CLI/" class="md-tabs__link">
+          
+  
+  Build Tools
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CI-CD/GitHub/001%20-%20Events/001%20-%20Pull%20Request/" class="md-tabs__link">
+          
+  
+  CI-CD
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Caching/Redis/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Caching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Azure%20204%20-%20Module%2001%20Revision/" class="md-tabs__link">
+          
+  
+  Cloud
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Containerization/Docker/001%20-%20Dockerfiles/001%20-%20Reference/" class="md-tabs__link">
+          
+  
+  Containerization
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Databases/Postgres/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Databases
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Frameworks/ASP.NET/01%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Frameworks
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-tabs__link">
+          
+  
+  Languages
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Libraries/JS-TS-Node/htmx/001%20-%20AJAX/001%20-%20Introduction/" class="md-tabs__link">
+          
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Package%20Management/Python/uv/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Package Management
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Projects/DockerLens/000%20-%20DockerLens%20outline/" class="md-tabs__link">
+          
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Proxies/Caddy/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Proxies
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Roles/Backend/001%20-%20Internet/001%20-%20How%20does%20the%20internet%20work/" class="md-tabs__link">
+          
+  
+  Roles
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Build%20Tools/Vite/001%20-%20CLI/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Build Tools
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../CI-CD/GitHub/001%20-%20Events/001%20-%20Pull%20Request/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    CI-CD
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Caching/Redis/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Caching
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure - 204
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Azure - 204
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2001%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 01 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2002%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 02 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2003%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 03 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2004%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 04 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2005%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 05 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2006%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 06 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2007%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 07 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 08 Revision
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 08 Revision
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explore-api-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore API Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore API Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discover-the-api-management-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discover the API Management service
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discover the API Management service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-management-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Management components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#products" class="md-nav__link">
+    <span class="md-ellipsis">
+      Products
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-api-gateways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore API gateways
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore API gateways">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managed-and-self-hosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managed and self-hosted
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-api-management-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore API Management policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore API Management policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-policy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding policy configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-policies-specified-at-different-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply policies specified at different scopes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-response-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filter response content
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-advanced-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create advanced policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create advanced policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limit concurrency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-to-event-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log to Event Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mock-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mock response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-apis-by-using-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure APIs by using subscriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secure APIs by using subscriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subscriptions-and-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscriptions and Keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-an-api-with-the-subscription-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call an API with the subscription key
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-apis-by-using-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure APIs by using certificates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secure APIs by using certificates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transport-layer-security-client-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transport Layer Security client authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accepting-client-certificates-in-the-consumption-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accepting client certificates in the Consumption tier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-authorization-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certificate Authorization Policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Certificate Authorization Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-the-thumbprint-of-a-client-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check the thumbprint of a client certificate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-thumbprint-against-certificates-uploaded-to-api-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check the thumbprint against certificates uploaded to API Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-issuer-and-subject-of-a-client-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check the issuer and subject of a client certificate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-create-a-backend-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise: Create a backend API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise: Create a backend API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-api-management-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an API management instance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-a-backend-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import a backend API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-backend-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure the backend settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up-azure-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clean up Azure resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2009%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 09 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2010%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 10 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2011%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 11 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2012%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 12 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Containerization/Docker/001%20-%20Dockerfiles/001%20-%20Reference/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Containerization
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Databases/Postgres/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Frameworks/ASP.NET/01%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Frameworks
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Languages
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Libraries/JS-TS-Node/htmx/001%20-%20AJAX/001%20-%20Introduction/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Libraries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Package%20Management/Python/uv/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Package Management
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Projects/DockerLens/000%20-%20DockerLens%20outline/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Proxies/Caddy/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Proxies
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Roles/Backend/001%20-%20Internet/001%20-%20How%20does%20the%20internet%20work/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Roles
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explore-api-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore API Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore API Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discover-the-api-management-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discover the API Management service
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discover the API Management service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-management-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Management components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#products" class="md-nav__link">
+    <span class="md-ellipsis">
+      Products
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-api-gateways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore API gateways
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore API gateways">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managed-and-self-hosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managed and self-hosted
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-api-management-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore API Management policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore API Management policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-policy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding policy configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-policies-specified-at-different-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply policies specified at different scopes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-response-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filter response content
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-advanced-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create advanced policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create advanced policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limit concurrency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-to-event-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log to Event Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mock-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mock response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-apis-by-using-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure APIs by using subscriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secure APIs by using subscriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subscriptions-and-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscriptions and Keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-an-api-with-the-subscription-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call an API with the subscription key
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-apis-by-using-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure APIs by using certificates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secure APIs by using certificates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transport-layer-security-client-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transport Layer Security client authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accepting-client-certificates-in-the-consumption-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accepting client certificates in the Consumption tier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-authorization-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certificate Authorization Policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Certificate Authorization Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-the-thumbprint-of-a-client-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check the thumbprint of a client certificate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-thumbprint-against-certificates-uploaded-to-api-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check the thumbprint against certificates uploaded to API Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-issuer-and-subject-of-a-client-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check the issuer and subject of a client certificate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-create-a-backend-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise: Create a backend API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise: Create a backend API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-api-management-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an API management instance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-a-backend-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import a backend API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-backend-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure the backend settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up-azure-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clean up Azure resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="implement-api-management">Implement API Management</h1>
+<h2 id="explore-api-management">Explore API Management</h2>
+<p>After completing this module, you'll be able to:</p>
+<ul>
+<li>Describe the components, and their function, of the API Management service.</li>
+<li>Explain how API gateways can help manage calls to your APIs.</li>
+<li>Secure access to APIs by using subscriptions and certificates.</li>
+<li>Create a backend API.</li>
+</ul>
+<h3 id="discover-the-api-management-service">Discover the API Management service</h3>
+<p>API Management provides the core functionality to ensure a successful API program through developer engagement, business insights, analytics, security, and protection. Each API consists of one or more operations, and each API can be added to one or more products. To use an API, developers subscribe to a product that contains that API, and then they can call the API's operation, subject to any usage policies that may be in effect.</p>
+<h4 id="api-management-components">API Management components</h4>
+<p>Azure API Management is made up of an <em>API gateway</em>, a <em>management plane</em>, and a <em>developer portal</em>. These components are Azure-hosted and fully managed by default. API Management is available in various <a href="https://learn.microsoft.com/en-us/azure/api-management/api-management-features">tiers</a> differing in capacity and features.</p>
+<ul>
+<li>The <strong>API gateway</strong> is the endpoint that:<ul>
+<li>Accepts API calls and routes them to appropriate backends</li>
+<li>Verifies API keys and other credentials presented with requests</li>
+<li>Enforces usage quotas and rate limits</li>
+<li>Transforms requests and responses specified in policy statements</li>
+<li>Caches responses to improve response latency and minimize the load on backend services</li>
+<li>Emits logs, metrics, and traces for monitoring, reporting, and troubleshooting</li>
+</ul>
+</li>
+<li>The <strong>management plane</strong> is the administrative interface where you set up your API program. Use it to:<ul>
+<li>Provision and configure API Management service settings</li>
+<li>Define or import API schema</li>
+<li>Package APIs into products</li>
+<li>Set up policies like quotas or transformations on the APIs</li>
+<li>Get insights from analytics</li>
+<li>Manage users</li>
+</ul>
+</li>
+<li>The <strong>Developer portal</strong> is an automatically generated, fully customizable website with the documentation of your APIs. Using the developer portal, developers can:<ul>
+<li>Read API documentation</li>
+<li>Call an API via the interactive console</li>
+<li>Create an account and subscribe to get API keys</li>
+<li>Access analytics on their own usage</li>
+<li>Download API definitions</li>
+<li>Manage API keys</li>
+</ul>
+</li>
+</ul>
+<h4 id="products">Products</h4>
+<p>Products are how APIs are surfaced to developers. Products in API Management have one or more APIs, and are configured with a title, description, and terms of use. Products can be <strong>Open</strong> or <strong>Protected</strong>. Protected products must be subscribed to before they can be used, while open products can be used without a subscription. Subscription approval is configured at the product level and can either require administrator approval, or be auto approved.</p>
+<h4 id="groups">Groups</h4>
+<p>Groups are used to manage the visibility of products to developers. API Management has the following immutable system groups:</p>
+<ul>
+<li><strong>Administrators</strong> - Manage API Management service instances and create the APIs, operations, and products that are used by developers. Azure subscription administrators are members of this group.</li>
+<li><strong>Developers</strong> - Authenticated developer portal users that build applications using your APIs. Developers are granted access to the developer portal and build applications that call the operations of an API.</li>
+<li><strong>Guests</strong> - Unauthenticated developer portal users. They can be granted certain read-only access, like the ability to view APIs but not call them.</li>
+</ul>
+<p>In addition to these system groups, administrators can create custom groups or use external groups in associated Microsoft Entra tenants.</p>
+<h4 id="developers">Developers</h4>
+<p>Developers represent the user accounts in an API Management service instance. Developers can be created or invited to join by administrators, or they can sign up from the Developer portal. Each developer is a member of one or more groups, and can subscribe to the products that grant visibility to those groups.</p>
+<h4 id="policies">Policies</h4>
+<p>Policies are a collection of statements that are executed sequentially on the request or response of an API. Popular statements include format conversion from XML to JSON and call rate limiting to restrict the number of incoming calls from a developer, and many other policies are available.</p>
+<p>Policy expressions can be used as attribute values or text values in any of the API Management policies, unless the policy specifies otherwise. Some policies such as the Control flow and Set variable policies are based on policy expressions.</p>
+<p>Policies can be applied at different scopes, depending on your needs: global (all APIs), a product, a specific API, or an API operation.</p>
+<h3 id="explore-api-gateways">Explore API gateways</h3>
+<p>Your solution may contain several front- and back-end services. In this scenario, how does a client know what endpoints to call? What happens when new services are introduced, or existing services are refactored? How do services handle SSL termination, authentication, and other concerns?</p>
+<p>The API Management gateway (also called data plane or runtime) is the service component that's responsible for proxying API requests, applying policies, and collecting telemetry.</p>
+<p>An API gateway sits between clients and services. It acts as a reverse proxy, routing requests from clients to services. It may also perform various cross-cutting tasks such as authentication, SSL termination, and rate limiting. If you don't deploy a gateway, clients must send requests directly to back-end services. However, there are some potential problems with exposing services directly to clients:</p>
+<ul>
+<li>It can result in complex client code. The client must keep track of multiple endpoints, and handle failures in a resilient way.</li>
+<li>It creates coupling between the client and the backend. The client needs to know how the individual services are decomposed. That makes it harder to maintain the client and also harder to refactor services.</li>
+<li>A single operation might require calls to multiple services.</li>
+<li>Each public-facing service must handle concerns such as authentication, SSL, and client rate limiting.</li>
+<li>Services must expose a client-friendly protocol such as HTTP or WebSocket. This limits the choice of communication protocols.</li>
+<li>Services with public endpoints are a potential attack surface, and must be hardened.</li>
+</ul>
+<p>A gateway helps to address these issues by decoupling clients from services.</p>
+<h4 id="managed-and-self-hosted">Managed and self-hosted</h4>
+<p>API Management offers both managed and self-hosted gateways:</p>
+<ul>
+<li><strong>Managed</strong> - The managed gateway is the default gateway component that is deployed in Azure for every API Management instance in every service tier. With the managed gateway, all API traffic flows through Azure regardless of where backends implementing the APIs are hosted.</li>
+<li><strong>Self-hosted</strong> - The self-hosted gateway is an optional, containerized version of the default managed gateway. It's useful for hybrid and multicloud scenarios where there's a requirement to run the gateways off of Azure in the same environments where API backends are hosted. The self-hosted gateway enables customers with hybrid IT infrastructure to manage APIs hosted on-premises and across clouds from a single API Management service in Azure.</li>
+</ul>
+<h3 id="explore-api-management-policies">Explore API Management policies</h3>
+<p>In Azure API Management, policies allow the publisher to change the behavior of the API through configuration. Policies are a collection of Statements that are executed sequentially on the request or response of an API.</p>
+<p>Policies are applied inside the gateway that sits between the API consumer and the managed API. The gateway receives all requests and usually forwards them unaltered to the underlying API. However a policy can apply changes to both the inbound request and outbound response. Policy expressions can be used as attribute values or text values in any of the API Management policies, unless the policy specifies otherwise.</p>
+<h4 id="understanding-policy-configuration">Understanding policy configuration</h4>
+<p>The policy definition is a simple XML document that describes a sequence of inbound and outbound statements. The XML can be edited directly in the definition window.</p>
+<p>The configuration is divided into <code>inbound</code>, <code>backend</code>, <code>outbound</code>, and <code>on-error</code>. The series of specified policy statements is executed in order for a request and a response.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;policies&gt;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  &lt;inbound&gt;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &lt;!-- statements to be applied to the request go here --&gt;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  &lt;/inbound&gt;
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  &lt;backend&gt;
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    &lt;!-- statements to be applied before the request is forwarded to 
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>         the backend service go here --&gt;
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  &lt;/backend&gt;
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  &lt;outbound&gt;
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    &lt;!-- statements to be applied to the response go here --&gt;
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  &lt;/outbound&gt;
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  &lt;on-error&gt;
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    &lt;!-- statements to be applied if there is an error condition go here --&gt;
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  &lt;/on-error&gt;
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>&lt;/policies&gt;
+</span></code></pre></div>
+<p>If there's an error during the processing of a request, any remaining steps in the <code>inbound</code>, <code>backend</code>, or <code>outbound</code> sections are skipped and execution jumps to the statements in the <code>on-error</code> section. By placing policy statements in the <code>on-error</code> section you can review the error by using the <code>context.LastError</code> property, inspect and customize the error response using the <code>set-body</code> policy, and configure what happens if an error occurs.</p>
+<h4 id="policy-expressions">Policy expressions</h4>
+<p>Unless the policy specifies otherwise, policy expressions can be used as attribute values or text values in any of the API Management policies. A policy expression is either:</p>
+<ul>
+<li>a single C# statement enclosed in <code>@(expression)</code>, or</li>
+<li>a multi-statement C# code block, enclosed in <code>@{expression}</code>, that returns a value</li>
+</ul>
+<p>Each expression has access to the implicitly provided <code>context</code> variable and an allowed subset of .NET Framework types.</p>
+<p><a href="https://learn.microsoft.com/en-us/azure/api-management/api-management-policy-expressions">Policy expressions</a> provide a sophisticated means to control traffic and modify API behavior without requiring you to write specialized code or modify backend services.</p>
+<p>The following example uses policy expressions and the set-header policy to add user data to the incoming request. The added header includes the user ID associated with the subscription key in the request, and the region where the gateway processing the request is hosted.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;policies&gt;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    &lt;inbound&gt;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        &lt;base /&gt;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        &lt;set-header name=&quot;x-request-context-data&quot; exists-action=&quot;override&quot;&gt;
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            &lt;value&gt;@(context.User.Id)&lt;/value&gt;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            &lt;value&gt;@(context.Deployment.Region)&lt;/value&gt;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>      &lt;/set-header&gt;
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    &lt;/inbound&gt;
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>&lt;/policies&gt;
+</span></code></pre></div>
+<h4 id="apply-policies-specified-at-different-scopes">Apply policies specified at different scopes</h4>
+<p>If you have a policy at the global level and a policy configured for an API, then whenever that particular API is used both policies are applied. API Management allows for deterministic ordering of combined policy statements via the base element.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;policies&gt;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    &lt;inbound&gt;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        &lt;cross-domain /&gt;
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        &lt;base /&gt;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        &lt;find-and-replace from=&quot;xyz&quot; to=&quot;abc&quot; /&gt;
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    &lt;/inbound&gt;
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>&lt;/policies&gt;
+</span></code></pre></div>
+<p>In the previous example policy definition, The <code>cross-domain</code> statement would execute first. The <code>find-and-replace</code> policy would execute after any policies at a broader scope.</p>
+<h4 id="filter-response-content">Filter response content</h4>
+<p>The policy defined in following example demonstrates how to filter data elements from the response payload based on the product associated with the request.</p>
+<p>The snippet assumes that response content is formatted as JSON and contains root-level properties named "minutely", "hourly", "daily", "flags".</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;policies&gt;
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  &lt;inbound&gt;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &lt;base /&gt;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  &lt;/inbound&gt;
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  &lt;backend&gt;
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    &lt;base /&gt;
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  &lt;/backend&gt;
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  &lt;outbound&gt;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    &lt;base /&gt;
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    &lt;choose&gt;
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>      &lt;when condition=&quot;@(context.Response.StatusCode == 200 &amp;&amp; context.Product.Name.Equals(&quot;Starter&quot;))&quot;&gt;
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        &lt;!-- NOTE that we are not using preserveContent=true when deserializing response body stream into a JSON object since we don&#39;t intend to access it again. See details on /azure/api-management/api-management-transformation-policies#SetBody --&gt;
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        &lt;set-body&gt;
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>          @{
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            var response = context.Response.Body.As&lt;JObject&gt;();
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            foreach (var key in new [] {&quot;minutely&quot;, &quot;hourly&quot;, &quot;daily&quot;, &quot;flags&quot;}) {
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>            response.Property (key).Remove ();
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>           }
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>          return response.ToString();
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>          }
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    &lt;/set-body&gt;
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>      &lt;/when&gt;
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    &lt;/choose&gt;    
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>  &lt;/outbound&gt;
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>  &lt;on-error&gt;
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>    &lt;base /&gt;
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>  &lt;/on-error&gt;
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>&lt;/policies&gt;
+</span></code></pre></div>
+<h3 id="create-advanced-policies">Create advanced policies</h3>
+<p>This unit provides a reference for the following API Management policies:</p>
+<ul>
+<li>Control flow - Conditionally applies policy statements based on the results of the evaluation of Boolean expressions.</li>
+<li>Forward request - Forwards the request to the backend service.</li>
+<li>Limit concurrency - Prevents enclosed policies from executing by more than the specified number of requests at a time.</li>
+<li>Log to Event Hub - Sends messages in the specified format to an Event Hub defined by a Logger entity.</li>
+<li>Mock response - Aborts pipeline execution and returns a mocked response directly to the caller.</li>
+<li>Retry - Retries execution of the enclosed policy statements, if and until the condition is met. Execution will repeat at the specified time intervals and up to the specified retry count.</li>
+</ul>
+<h4 id="control-flow">Control flow</h4>
+<p>The <code>choose</code> policy applies enclosed policy statements based on the outcome of evaluation of boolean expressions, similar to an if-then-else or a switch construct in a programming language.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;choose&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;when</span><span class="w"> </span><span class="na">condition=</span><span class="s">&quot;Boolean expression | Boolean constant&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="cp">&lt;!— one or more policy statements to be applied if the above condition is true  --&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&lt;/when&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&lt;when</span><span class="w"> </span><span class="na">condition=</span><span class="s">&quot;Boolean expression | Boolean constant&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="cp">&lt;!— one or more policy statements to be applied if the above condition is true  --&gt;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">&lt;/when&gt;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">&lt;otherwise&gt;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="cp">&lt;!— one or more policy statements to be applied if none of the above conditions are true  --&gt;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nt">&lt;/otherwise&gt;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nt">&lt;/choose&gt;</span>
+</span></code></pre></div>
+<p>The control flow policy must contain at least one <code>&lt;when/&gt;</code> element. The <code>&lt;otherwise/&gt;</code> element is optional. Conditions in <code>&lt;when/&gt;</code> elements are evaluated in order of their appearance within the policy. Policy statement(s) enclosed within the first <code>&lt;when/&gt;</code> element with condition attribute equals true will be applied. Policies enclosed within the <code>&lt;otherwise/&gt;</code> element, if present, will be applied if all of the <code>&lt;when/&gt;</code> element condition attributes are false.</p>
+<h4 id="forward-request">Forward request</h4>
+<p>The <code>forward-request</code> policy forwards the incoming request to the backend service specified in the request context. The backend service URL is specified in the API settings and can be changed using the set backend service policy.</p>
+<p>Removing this policy results in the request not being forwarded to the backend service and the policies in the outbound section are evaluated immediately upon the successful completion of the policies in the inbound section.</p>
+<div class="language-XML highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;forward-request</span><span class="w"> </span><span class="na">timeout=</span><span class="s">&quot;time in seconds&quot;</span><span class="w"> </span><span class="na">follow-redirects=</span><span class="s">&quot;true | false&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h4 id="limit-concurrency">Limit concurrency</h4>
+<p>The <code>limit-concurrency</code> policy prevents enclosed policies from executing by more than the specified number of requests at any time. Upon exceeding that number, new requests will fail immediately with a <em>429 Too Many Requests</em> status code.</p>
+<div class="language-XML highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;limit-concurrency</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;expression&quot;</span><span class="w"> </span><span class="na">max-count=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="cp">&lt;!— nested policy statements --&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">&lt;/limit-concurrency&gt;</span>
+</span></code></pre></div>
+<h4 id="log-to-event-hub">Log to Event Hub</h4>
+<p>The <code>log-to-eventhub</code> policy sends messages in the specified format to an Event Hub defined by a Logger entity. As its name implies, the policy is used for saving selected request or response context information for online or offline analysis.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;log-to-eventhub</span><span class="w"> </span><span class="na">logger-id=</span><span class="s">&quot;id of the logger entity&quot;</span><span class="w"> </span><span class="na">partition-id=</span><span class="s">&quot;index of the partition where messages are sent&quot;</span><span class="w"> </span><span class="na">partition-key=</span><span class="s">&quot;value used for partition assignment&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span>Expression<span class="w"> </span>returning<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>logged
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">&lt;/log-to-eventhub&gt;</span>
+</span></code></pre></div>
+<h4 id="mock-response">Mock response</h4>
+<p>The <code>mock-response</code>, as the name implies, is used to mock APIs and operations. It aborts normal pipeline execution and returns a mocked response to the caller. The policy always tries to return responses of highest fidelity. It prefers response content examples, whenever available. It generates sample responses from schemas, when schemas are provided and examples are not. If neither examples or schemas are found, responses with no content are returned.</p>
+<div class="language-XML highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;mock-response</span><span class="w"> </span><span class="na">status-code=</span><span class="s">&quot;code&quot;</span><span class="w"> </span><span class="na">content-type=</span><span class="s">&quot;media type&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h4 id="retry">Retry</h4>
+<p>The <code>retry</code> policy executes its child policies once and then retries their execution until the retry <code>condition</code> becomes <code>false</code> or retry <code>count</code> is exhausted.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;retry</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="na">condition=</span><span class="s">&quot;boolean expression or literal&quot;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="na">count=</span><span class="s">&quot;number of retry attempts&quot;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="na">interval=</span><span class="s">&quot;retry interval in seconds&quot;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="na">max-interval=</span><span class="s">&quot;maximum retry interval in seconds&quot;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="na">delta=</span><span class="s">&quot;retry interval delta in seconds&quot;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="na">first-fast-retry=</span><span class="s">&quot;boolean expression or literal&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="cm">&lt;!-- One or more child policies. No restrictions --&gt;</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nt">&lt;/retry&gt;</span>
+</span></code></pre></div>
+<h4 id="return-response">Return response</h4>
+<p>The <code>return-response</code> policy aborts pipeline execution and returns either a default or custom response to the caller. Default response is <code>200 OK</code> with no body. Custom response can be specified via a context variable or policy statements. When both are provided, the response contained within the context variable is modified by the policy statements before being returned to the caller.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;return-response</span><span class="w"> </span><span class="na">response-variable-name=</span><span class="s">&quot;existing context variable&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&lt;set-header/&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&lt;set-body/&gt;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">&lt;set-status/&gt;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nt">&lt;/return-response&gt;</span>
+</span></code></pre></div>
+<h4 id="additional-resources">Additional resources</h4>
+<ul>
+<li>Visit <a href="https://learn.microsoft.com/en-us/azure/api-management/api-management-policies">API Management policies</a> for more policy examples.</li>
+<li><a href="https://learn.microsoft.com/en-us/azure/api-management/api-management-error-handling-policies">Error handling in API Management policies</a></li>
+</ul>
+<h3 id="secure-apis-by-using-subscriptions">Secure APIs by using subscriptions</h3>
+<p>When you publish APIs through API Management, it's easy and common to secure access to those APIs by using subscription keys. Developers who need to consume the published APIs must include a valid subscription key in HTTP requests when they make calls to those APIs. Otherwise, the calls are rejected immediately by the API Management gateway. They aren't forwarded to the back-end services.</p>
+<p>To get a subscription key for accessing APIs, a subscription is required. A subscription is essentially a named container for a pair of subscription keys. Developers who need to consume the published APIs can get subscriptions. And they don't need approval from API publishers. API publishers can also create subscriptions directly for API consumers.</p>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240822123355.png" /></p>
+<h4 id="subscriptions-and-keys">Subscriptions and Keys</h4>
+<p>A subscription key is a unique auto-generated key that can be passed through in the headers of the client request or as a query string parameter. The key is directly related to a subscription, which can be scoped to different areas. Subscriptions give you granular control over permissions and policies.</p>
+<p>The three main subscription scopes are:</p>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All APIs</td>
+<td>Applies to every API accessible from the gateway</td>
+</tr>
+<tr>
+<td>Single API</td>
+<td>This scope applies to a single imported API and all of its endpoints</td>
+</tr>
+<tr>
+<td>Product</td>
+<td>A product is a collection of one or more APIs that you configure in API Management. You can assign APIs to more than one product. Products can have different access rules, usage quotas, and terms of use.</td>
+</tr>
+</tbody>
+</table>
+<p>Applications that call a protected API must include the key in every request.</p>
+<p>You can regenerate these subscription keys at any time, for example, if you suspect that a key has been shared with unauthorized users.</p>
+<p><img alt="Image showing the Subscriptions screen." src="https://learn.microsoft.com/en-gb/training/wwl-azure/explore-api-management/media/subscription-keys.png" /></p>
+<p>Every subscription has two keys, a primary and a secondary. Having two keys makes it easier when you do need to regenerate a key. For example, if you want to change the primary key and avoid downtime, use the secondary key in your apps.</p>
+<p>For products where subscriptions are enabled, clients must supply a key when making calls to APIs in that product. Developers can obtain a key by submitting a subscription request. If you approve the request, you must send them the subscription key securely, for example, in an encrypted message. This step is a core part of the API Management workflow.</p>
+<h4 id="call-an-api-with-the-subscription-key">Call an API with the subscription key</h4>
+<p>Applications must include a valid key in all HTTP requests when they make calls to API endpoints that are protected by a subscription. Keys can be passed in the request header, or as a query string in the URL.</p>
+<p>The default header name is <strong>Ocp-Apim-Subscription-Key</strong>, and the default query string is <strong>subscription-key</strong>.</p>
+<p>To test out your API calls, you can use the developer portal, or command-line tools, such as <strong>curl</strong>. Here's an example of a <code>GET</code> request using the developer portal, which shows the subscription key header:</p>
+<p><img alt="Call API from developer portal" src="https://learn.microsoft.com/en-gb/training/wwl-azure/explore-api-management/media/key-header-portal.png" /></p>
+<p>Here's how you can pass a key in the request header using <strong>curl</strong>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>curl<span class="w"> </span>--header<span class="w"> </span><span class="s2">&quot;Ocp-Apim-Subscription-Key: &lt;key string&gt;&quot;</span><span class="w"> </span>https://&lt;apim<span class="w"> </span>gateway&gt;.azure-api.net/api/path
+</span></code></pre></div>
+<p>Here's an example <strong>curl</strong> command that passes a key in the URL as a query string:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>curl<span class="w"> </span>https://&lt;apim<span class="w"> </span>gateway&gt;.azure-api.net/api/path?subscription-key<span class="o">=</span>&lt;key<span class="w"> </span>string&gt;
+</span></code></pre></div>
+<p>If the key is not passed in the header, or as a query string in the URL, you'll get a <strong>401 Access Denied</strong> response from the API gateway.</p>
+<h3 id="secure-apis-by-using-certificates">Secure APIs by using certificates</h3>
+<p>Certificates can be used to provide Transport Layer Security (TLS) mutual authentication between the client and the API gateway. You can configure the API Management gateway to allow only requests with certificates containing a specific thumbprint. The authorization at the gateway level is handled through inbound policies.</p>
+<h4 id="transport-layer-security-client-authentication">Transport Layer Security client authentication</h4>
+<p>With TLS client authentication, the API Management gateway can inspect the certificate contained within the client request and check for properties like:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Certificate Authority (CA)</strong></td>
+<td>Only allow certificates signed by a particular CA</td>
+</tr>
+<tr>
+<td><strong>Thumbprint</strong></td>
+<td>Allow certificates containing a specified thumbprint</td>
+</tr>
+<tr>
+<td><strong>Subject</strong></td>
+<td>Only allow certificates with a specified subject</td>
+</tr>
+<tr>
+<td><strong>Expiration Date</strong></td>
+<td>Only allow certificates that have not expired</td>
+</tr>
+</tbody>
+</table>
+<p>These properties are not mutually exclusive and they can be mixed together to form your own policy requirements. For instance, you can specify that the certificate passed in the request is signed by a certain certificate authority and hasn't expired.</p>
+<p>Client certificates are signed to ensure that they are not tampered with. When a partner sends you a certificate, verify that it comes from them and not an imposter. There are two common ways to verify a certificate:</p>
+<ul>
+<li>Check who issued the certificate. If the issuer was a certificate authority that you trust, you can use the certificate. You can configure the trusted certificate authorities in the Azure portal to automate this process.</li>
+<li>If the certificate is issued by the partner, verify that it came from them. For example, if they deliver the certificate in person, you can be sure of its authenticity. These are known as self-signed certificates.</li>
+</ul>
+<h4 id="accepting-client-certificates-in-the-consumption-tier">Accepting client certificates in the Consumption tier</h4>
+<p>The Consumption tier in API Management is designed to conform with serverless design principals. If you build your APIs from serverless technologies, such as Azure Functions, this tier is a good fit. In the Consumption tier, you must explicitly enable the use of client certificates, which you can do on the <strong>Custom domains</strong> page. This step is not necessary in other tiers.</p>
+<p><img alt="Configure the gateway to request certificates" src="https://learn.microsoft.com/en-gb/training/wwl-azure/explore-api-management/media/configure-request-certificates.png" /></p>
+<h4 id="certificate-authorization-policies">Certificate Authorization Policies</h4>
+<p>Create these policies in the inbound processing policy file within the API Management gateway:</p>
+<p><img alt="Inbound processing policy button" src="https://learn.microsoft.com/en-gb/training/wwl-azure/explore-api-management/media/inbound-policy.png" /></p>
+<h5 id="check-the-thumbprint-of-a-client-certificate">Check the thumbprint of a client certificate</h5>
+<p>Every client certificate includes a thumbprint, which is a hash, calculated from other certificate properties. The thumbprint ensures that the values in the certificate have not been altered since the certificate was issued by the certificate authority. You can check the thumbprint in your policy. The following example checks the thumbprint of the certificate passed in the request:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;choose&gt;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nt">&lt;when</span><span class="w"> </span><span class="na">condition=</span><span class="s">&quot;@(context.Request.Certificate == null || context.Request.Certificate.Thumbprint != &quot;</span><span class="err">desired-thumbprint&quot;)&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">        </span><span class="nt">&lt;return-response&gt;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">            </span><span class="nt">&lt;set-status</span><span class="w"> </span><span class="na">code=</span><span class="s">&quot;403&quot;</span><span class="w"> </span><span class="na">reason=</span><span class="s">&quot;Invalid client certificate&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="nt">&lt;/return-response&gt;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nt">&lt;/when&gt;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nt">&lt;/choose&gt;</span>
+</span></code></pre></div>
+<h5 id="check-the-thumbprint-against-certificates-uploaded-to-api-management">Check the thumbprint against certificates uploaded to API Management</h5>
+<p>In the previous example, only one thumbprint would work so only one certificate would be validated. Usually, each customer or partner company would pass a different certificate with a different thumbprint. To support this scenario, obtain the certificates from your partners and use the <strong>Client certificates</strong> page in the Azure portal to upload them to the API Management resource. Then add this code to your policy:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">&lt;choose&gt;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nt">&lt;when</span><span class="w"> </span><span class="na">condition=</span><span class="s">&quot;@(context.Request.Certificate == null || !context.Request.Certificate.Verify()  || !context.Deployment.Certificates.Any(c =&gt; c.Value.Thumbprint == context.Request.Certificate.Thumbprint))&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">        </span><span class="nt">&lt;return-response&gt;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">            </span><span class="nt">&lt;set-status</span><span class="w"> </span><span class="na">code=</span><span class="s">&quot;403&quot;</span><span class="w"> </span><span class="na">reason=</span><span class="s">&quot;Invalid client certificate&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">        </span><span class="nt">&lt;/return-response&gt;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="nt">&lt;/when&gt;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="nt">&lt;/choose&gt;</span>
+</span></code></pre></div>
+<h5 id="check-the-issuer-and-subject-of-a-client-certificate">Check the issuer and subject of a client certificate</h5>
+<p>This example checks the issuer and subject of the certificate passed in the request:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&lt;choose&gt;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">&lt;when</span><span class="w"> </span><span class="na">condition=</span><span class="s">&quot;@(context.Request.Certificate == null || context.Request.Certificate.Issuer != &quot;</span><span class="err">trusted-issuer&quot;</span><span class="w"> </span><span class="err">||</span><span class="w"> </span><span class="err">context.Request.Certificate.SubjectName.Name</span><span class="w"> </span><span class="err">!=</span><span class="w"> </span><span class="err">&quot;expected-subject-name&quot;)&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">        </span><span class="nt">&lt;return-response&gt;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">            </span><span class="nt">&lt;set-status</span><span class="w"> </span><span class="na">code=</span><span class="s">&quot;403&quot;</span><span class="w"> </span><span class="na">reason=</span><span class="s">&quot;Invalid client certificate&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">        </span><span class="nt">&lt;/return-response&gt;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="nt">&lt;/when&gt;</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="nt">&lt;/choose&gt;</span>
+</span></code></pre></div>
+<h3 id="exercise-create-a-backend-api">Exercise: Create a backend API</h3>
+<h4 id="create-an-api-management-instance">Create an API management instance</h4>
+<p>Let's set some variables for the CLI commands to use to reduce the amount of retyping. Replace <code>&lt;myLocation&gt;</code> with a region that makes sense for you. The APIM name needs to be a globally unique name, and the following script generates a random string. Replace <code>&lt;myEmail&gt;</code> with an email address you can access.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>myApiName=az204-apim-$RANDOM
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>myLocation=&lt;myLocation&gt;
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>myEmail=&lt;myEmail&gt;
+</span></code></pre></div>
+<p>Create a resource group. The following commands create a resource group named <em>az204-apim-rg</em>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>az<span class="w"> </span>group<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>az204-apim-rg<span class="w"> </span>--location<span class="w"> </span><span class="nv">$myLocation</span>
+</span></code></pre></div>
+<p>Create an APIM instance. The <code>az apim create</code> command is used to create the instance. The <code>--sku-name Consumption</code> option is used to speed up the process for the walkthrough.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>az<span class="w"> </span>apim<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="nv">$myApiName</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span>--location<span class="w"> </span><span class="nv">$myLocation</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span>--publisher-email<span class="w"> </span><span class="nv">$myEmail</span><span class="w">  </span><span class="se">\</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span>--resource-group<span class="w"> </span>az204-apim-rg<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span>--publisher-name<span class="w"> </span>AZ204-APIM-Exercise<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span>--sku-name<span class="w"> </span>Consumption<span class="w"> </span>
+</span></code></pre></div>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240822124634.png" /></p>
+<h4 id="import-a-backend-api">Import a backend API</h4>
+<p>This section shows how to import and publish an OpenAPI specification backend API.</p>
+<ol>
+<li>In the Azure portal, search for and select <strong>API Management services</strong>.</li>
+<li>On the <strong>API Management</strong> screen, select the API Management instance you created.</li>
+<li>
+<p>Select <strong>APIs</strong> in the <strong>API management service</strong> navigation pane.</p>
+<p><img alt="Select APIs in the service navigation pane." src="https://learn.microsoft.com/en-gb/training/wwl-azure/explore-api-management/media/select-apis-navigation-pane.png" /></p>
+</li>
+<li>
+<p>Select <strong>OpenAPI</strong> from the list and select <strong>Full</strong> in the pop-up.</p>
+<p><img alt="The OpenAPI dialog box. Fields are detailed in the following table." src="https://learn.microsoft.com/en-gb/training/wwl-azure/explore-api-management/media/create-api.png" /></p>
+<p>Use the values from the table below to fill out the form. You can leave any fields not mentioned their default value.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OpenAPI Specification</strong></td>
+<td><code>https://conferenceapi.azurewebsites.net?format=json</code></td>
+<td>References the service implementing the API, requests are forwarded to this address. Most of the necessary information in the form is automatically populated after you enter this.</td>
+</tr>
+<tr>
+<td><strong>Display name</strong></td>
+<td><em>Demo Conference API</em></td>
+<td>This name is displayed in the Developer portal.</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td><em>demo-conference-api</em></td>
+<td>Provides a unique name for the API.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Automatically populated</td>
+<td>Provide an optional description of the API.</td>
+</tr>
+<tr>
+<td><strong>API URL suffix</strong></td>
+<td><em>conference</em></td>
+<td>The suffix is appended to the base URL for the API management service. API Management distinguishes APIs by their suffix and therefore the suffix must be unique for every API for a given publisher.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="configure-the-backend-settings">Configure the backend settings</h4>
+<p>The <em>Demo Conference API</em> is created and a backend needs to be specified.</p>
+<ol>
+<li>Select <strong>Settings</strong> in the blade to the right and enter <code>https://conferenceapi.azurewebsites.net/</code> in the <strong>Web service URL</strong> field.</li>
+<li>Deselect the <strong>Subscription required</strong> checkbox.
+    <img alt="Specify the backend URL for the API." src="https://learn.microsoft.com/en-gb/training/wwl-azure/explore-api-management/media/api-settings-backend.png" /></li>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<h4 id="test-the-api">Test the API</h4>
+<p>Now that the API has been imported and the backend configured it's time to test the API.</p>
+<ol>
+<li>
+<p>Select <strong>Test</strong>.</p>
+<p><img alt="Select test in the right pane." src="https://learn.microsoft.com/en-gb/training/wwl-azure/explore-api-management/media/select-test.png" /></p>
+</li>
+<li>
+<p>Select <strong>GetSpeakers</strong>. The page shows <strong>Query parameters</strong> and <strong>Headers</strong>, if any. The <code>Ocp-Apim-Subscription-Key</code> is filled in automatically for the subscription key associated with this API.</p>
+</li>
+<li>Select <strong>Send</strong>.
+    Backend responds with <strong>200 OK</strong> and some data.</li>
+</ol>
+<h4 id="clean-up-azure-resources">Clean up Azure resources</h4>
+<p>When you're finished with the resources you created in this exercise you can use the command below to delete the resource group and all related resources.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>az<span class="w"> </span>group<span class="w"> </span>delete<span class="w"> </span>--name<span class="w"> </span>az204-apim-rg
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.path", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

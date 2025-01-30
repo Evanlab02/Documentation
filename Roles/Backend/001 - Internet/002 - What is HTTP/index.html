@@ -1,0 +1,1695 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../001%20-%20How%20does%20the%20internet%20work/">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>002 - What is HTTP - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#resources" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              002 - What is HTTP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Build%20Tools/Vite/001%20-%20CLI/" class="md-tabs__link">
+          
+  
+  Build Tools
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../CI-CD/GitHub/001%20-%20Events/001%20-%20Pull%20Request/" class="md-tabs__link">
+          
+  
+  CI-CD
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Caching/Redis/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Caching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2001%20Revision/" class="md-tabs__link">
+          
+  
+  Cloud
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Containerization/Docker/001%20-%20Dockerfiles/001%20-%20Reference/" class="md-tabs__link">
+          
+  
+  Containerization
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Databases/Postgres/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Databases
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Frameworks/ASP.NET/01%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Frameworks
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-tabs__link">
+          
+  
+  Languages
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Libraries/JS-TS-Node/htmx/001%20-%20AJAX/001%20-%20Introduction/" class="md-tabs__link">
+          
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Package%20Management/Python/uv/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Package Management
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Projects/DockerLens/000%20-%20DockerLens%20outline/" class="md-tabs__link">
+          
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Proxies/Caddy/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Proxies
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../001%20-%20How%20does%20the%20internet%20work/" class="md-tabs__link">
+          
+  
+  Roles
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../../Build%20Tools/Vite/001%20-%20CLI/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Build Tools
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../../CI-CD/GitHub/001%20-%20Events/001%20-%20Pull%20Request/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    CI-CD
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../../Caching/Redis/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Caching
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../../Cloud/Azure%20-%20204/Azure%20204%20-%20Module%2001%20Revision/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Cloud
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../../Containerization/Docker/001%20-%20Dockerfiles/001%20-%20Reference/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Containerization
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../../Databases/Postgres/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../../Frameworks/ASP.NET/01%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Frameworks
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Languages
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../../Libraries/JS-TS-Node/htmx/001%20-%20AJAX/001%20-%20Introduction/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Libraries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../../Package%20Management/Python/uv/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Package Management
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../../Projects/DockerLens/000%20-%20DockerLens%20outline/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../../Proxies/Caddy/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Proxies
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Roles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Roles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Backend
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            Backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14_1_1" id="__nav_14_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    001 - Internet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_14_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            001 - Internet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../001%20-%20How%20does%20the%20internet%20work/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    001 - How does the internet work
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    002 - What is HTTP
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=2JYT5f2isg4">Full HTTP Networking Course – Fetch and REST APIs in JavaScript | Youtube</a></li>
+<li><a href="https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/">What is HTTP? | Cloudflare</a> </li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">An overview of HTTP | Mozilla</a></li>
+<li><a href="https://www.youtube.com/watch?v=a-sBfyiXysI">HTTP/1 to HTTP/2 to HTTP/3 | Youtube</a></li>
+<li><a href="https://www.youtube.com/watch?v=j9QmMEWmcfo">SSL, TLS, HTTPS Explained | Youtube</a></li>
+</ul>
+<h1 id="what-is-http">What is HTTP?</h1>
+<p>HTTP (Hypertext Transfer Protocol) is a protocol used for transmitting hypertext via the World Wide Web. It defines how messages are formatted and transmitted, and how web servers and browsers should respond to various commands. HTTP operates on a request-response model: a client (usually a web browser) sends an HTTP request to a server for resources, such as web pages or files, and the server responds with the requested content and an HTTP status code indicating the result of the request. HTTP is stateless, meaning each request from a client to a server is independent and does not retain information about previous interactions. It forms the foundation of data communication on the web and is typically used with secure HTTP (HTTPS) for encrypted communication.</p>
+<h1 id="an-overview-of-http">An overview of HTTP</h1>
+<p><strong>HTTP</strong> is a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Protocol">protocol</a> for fetching resources such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is typically constructed from resources such as text content, layout instructions, images, videos, scripts, and more.</p>
+<p><img alt="A single Web document composed from multiple resources from different servers." src="https://mdn.github.io/shared-assets/images/diagrams/http/overview/fetching-a-page.svg" /></p>
+<p>Clients and servers communicate by exchanging individual messages (as opposed to a stream of data). The messages sent by the client are called <em>requests</em> and the messages sent by the server as an answer are called <em>responses</em>.</p>
+<p><img alt="HTTP as an application layer protocol, on top of TCP (transport layer) and IP (network layer) and below the presentation layer." src="https://mdn.github.io/shared-assets/images/diagrams/http/overview/http-layers.svg" /></p>
+<p>Designed in the early 1990s, HTTP is an extensible protocol which has evolved over time. It is an application layer protocol that is sent over <a href="https://developer.mozilla.org/en-US/docs/Glossary/TCP">TCP</a>, or over a <a href="https://developer.mozilla.org/en-US/docs/Glossary/TLS">TLS</a>-encrypted TCP connection, though any reliable transport protocol could theoretically be used. Due to its extensibility, it is used to not only fetch hypertext documents, but also images and videos or to post content to servers, like with HTML form results. HTTP can also be used to fetch parts of documents to update Web pages on demand.</p>
+<h2 id="components-of-http-based-systems">Components of HTTP-based systems</h2>
+<p>HTTP is a client-server protocol: requests are sent by one entity, the user-agent (or a proxy on behalf of it). Most of the time the user-agent is a Web browser, but it can be anything, for example, a robot that crawls the Web to populate and maintain a search engine index.</p>
+<p>Each individual request is sent to a server, which handles it and provides an answer called the <em>response</em>. Between the client and the server there are numerous entities, collectively called <a href="https://developer.mozilla.org/en-US/docs/Glossary/Proxy_server">proxies</a>, which perform different operations and act as gateways or <a href="https://developer.mozilla.org/en-US/docs/Glossary/Cache">caches</a>, for example.</p>
+<p><img alt="A HTTP request from a client forwarded by several proxies to a server and a response taking the same route back to the client." src="https://mdn.github.io/shared-assets/images/diagrams/http/overview/client-server-chain.svg" /></p>
+<p>In reality, there are more computers between a browser and the server handling the request: there are routers, modems, and more. Thanks to the layered design of the Web, these are hidden in the network and transport layers. HTTP is on top, at the application layer. Although important for diagnosing network problems, the underlying layers are mostly irrelevant to the description of HTTP.</p>
+<h3 id="client-the-user-agent">Client: the user-agent</h3>
+<p>The <em>user-agent</em> is any tool that acts on behalf of the user. This role is primarily performed by the Web browser, but it may also be performed by programs used by engineers and Web developers to debug their applications.</p>
+<p>The browser is <strong>always</strong> the entity initiating the request. It is never the server (though some mechanisms have been added over the years to simulate server-initiated messages).</p>
+<p>To display a Web page, the browser sends an original request to fetch the HTML document that represents the page. It then parses this file, making additional requests corresponding to execution scripts, layout information (CSS) to display, and sub-resources contained within the page (usually images and videos). The Web browser then combines these resources to present the complete document, the Web page. Scripts executed by the browser can fetch more resources in later phases and the browser updates the Web page accordingly.</p>
+<p>A Web page is a hypertext document. This means some parts of the displayed content are links, which can be activated (usually by a click of the mouse) to fetch a new Web page, allowing the user to direct their user-agent and navigate through the Web. The browser translates these directions into HTTP requests, and further interprets the HTTP responses to present the user with a clear response.</p>
+<h3 id="the-web-server">The Web server</h3>
+<p>On the opposite side of the communication channel is the server, which <em>serves</em> the document as requested by the client. A server appears as only a single machine virtually; but it may actually be a collection of servers sharing the load (load balancing), or other software (such as caches, a database server, or e-commerce servers), totally or partially generating the document on demand.</p>
+<p>A server is not necessarily a single machine, but several server software instances can be hosted on the same machine. With HTTP/1.1 and the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Host"><code>Host</code></a> header, they may even share the same IP address.</p>
+<h3 id="proxies">Proxies</h3>
+<p>Between the Web browser and the server, numerous computers and machines relay the HTTP messages. Due to the layered structure of the Web stack, most of these operate at the transport, network or physical levels, becoming transparent at the HTTP layer and potentially having a significant impact on performance. Those operating at the application layers are generally called <strong>proxies</strong>. These can be transparent, forwarding on the requests they receive without altering them in any way, or non-transparent, in which case they will change the request in some way before passing it along to the server. Proxies may perform numerous functions:</p>
+<ul>
+<li>caching (the cache can be public or private, like the browser cache)</li>
+<li>filtering (like an antivirus scan or parental controls)</li>
+<li>load balancing (to allow multiple servers to serve different requests)</li>
+<li>authentication (to control access to different resources)</li>
+<li>logging (allowing the storage of historical information)</li>
+</ul>
+<h2 id="basic-aspects-of-http">Basic aspects of HTTP</h2>
+<h3 id="http-is-simple">HTTP is simple</h3>
+<p>HTTP is generally designed to be simple and human-readable, even with the added complexity introduced in HTTP/2 by encapsulating HTTP messages into frames. HTTP messages can be read and understood by humans, providing easier testing for developers, and reduced complexity for newcomers.</p>
+<h3 id="http-is-extensible">HTTP is extensible</h3>
+<p>Introduced in HTTP/1.0, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">HTTP headers</a> make this protocol easy to extend and experiment with. New functionality can even be introduced by an agreement between a client and a server about a new header's semantics.</p>
+<h3 id="http-is-stateless-but-not-sessionless">HTTP is stateless, but not sessionless</h3>
+<p>HTTP is stateless: there is no link between two requests being successively carried out on the same connection. This immediately has the prospect of being problematic for users attempting to interact with certain pages coherently, for example, using e-commerce shopping baskets. But while the core of HTTP itself is stateless, HTTP cookies allow the use of stateful sessions. Using header extensibility, HTTP Cookies are added to the workflow, allowing session creation on each HTTP request to share the same context, or the same state.</p>
+<h3 id="http-and-connections">HTTP and connections</h3>
+<p>A connection is controlled at the transport layer, and therefore fundamentally out of scope for HTTP. HTTP doesn't require the underlying transport protocol to be connection-based; it only requires it to be <em>reliable</em>, or not lose messages (at minimum, presenting an error in such cases). Among the two most common transport protocols on the Internet, TCP is reliable and UDP isn't. HTTP therefore relies on the TCP standard, which is connection-based.</p>
+<p>Before a client and server can exchange an HTTP request/response pair, they must establish a TCP connection, a process which requires several round-trips. The default behavior of HTTP/1.0 is to open a separate TCP connection for each HTTP request/response pair. This is less efficient than sharing a single TCP connection when multiple requests are sent in close succession.</p>
+<p>In order to mitigate this flaw, HTTP/1.1 introduced <em>pipelining</em> (which proved difficult to implement) and <em>persistent connections</em>: the underlying TCP connection can be partially controlled using the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection"><code>Connection</code></a> header. HTTP/2 went a step further by multiplexing messages over a single connection, helping keep the connection warm and more efficient.</p>
+<p>Experiments are in progress to design a better transport protocol more suited to HTTP. For example, Google is experimenting with <a href="https://en.wikipedia.org/wiki/QUIC">QUIC</a> which builds on UDP to provide a more reliable and efficient transport protocol.</p>
+<h2 id="what-can-be-controlled-by-http">What can be controlled by HTTP</h2>
+<p>This extensible nature of HTTP has, over time, allowed for more control and functionality of the Web. Cache and authentication methods were functions handled early in HTTP history. The ability to relax the <em>origin constraint</em>, by contrast, was only added in the 2010s.</p>
+<p>Here is a list of common features controllable with HTTP:</p>
+<ul>
+<li><em><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching">Caching</a></em>: How documents are cached can be controlled by HTTP. The server can instruct proxies and clients about what to cache and for how long. The client can instruct intermediate cache proxies to ignore the stored document.</li>
+<li><em>Relaxing the origin constraint</em>: To prevent snooping and other privacy invasions, Web browsers enforce strict separation between websites. Only pages from the <strong>same origin</strong> can access all the information of a Web page. Though such a constraint is a burden to the server, HTTP headers can relax this strict separation on the server side, allowing a document to become a patchwork of information sourced from different domains; there could even be security-related reasons to do so.</li>
+<li><em>Authentication</em>: Some pages may be protected so that only specific users can access them. Basic authentication may be provided by HTTP, either using the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate"><code>WWW-Authenticate</code></a> and similar headers, or by setting a specific session using <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies">HTTP cookies</a>.</li>
+<li><em><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling">Proxy and tunneling</a></em>: Servers or clients are often located on intranets and hide their true IP address from other computers. HTTP requests then go through proxies to cross this network barrier. Not all proxies are HTTP proxies. The SOCKS protocol, for example, operates at a lower level. Other protocols, like ftp, can be handled by these proxies.</li>
+<li><em>Sessions</em>: Using HTTP cookies allows you to link requests with the state of the server. This creates sessions, despite basic HTTP being a state-less protocol. This is useful not only for e-commerce shopping baskets, but also for any site allowing user configuration of the output.</li>
+</ul>
+<h2 id="http-flow">HTTP flow</h2>
+<p>When a client wants to communicate with a server, either the final server or an intermediate proxy, it performs the following steps:</p>
+<p>1 -&gt;
+Open a TCP connection: The TCP connection is used to send a request, or several, and receive an answer. The client may open a new connection, reuse an existing connection, or open several TCP connections to the servers.</p>
+<p>2 -&gt;
+Send an HTTP message: HTTP messages (before HTTP/2) are human-readable. With HTTP/2, these simple messages are encapsulated in frames, making them impossible to read directly, but the principle remains the same. For example:</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">GET</span> <span class="nn">/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">developer.mozilla.org</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">Accept-Language</span><span class="o">:</span> <span class="l">fr</span>
+</span></code></pre></div>
+<p>3 -&gt;
+Read the response sent by the server, such as:</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">Date</span><span class="o">:</span> <span class="l">Sat, 09 Oct 2010 14:28:02 GMT</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">Server</span><span class="o">:</span> <span class="l">Apache</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Tue, 01 Dec 2009 20:18:22 GMT</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">ETag</span><span class="o">:</span> <span class="l">&quot;51142bc1-7449-479b075b2891b&quot;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="na">Accept-Ranges</span><span class="o">:</span> <span class="l">bytes</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="na">Content-Length</span><span class="o">:</span> <span class="l">29769</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/html</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cp">&lt;!doctype html&gt;</span>… (here come the 29769 bytes of the requested web page)
+</span></code></pre></div>
+<p>4 -&gt; Close or reuse the connection for further requests.</p>
+<p>If HTTP pipelining is activated, several requests can be sent without waiting for the first response to be fully received. HTTP pipelining has proven difficult to implement in existing networks, where old pieces of software coexist with modern versions. HTTP pipelining has been superseded in HTTP/2 with more robust multiplexing requests within a frame.</p>
+<h2 id="http-messages">HTTP Messages</h2>
+<p>HTTP messages, as defined in HTTP/1.1 and earlier, are human-readable. In HTTP/2, these messages are embedded into a binary structure, a <em>frame</em>, allowing optimizations like compression of headers and multiplexing. Even if only part of the original HTTP message is sent in this version of HTTP, the semantics of each message is unchanged and the client reconstitutes (virtually) the original HTTP/1.1 request. It is therefore useful to comprehend HTTP/2 messages in the HTTP/1.1 format.</p>
+<p>There are two types of HTTP messages, requests and responses, each with its own format.</p>
+<h3 id="requests">Requests</h3>
+<p>An example HTTP request:</p>
+<p><img alt="Overview of a HTTP GET request with headers" src="https://mdn.github.io/shared-assets/images/diagrams/http/overview/http-request.svg" /></p>
+<p>Requests consist of the following elements:</p>
+<ul>
+<li>An HTTP <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">method</a>, usually a verb like <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET"><code>GET</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"><code>POST</code></a>, or a noun like <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS"><code>OPTIONS</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD"><code>HEAD</code></a> that defines the operation the client wants to perform. Typically, a client wants to fetch a resource (using <code>GET</code>) or post the value of an <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms">HTML form</a> (using <code>POST</code>), though more operations may be needed in other cases.</li>
+<li>The path of the resource to fetch; the URL of the resource stripped from elements that are obvious from the context, for example without the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Protocol">protocol</a> (<code>http://</code>), the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Domain">domain</a> (here, <code>developer.mozilla.org</code>), or the TCP <a href="https://developer.mozilla.org/en-US/docs/Glossary/Port">port</a> (here, <code>80</code>).</li>
+<li>The version of the HTTP protocol.</li>
+<li>Optional <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">headers</a> that convey additional information for the servers.</li>
+<li>A body, for some methods like <code>POST</code>, similar to those in responses, which contain the resource sent.</li>
+</ul>
+<h3 id="responses">Responses</h3>
+<p>An example response:</p>
+<p><img alt="Overview of a '200 OK' HTTP response to a GET request including response headers." src="https://mdn.github.io/shared-assets/images/diagrams/http/overview/http-response.svg" /></p>
+<p>Responses consist of the following elements:</p>
+<ul>
+<li>The version of the HTTP protocol they follow.</li>
+<li>A <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">status code</a>, indicating if the request was successful or not, and why.</li>
+<li>A status message, a non-authoritative short description of the status code.</li>
+<li>HTTP <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">headers</a>, like those for requests.</li>
+<li>Optionally, a body containing the fetched resource.</li>
+</ul>
+<h2 id="apis-based-on-http">APIs based on HTTP</h2>
+<p>The most commonly used API based on HTTP is the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a>, which can be used to make HTTP requests from JavaScript. The Fetch API replaces the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"><code>XMLHttpRequest</code></a> API.</p>
+<p>Another API, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events">server-sent events</a>, is a one-way service that allows a server to send events to the client, using HTTP as a transport mechanism. Using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventSource"><code>EventSource</code></a> interface, the client opens a connection and establishes event handlers. The client browser automatically converts the messages that arrive on the HTTP stream into appropriate <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event"><code>Event</code></a> objects. Then it delivers them to the event handlers that have been registered for the events' <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/type" title="type"><code>type</code></a> if known, or to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventSource/message_event" title="onmessage"><code>onmessage</code></a> event handler if no type-specific event handler was established.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>HTTP is an extensible protocol that is easy to use. The client-server structure, combined with the ability to add headers, allows HTTP to advance along with the extended capabilities of the Web.</p>
+<p>Though HTTP/2 adds some complexity by embedding HTTP messages in frames to improve performance, the basic structure of messages has stayed the same since HTTP/1.0. Session flow remains basic, allowing it to be investigated and debugged with a <a href="https://firefox-source-docs.mozilla.org/devtools-user/network_monitor/index.html">HTTP network monitor</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.path", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2640 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Azure%20204%20-%20Module%2003%20Revision/">
+      
+      
+        <link rel="next" href="../Azure%20204%20-%20Module%2005%20Revision/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>Azure 204 - Module 04 Revision - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#41-explore-azure-cosmos-db" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure 204 - Module 04 Revision
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Build%20Tools/Vite/001%20-%20CLI/" class="md-tabs__link">
+          
+  
+  Build Tools
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CI-CD/GitHub/001%20-%20Events/001%20-%20Pull%20Request/" class="md-tabs__link">
+          
+  
+  CI-CD
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Caching/Redis/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Caching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Azure%20204%20-%20Module%2001%20Revision/" class="md-tabs__link">
+          
+  
+  Cloud
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Containerization/Docker/001%20-%20Dockerfiles/001%20-%20Reference/" class="md-tabs__link">
+          
+  
+  Containerization
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Databases/Postgres/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Databases
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Frameworks/ASP.NET/01%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Frameworks
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-tabs__link">
+          
+  
+  Languages
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Libraries/JS-TS-Node/htmx/001%20-%20AJAX/001%20-%20Introduction/" class="md-tabs__link">
+          
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Package%20Management/Python/uv/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Package Management
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Projects/DockerLens/000%20-%20DockerLens%20outline/" class="md-tabs__link">
+          
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Proxies/Caddy/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Proxies
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Roles/Backend/001%20-%20Internet/001%20-%20How%20does%20the%20internet%20work/" class="md-tabs__link">
+          
+  
+  Roles
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Build%20Tools/Vite/001%20-%20CLI/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Build Tools
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../CI-CD/GitHub/001%20-%20Events/001%20-%20Pull%20Request/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    CI-CD
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Caching/Redis/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Caching
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure - 204
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Azure - 204
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2001%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 01 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2002%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 02 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2003%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 03 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 04 Revision
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 04 Revision
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-benefits-of-global-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key benefits of global distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elements-in-an-azure-cosmos-db-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements in an Azure Cosmos DB account
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-cosmos-db-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Cosmos DB databases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-cosmos-db-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Cosmos DB containers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-cosmos-db-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Cosmos DB items
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consistency-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consistency Levels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Consistency Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strong-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strong consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bounded-staleness-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bounded staleness consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistent-prefix-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consistent prefix consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventual-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventual consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference Screenshot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosmos-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cosmos APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cosmos APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-for-nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for NoSQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-for-mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for MongoDB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-for-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for PostgreSQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-for-apache-cassandra" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for Apache Cassandra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-for-apache-gremlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for Apache Gremlin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-for-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request units
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2005%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 05 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2006%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 06 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2007%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 07 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2008%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 08 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2009%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 09 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2010%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 10 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2011%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 11 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2012%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 12 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Containerization/Docker/001%20-%20Dockerfiles/001%20-%20Reference/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Containerization
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Databases/Postgres/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Frameworks/ASP.NET/01%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Frameworks
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Languages
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Libraries/JS-TS-Node/htmx/001%20-%20AJAX/001%20-%20Introduction/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Libraries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Package%20Management/Python/uv/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Package Management
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Projects/DockerLens/000%20-%20DockerLens%20outline/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Proxies/Caddy/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Proxies
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Roles/Backend/001%20-%20Internet/001%20-%20How%20does%20the%20internet%20work/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Roles
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-benefits-of-global-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key benefits of global distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elements-in-an-azure-cosmos-db-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elements in an Azure Cosmos DB account
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-cosmos-db-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Cosmos DB databases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-cosmos-db-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Cosmos DB containers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-cosmos-db-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Cosmos DB items
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consistency-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consistency Levels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Consistency Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strong-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strong consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bounded-staleness-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bounded staleness consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistent-prefix-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consistent prefix consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventual-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventual consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference Screenshot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosmos-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cosmos APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cosmos APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-for-nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for NoSQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-for-mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for MongoDB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-for-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for PostgreSQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-for-apache-cassandra" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for Apache Cassandra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-for-apache-gremlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for Apache Gremlin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-for-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      API for Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request units
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p>Azure Cosmos DB is a globally distributed database system that allows you to read and write data from the local replicas of your database and it transparently replicates the data to all the regions associated with your Cosmos account.</p>
+<p>After completing this module, you'll be able to:</p>
+<ul>
+<li>Identify the key benefits provided by Azure Cosmos DB</li>
+<li>Describe the elements in an Azure Cosmos DB account and how they're organized</li>
+<li>Explain the different consistency levels and choose the correct one for your project</li>
+<li>Explore the APIs supported in Azure Cosmos DB and choose the appropriate API for your solution</li>
+<li>Describe how request units impact costs</li>
+<li>Create Azure Cosmos DB resources by using the Azure portal.</li>
+<li>Identify classes and methods used to create resources</li>
+<li>Create resources by using the Azure Cosmos DB .NET v3 SDK</li>
+<li>Write stored procedures, triggers, and user-defined functions by using JavaScript</li>
+<li>Implement change feed notifications</li>
+</ul>
+<h1 id="41-explore-azure-cosmos-db">4.1 - Explore Azure Cosmos DB</h1>
+<p>Azure <strong>Cosmos</strong> DB is a fully managed NoSQL database designed to provide low latency, elastic scalability of throughput, well-defined semantics for data consistency, and high availability.</p>
+<p>You can configure your databases to be globally distributed and available in any of the Azure regions. To lower the latency, place the data close to where your users are. Choosing the required regions depends on the global reach of your application and where your users are located.</p>
+<p>With Azure Cosmos DB, you can add or remove the regions associated with your account at any time. Your application doesn't need to be paused or redeployed to add or remove a region.</p>
+<h2 id="key-benefits-of-global-distribution">Key benefits of global distribution</h2>
+<p>With its novel multi-master replication protocol, every region supports both writes and reads. The multi-master capability also enables:</p>
+<ul>
+<li>Unlimited elastic write and read scalability.</li>
+<li>99.999% read and write availability all around the world.</li>
+<li>Guaranteed reads and writes served in less than 10 milliseconds at the 99th percentile.</li>
+</ul>
+<p>Your application can perform near real-time reads and writes against all the regions you chose for your database. Azure Cosmos DB internally handles the data replication between regions with consistency level guarantees of the level you selected.</p>
+<p>Running a database in multiple regions worldwide increases the availability of a database. If one region is unavailable, other regions automatically handle application requests. Azure Cosmos DB offers 99.999% read and write availability for multi-region databases.</p>
+<h2 id="elements-in-an-azure-cosmos-db-account">Elements in an Azure Cosmos DB account</h2>
+<p>Currently, you can create a maximum of 50 Azure Cosmos DB accounts under an Azure subscription (can be increased via support request). After you create an account under your Azure subscription, you can manage the data in your account by creating databases, containers, and items.</p>
+<p>The following image shows the hierarchy of different entities in an Azure Cosmos DB account:</p>
+<p><img alt="Image showing the hierarchy of Azure Cosmos DB entities: Database accounts are at the top, databases are grouped under accounts, and containers are grouped under databases." src="https://learn.microsoft.com/en-us/training/wwl-azure/explore-azure-cosmos-db/media/cosmos-entities.png" /></p>
+<h2 id="azure-cosmos-db-databases">Azure Cosmos DB databases</h2>
+<p>You can create one or multiple Azure Cosmos DB databases under your account. A database is analogous to a namespace. A database is the unit of management for a set of Azure Cosmos DB containers.</p>
+<h2 id="azure-cosmos-db-containers">Azure Cosmos DB containers</h2>
+<p>An Azure Cosmos DB container is where data is stored. Unlike most relational databases, which scale up with larger sizes of virtual machines, Azure Cosmos DB scales out.</p>
+<p>Data is stored on one or more servers called <em>partitions</em>. To increase partitions, you increase throughput, or they grow automatically as storage increases. This relationship provides a virtually unlimited amount of throughput and storage for a container.</p>
+<p>When you create a container, you need to supply a partition key. The partition key is a property that you select from your items to help Azure Cosmos DB distribute the data efficiently across partitions. Azure Cosmos DB uses the value of this property to route data to the appropriate partition to be written, updated, or deleted. You can also use the partition key in the <code>WHERE</code> clause in queries for efficient data retrieval.</p>
+<p>The underlying storage mechanism for data in Azure Cosmos DB is called a <em>physical partition</em>. Physical partitions can have a throughput amount up to 10,000 Request Units per second, and they can store up to 50 GB of data. Azure Cosmos DB abstracts this partitioning concept with a logical partition, which can store up to 20 GB of data.</p>
+<p>When you create a container, you configure throughput in one of the following modes:</p>
+<ul>
+<li><strong>Dedicated throughput</strong>: The throughput on a container is exclusively reserved for that container. There are two types of dedicated throughput: standard and autoscale.</li>
+<li><strong>Shared throughput</strong>: Throughput is specified at the database level and then shared with up to 25 containers within the database. Sharing of throughput excludes containers that are configured with their own dedicated throughput.</li>
+</ul>
+<h2 id="azure-cosmos-db-items">Azure Cosmos DB items</h2>
+<p>Depending on which API you use, individual data entities can be represented in various ways:</p>
+<table>
+<thead>
+<tr>
+<th>Azure Cosmos DB entity</th>
+<th>API for NoSQL</th>
+<th>API for Cassandra</th>
+<th>API for MongoDB</th>
+<th>API for Gremlin</th>
+<th>API for Table</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Azure Cosmos DB item</td>
+<td>Item</td>
+<td>Row</td>
+<td>Document</td>
+<td>Node or edge</td>
+<td>Item</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consistency-levels">Consistency Levels</h2>
+<p>Azure Cosmos DB approaches data consistency as a spectrum of choices instead of two extremes. Strong consistency and eventual consistency are at the ends of the spectrum, but there are many consistency choices along the spectrum. Developers can use these options to make precise choices and granular tradeoffs with respect to high availability and performance.</p>
+<p>Azure Cosmos DB offers five well-defined levels. From strongest to weakest, the levels are:</p>
+<ul>
+<li>Strong</li>
+<li>Bounded staleness</li>
+<li>Session</li>
+<li>Consistent prefix</li>
+<li>Eventual</li>
+</ul>
+<p>Each level provides availability and performance tradeoffs. The following image shows the different consistency levels as a spectrum.</p>
+<p><img alt="Image showing data consistency as a spectrum." src="https://learn.microsoft.com/en-us/training/wwl-azure/explore-azure-cosmos-db/media/five-consistency-levels.png" /></p>
+<p>The consistency levels are region-agnostic and are guaranteed for all operations, regardless of:</p>
+<ul>
+<li>The region where the reads and writes are served</li>
+<li>The number of regions associated with your Azure Cosmos DB account</li>
+<li>Whether your account is configured with a single or multiple write regions.</li>
+</ul>
+<p>You can configure the default consistency level on your Azure Cosmos DB account at any time. The default consistency level configured on your account applies to all Azure Cosmos DB databases and containers under that account. All reads and queries issued against a container or a database use the specified consistency level by default.</p>
+<p>Read consistency applies to a single read operation scoped within a logical partition. The read operation can be issued by a remote client or a stored procedure.</p>
+<h3 id="strong-consistency">Strong consistency</h3>
+<p>Strong consistency offers a linearizability guarantee. Linearizability refers to serving requests concurrently. The reads are guaranteed to return the most recent committed version of an item. A client never sees an uncommitted or partial write. Users are always guaranteed to read the latest committed write.</p>
+<h3 id="bounded-staleness-consistency">Bounded staleness consistency</h3>
+<p>In bounded staleness consistency, the lag of data between any two regions is always less than a specified amount. The amount can be "K" versions (that is, "updates") of an item or by "T" time intervals, whichever is reached first. In other words, when you choose bounded staleness, the maximum "staleness" of the data in any region can be configured in two ways:</p>
+<ul>
+<li>The number of versions (<em>K</em>) of the item</li>
+<li>The time interval (<em>T</em>) reads might lag behind the writes</li>
+</ul>
+<p>Bounded Staleness is beneficial primarily to single-region write accounts with two or more regions. If the data lag in a region (determined per physical partition) exceeds the configured staleness value, writes for that partition are throttled until staleness is back within the configured upper bound.</p>
+<p>For a single-region account, Bounded Staleness provides the same write consistency guarantees as Session and Eventual Consistency. With Bounded Staleness, data is replicated to a local majority (three replicas in a four replica set) in the single region.</p>
+<h3 id="session-consistency">Session consistency</h3>
+<p>In session consistency, within a single client session, reads are guaranteed to honor the read-your-writes, and write-follows-reads guarantees. This guarantee assumes a single “writer” session or sharing the session token for multiple writers.</p>
+<p>Like all consistency levels weaker than Strong, writes are replicated to a minimum of three replicas (in a four replica set) in the local region, with asynchronous replication to all other regions.</p>
+<h3 id="consistent-prefix-consistency">Consistent prefix consistency</h3>
+<p>In consistent prefix, updates made as single document writes see eventual consistency. Updates made as a batch within a transaction, are returned consistent to the transaction in which they were committed. Write operations within a transaction of multiple documents are always visible together.</p>
+<p>Assume two write operations are performed on documents <em>Doc 1</em> and <em>Doc 2</em>, within transactions T1 and T2. When client does a read in any replica, the user sees either “<em>Doc 1</em> v1 and <em>Doc 2</em> v1” or “<em>Doc 1</em> v2 and <em>Doc 2</em> v2”, but never “<em>Doc 1</em> v1 and <em>Doc 2</em> v2” or “<em>Doc 1</em> v2 and <em>Doc 2</em> v1” for the same read or query operation.</p>
+<h3 id="eventual-consistency">Eventual consistency</h3>
+<p>In eventual consistency, there's no ordering guarantee for reads. In the absence of any further writes, the replicas eventually converge.</p>
+<p>Eventual consistency is the weakest form of consistency because a client might read the values that are older than the ones it read before. Eventual consistency is ideal where the application doesn't require any ordering guarantees. Examples include count of Retweets, Likes, or nonthreaded comments.</p>
+<h3 id="reference-screenshot">Reference Screenshot</h3>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240729102254.png" /></p>
+<h2 id="cosmos-apis">Cosmos APIs</h2>
+<p>Azure Cosmos DB offers multiple database APIs, which include NoSQL, MongoDB, PostgreSQL, Cassandra, Gremlin, and Table. By using these APIs, you can model real world data using documents, key-value, graph, and column-family data models. These APIs allow your applications to treat Azure Cosmos DB as if it were various other databases technologies, without the overhead of management, and scaling approaches. Azure Cosmos DB helps you to use the ecosystems, tools, and skills you already have for data modeling and querying with its various APIs.</p>
+<p>### Considerations when choosing an API\</p>
+<p>API for NoSQL is native to Azure Cosmos DB.</p>
+<p>API for MongoDB, PostgreSQL, Cassandra, Gremlin, and Table implement the wire protocol of open-source database engines. These APIs are best suited if the following conditions are true:</p>
+<ul>
+<li>If you have existing MongoDB, PostgreSQL Cassandra, or Gremlin applications</li>
+<li>If you don't want to rewrite your entire data access layer</li>
+<li>If you want to use the open-source developer ecosystem, client-drivers, expertise, and resources for your database</li>
+</ul>
+<h3 id="api-for-nosql">API for NoSQL</h3>
+<p>The Azure Cosmos DB API for NoSQL stores data in document format. It offers the best end-to-end experience as we have full control over the interface, service, and the SDK client libraries. Any new feature that is rolled out to Azure Cosmos DB is first available on API for NoSQL accounts. NoSQL accounts provide support for querying items using the Structured Query Language (SQL) syntax.</p>
+<h3 id="api-for-mongodb">API for MongoDB</h3>
+<p>The Azure Cosmos DB API for MongoDB stores data in a document structure, via BSON format. It's compatible with MongoDB wire protocol; however, it doesn't use any native MongoDB related code. The API for MongoDB is a great choice if you want to use the broader MongoDB ecosystem and skills, without compromising on using Azure Cosmos DB features.</p>
+<h3 id="api-for-postgresql">API for PostgreSQL</h3>
+<p>Azure Cosmos DB for PostgreSQL is a managed service for running PostgreSQL at any scale, with the <a href="https://github.com/citusdata/citus">Citus open source</a> superpower of distributed tables. It stores data either on a single node, or distributed in a multi-node configuration.</p>
+<h3 id="api-for-apache-cassandra">API for Apache Cassandra</h3>
+<p>The Azure Cosmos DB API for Cassandra stores data in column-oriented schema. Apache Cassandra offers a highly distributed, horizontally scaling approach to storing large volumes of data while offering a flexible approach to a column-oriented schema. API for Cassandra in Azure Cosmos DB aligns with this philosophy to approaching distributed NoSQL databases. This API for Cassandra is wire protocol compatible with native Apache Cassandra.</p>
+<h3 id="api-for-apache-gremlin">API for Apache Gremlin</h3>
+<p>The Azure Cosmos DB API for Gremlin allows users to make graph queries and stores data as edges and vertices.</p>
+<p>Use the API for Gremlin for scenarios:</p>
+<ul>
+<li>Involving dynamic data</li>
+<li>Involving data with complex relations</li>
+<li>Involving data that is too complex to be modeled with relational databases</li>
+<li>If you want to use the existing Gremlin ecosystem and skills</li>
+</ul>
+<h3 id="api-for-table">API for Table</h3>
+<p>The Azure Cosmos DB API for Table stores data in key/value format. If you're currently using Azure Table storage, you might see some limitations in latency, scaling, throughput, global distribution, index management, low query performance. API for Table overcomes these limitations and the recommendation is to migrate your app if you want to use the benefits of Azure Cosmos DB. API for Table only supports OLTP scenarios.</p>
+<h2 id="request-units">Request units</h2>
+<p>With Azure Cosmos DB, you pay for the throughput you provision and the storage you consume on an hourly basis. Throughput must be provisioned to ensure that sufficient system resources are available for your Azure Cosmos database always.</p>
+<p>The cost of all database operations is normalized in Azure Cosmos DB and expressed by <em>request units</em> (or RUs, for short). A request unit represents the system resources such as CPU, IOPS, and memory that are required to perform the database operations supported by Azure Cosmos DB.</p>
+<p>The cost to do a point read, which is fetching a single item by its ID and partition key value, for a 1-KB item is 1RU. All other database operations are similarly assigned a cost using RUs. No matter which API you use to interact with your Azure Cosmos container, costs are measured by RUs. Whether the database operation is a write, point read, or query, costs are measured in RUs.</p>
+<p>The following image shows the high-level idea of RUs:</p>
+<p><img alt="Image showing how database operations consume request units." src="https://learn.microsoft.com/en-us/training/wwl-azure/explore-azure-cosmos-db/media/request-units.png" /></p>
+<p>The type of Azure Cosmos DB account you're using determines the way consumed RUs get charged. There are three modes in which you can create an account:</p>
+<ul>
+<li><strong>Provisioned throughput mode</strong>: In this mode, you provision the number of RUs for your application on a per-second basis in increments of 100 RUs per second. To scale the provisioned throughput for your application, you can increase or decrease the number of RUs at any time in increments or decrements of 100 RUs. You can make your changes either programmatically or by using the Azure portal. You can provision throughput at container and database granularity level.</li>
+<li><strong>Serverless mode</strong>: In this mode, you don't have to provision any throughput when creating resources in your Azure Cosmos DB account. At the end of your billing period, you get billed for the number of request units that have been consumed by your database operations.</li>
+<li><strong>Autoscale mode:</strong> In this mode, you can automatically and instantly scale the throughput (RU/s) of your database or container based on its usage. This scaling operation doesn't affect the availability, latency, throughput, or performance of the workload. This mode is well suited for mission-critical workloads that have variable or unpredictable traffic patterns, and require SLAs on high performance and scale.</li>
+</ul>
+<h1 id="42-work-with-cosmosdb">4.2 - Work with CosmosDB</h1>
+<h2 id="cosmosclient">CosmosClient</h2>
+<p>Creates a new <code>CosmosClient</code> with a connection string. <code>CosmosClient</code> is thread-safe. The recommendation is to maintain a single instance of <code>CosmosClient</code> per lifetime of the application that enables efficient connection management and performance.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">CosmosClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CosmosClient</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+</span></code></pre></div>
+<h2 id="database-examples">Database examples</h2>
+<h3 id="create-a-database">Create a database</h3>
+<p>The <code>CosmosClient.CreateDatabaseAsync</code> method throws an exception if a database with the same name already exists.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// New instance of Database class referencing the server-side database</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Database</span><span class="w"> </span><span class="n">database1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">CreateDatabaseAsync</span><span class="p">(</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;adventureworks-1&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">);</span>
+</span></code></pre></div>
+<p>The <code>CosmosClient.CreateDatabaseIfNotExistsAsync</code> checks if a database exists, and if it doesn't, creates it. Only the database <code>id</code> is used to verify if there's an existing database.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// New instance of Database class referencing the server-side database</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Database</span><span class="w"> </span><span class="n">database2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">CreateDatabaseIfNotExistsAsync</span><span class="p">(</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;adventureworks-2&quot;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="read-a-database-by-id">Read a database by ID</h3>
+<p>Reads a database from the Azure Cosmos DB service as an asynchronous operation.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">DatabaseResponse</span><span class="w"> </span><span class="n">readResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">database</span><span class="p">.</span><span class="n">ReadAsync</span><span class="p">();</span>
+</span></code></pre></div>
+<h3 id="delete-a-database">Delete a database</h3>
+<p>Delete a Database as an asynchronous operation.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">await</span><span class="w"> </span><span class="n">database</span><span class="p">.</span><span class="n">DeleteAsync</span><span class="p">();</span>
+</span></code></pre></div>
+<h2 id="container-examples">Container examples</h2>
+<h3 id="create-a-container">Create a container</h3>
+<p>The <code>Database.CreateContainerIfNotExistsAsync</code> method checks if a container exists, and if it doesn't, it creates it. Only the container <code>id</code> is used to verify if there's an existing container.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// Set throughput to the minimum value of 400 RU/s</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">ContainerResponse</span><span class="w"> </span><span class="n">simpleContainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">database</span><span class="p">.</span><span class="n">CreateContainerIfNotExistsAsync</span><span class="p">(</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">containerId</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">partitionKeyPath</span><span class="p">:</span><span class="w"> </span><span class="n">partitionKey</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">throughput</span><span class="p">:</span><span class="w"> </span><span class="m">400</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="get-a-container-by-id">Get a container by ID</h3>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Container</span><span class="w"> </span><span class="n">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">database</span><span class="p">.</span><span class="n">GetContainer</span><span class="p">(</span><span class="n">containerId</span><span class="p">);</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">ContainerProperties</span><span class="w"> </span><span class="n">containerProperties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">ReadContainerAsync</span><span class="p">();</span>
+</span></code></pre></div>
+<h3 id="delete-a-container">Delete a container</h3>
+<p>Delete a Container as an asynchronous operation.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">await</span><span class="w"> </span><span class="n">database</span><span class="p">.</span><span class="n">GetContainer</span><span class="p">(</span><span class="n">containerId</span><span class="p">).</span><span class="n">DeleteContainerAsync</span><span class="p">();</span>
+</span></code></pre></div>
+<h2 id="item-examples">Item examples</h2>
+<h3 id="create-an-item">Create an item</h3>
+<p>Use the <code>Container.CreateItemAsync</code> method to create an item. The method requires a JSON serializable object that must contain an <code>id</code> property, and a <code>partitionKey</code>.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">ItemResponse</span><span class="o">&lt;</span><span class="n">SalesOrder</span><span class="o">&gt;</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">CreateItemAsync</span><span class="p">(</span><span class="n">salesOrder</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PartitionKey</span><span class="p">(</span><span class="n">salesOrder</span><span class="p">.</span><span class="n">AccountNumber</span><span class="p">));</span>
+</span></code></pre></div>
+<h3 id="read-an-item">Read an item</h3>
+<p>Use the <code>Container.ReadItemAsync</code> method to read an item. The method requires type to serialize the item to along with an <code>id</code> property, and a <code>partitionKey</code>.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;[id]&quot;</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kt">string</span><span class="w"> </span><span class="n">accountNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;[partition-key]&quot;</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">ItemResponse</span><span class="o">&lt;</span><span class="n">SalesOrder</span><span class="o">&gt;</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">ReadItemAsync</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PartitionKey</span><span class="p">(</span><span class="n">accountNumber</span><span class="p">));</span>
+</span></code></pre></div>
+<h3 id="query-an-item">Query an item</h3>
+<p>The <code>Container.GetItemQueryIterator</code> method creates a query for items under a container in an Azure Cosmos database using a SQL statement with parameterized values. It returns a <code>FeedIterator</code>.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">QueryDefinition</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">QueryDefinition</span><span class="p">(</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="s">&quot;select * from sales s where s.AccountNumber = @AccountInput &quot;</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="p">.</span><span class="n">WithParameter</span><span class="p">(</span><span class="s">&quot;@AccountInput&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Account1&quot;</span><span class="p">);</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">FeedIterator</span><span class="o">&lt;</span><span class="n">SalesOrder</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resultSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">GetItemQueryIterator</span><span class="o">&lt;</span><span class="n">SalesOrder</span><span class="o">&gt;</span><span class="p">(</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="n">query</span><span class="p">,</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="n">requestOptions</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">QueryRequestOptions</span><span class="p">()</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">        </span><span class="n">PartitionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PartitionKey</span><span class="p">(</span><span class="s">&quot;Account1&quot;</span><span class="p">),</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">        </span><span class="n">MaxItemCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="p">});</span>
+</span></code></pre></div>
+<h2 id="az-commands-for-cosmosdb">AZ Commands for CosmosDB</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>az<span class="w"> </span>group<span class="w"> </span>create<span class="w"> </span>--location<span class="w"> </span>&lt;myLocation&gt;<span class="w"> </span>--name<span class="w"> </span>az204-cosmos-rg
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>az<span class="w"> </span>cosmosdb<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>&lt;myCosmosDBacct&gt;<span class="w"> </span>--resource-group<span class="w"> </span>az204-cosmos-rg
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Retrieve the primary key</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>az<span class="w"> </span>cosmosdb<span class="w"> </span>keys<span class="w"> </span>list<span class="w"> </span>--name<span class="w"> </span>&lt;myCosmosDBacct&gt;<span class="w"> </span>--resource-group<span class="w"> </span>az204-cosmos-rg
+</span></code></pre></div>
+<h2 id="stored-procedures">Stored procedures</h2>
+<p>Azure Cosmos DB provides language-integrated, transactional execution of JavaScript that lets you write <strong>stored procedures</strong>, <strong>triggers</strong>, and <strong>user-defined functions (UDFs)</strong>. To call a stored procedure, trigger, or user-defined function, you need to register it. For more information, see <a href="https://learn.microsoft.com/en-us/azure/cosmos-db/sql/how-to-use-stored-procedures-triggers-udfs">How to work with stored procedures, triggers, user-defined functions in Azure Cosmos DB</a>.</p>
+<h3 id="writing-stored-procedures">Writing stored procedures</h3>
+<p>Stored procedures can create, update, read, query, and delete items inside an Azure Cosmos container. Stored procedures are registered per collection, and can operate on any document or an attachment present in that collection.</p>
+<p>Here's a simple stored procedure that returns a "Hello World" response.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">helloWorldStoredProc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;helloWorld&quot;</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nx">serverScript</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getContext</span><span class="p">();</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">getResponse</span><span class="p">();</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">        </span><span class="nx">response</span><span class="p">.</span><span class="nx">setBody</span><span class="p">(</span><span class="s2">&quot;Hello, World&quot;</span><span class="p">);</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The context object provides access to all operations that can be performed in Azure Cosmos DB, and access to the request and response objects. In this case, you use the response object to set the body of the response to be sent back to the client.</p>
+<h3 id="create-an-item-using-stored-procedure">Create an item using stored procedure</h3>
+<p>When you create an item by using a stored procedure, the item is inserted into the Azure Cosmos DB container and an ID for the newly created item is returned. Creating an item is an asynchronous operation and depends on the JavaScript callback functions. The callback function has two parameters: one for the error object in case the operation fails, and another for a return value, in this case, the created object. Inside the callback, you can either handle the exception or throw an error. If a callback isn't provided and there's an error, the Azure Cosmos DB runtime throws an error.</p>
+<p>The stored procedure also includes a parameter to set the description as a boolean value. When the parameter is set to true and the description is missing, the stored procedure throws an exception. Otherwise, the rest of the stored procedure continues to run.</p>
+<p>This stored procedure takes as input <code>documentToCreate</code>, the body of a document to be created in the current collection. All such operations are asynchronous and depend on JavaScript function callbacks.</p>
+<div class="language-JavaScript highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">createDocumentStoredProc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;createMyDocument&quot;</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createMyDocument</span><span class="p">(</span><span class="nx">documentToCreate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getContext</span><span class="p">();</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">getCollection</span><span class="p">();</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">accepted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">collection</span><span class="p">.</span><span class="nx">createDocument</span><span class="p">(</span><span class="nx">collection</span><span class="p">.</span><span class="nx">getSelfLink</span><span class="p">(),</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">              </span><span class="nx">documentToCreate</span><span class="p">,</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">              </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">documentCreated</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">                  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">                  </span><span class="nx">context</span><span class="p">.</span><span class="nx">getResponse</span><span class="p">().</span><span class="nx">setBody</span><span class="p">(</span><span class="nx">documentCreated</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">              </span><span class="p">});</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">accepted</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="arrays-as-input-parameters-for-stored-procedures">Arrays as input parameters for stored procedures</h3>
+<p>When defining a stored procedure in the Azure portal, input parameters are always sent as a string to the stored procedure. Even if you pass an array of strings as an input, the array is converted to string and sent to the stored procedure. To work around this, you can define a function within your stored procedure to parse the string as an array. The following code shows how to parse a string input parameter as an array:</p>
+<div class="language-JavaScript highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">sample</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">)</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">        </span><span class="c1">// do something here</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="p">});</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="bounded-execution">Bounded execution</h4>
+<p>All Azure Cosmos DB operations must complete within a limited amount of time. Stored procedures have a limited amount of time to run on the server. All collection functions return a Boolean value that represents whether that operation completes or not.</p>
+<h3 id="transactions-within-stored-procedures">Transactions within stored procedures</h3>
+<p>You can implement transactions on items within a container by using a stored procedure. JavaScript functions can implement a continuation-based model to batch or resume execution. The continuation value can be any value of your choice and your applications can then use this value to resume a transaction from a new starting point. The following diagram depicts how the transaction continuation model can be used to repeat a server-side function until the function finishes its entire processing workload.</p>
+<p><img alt="This diagram depicts how the transaction continuation model can be used to repeat a server-side function until the function finishes its entire processing workload." src="https://learn.microsoft.com/en-us/training/wwl-azure/work-with-cosmos-db/media/transaction-continuation-model.png" /></p>
+<h2 id="create-triggers-and-user-defined-functions">Create triggers and user-defined functions</h2>
+<p>Azure Cosmos DB supports pretriggers and post-triggers. Pretriggers are executed before modifying a database item and post-triggers are executed after modifying a database item. Triggers aren't automatically executed. They must be specified for each database operation where you want them to execute. After you define a trigger, you should register it by using the Azure Cosmos DB SDKs.</p>
+<p>For examples of how to register and call a trigger, see <a href="https://learn.microsoft.com/en-us/azure/cosmos-db/sql/how-to-use-stored-procedures-triggers-udfs#pre-triggers">pretriggers</a> and <a href="https://learn.microsoft.com/en-us/azure/cosmos-db/sql/how-to-use-stored-procedures-triggers-udfs#post-triggers">post-triggers</a>.</p>
+<h3 id="pretriggers">Pretriggers</h3>
+<p>The following example shows how a pretrigger is used to validate the properties of an Azure Cosmos item that is being created. It adds a timestamp property to a newly added item if it doesn't contain one.</p>
+<div class="language-JavaScript highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">validateToDoItemTimestamp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getContext</span><span class="p">();</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">getRequest</span><span class="p">();</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="c1">// item to be created in the current operation</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">itemToCreate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">getBody</span><span class="p">();</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="c1">// validate properties</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">itemToCreate</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">ts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">        </span><span class="nx">itemToCreate</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ts</span><span class="p">.</span><span class="nx">getTime</span><span class="p">();</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">    </span><span class="c1">// update the item that will be created</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">    </span><span class="nx">request</span><span class="p">.</span><span class="nx">setBody</span><span class="p">(</span><span class="nx">itemToCreate</span><span class="p">);</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Pretriggers can't have any input parameters. The request object in the trigger is used to manipulate the request message associated with the operation. In the previous example, the pretrigger is run when creating an Azure Cosmos item and the request message body contains the item to be created in JSON format.</p>
+<p>When triggers are registered, you can specify the operations that it can run with. This trigger should be created with a <code>TriggerOperation</code> value of <code>TriggerOperation.Create</code>, using the trigger in a replace operation isn't permitted.</p>
+<p>For examples of how to register and call a pretrigger, visit the <a href="https://learn.microsoft.com/en-us/azure/cosmos-db/sql/how-to-use-stored-procedures-triggers-udfs#pre-triggers">pretriggers</a> article.</p>
+<h3 id="post-triggers">Post-triggers</h3>
+<p>The following example shows a post-trigger. This trigger queries for the metadata item and updates it with details about the newly created item.</p>
+<div class="language-JavaScript highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">updateMetadata</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getContext</span><span class="p">();</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">getCollection</span><span class="p">();</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">getResponse</span><span class="p">();</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="c1">// item that was created</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="kd">var</span><span class="w"> </span><span class="nx">createdItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">getBody</span><span class="p">();</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="c1">// query for metadata document</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="kd">var</span><span class="w"> </span><span class="nx">filterQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;SELECT * FROM root r WHERE r.id = &quot;_metadata&quot;&#39;</span><span class="p">;</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="kd">var</span><span class="w"> </span><span class="nx">accept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">container</span><span class="p">.</span><span class="nx">queryDocuments</span><span class="p">(</span><span class="nx">container</span><span class="p">.</span><span class="nx">getSelfLink</span><span class="p">(),</span><span class="w"> </span><span class="nx">filterQuery</span><span class="p">,</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="nx">updateMetadataCallback</span><span class="p">);</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">accept</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="s2">&quot;Unable to update metadata, abort&quot;</span><span class="p">;</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="kd">function</span><span class="w"> </span><span class="nx">updateMetadataCallback</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">items</span><span class="p">,</span><span class="w"> </span><span class="nx">responseOptions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="s1">&#39;Unable to find metadata document&#39;</span><span class="p">;</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">metadataItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">items</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">        </span><span class="c1">// update metadata</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">        </span><span class="nx">metadataItem</span><span class="p">.</span><span class="nx">createdItems</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">        </span><span class="nx">metadataItem</span><span class="p">.</span><span class="nx">createdNames</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">createdItem</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">accept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">container</span><span class="p">.</span><span class="nx">replaceDocument</span><span class="p">(</span><span class="nx">metadataItem</span><span class="p">.</span><span class="nx">_self</span><span class="p">,</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="w">            </span><span class="nx">metadataItem</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">itemReplaced</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="s2">&quot;Unable to update metadata, abort&quot;</span><span class="p">;</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="w">            </span><span class="p">});</span>
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">accept</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="s2">&quot;Unable to update metadata, abort&quot;</span><span class="p">;</span>
+</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-18-30"><a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-18-31"><a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>One thing that is important to note is the transactional execution of triggers in Azure Cosmos DB. The post-trigger runs as part of the same transaction for the underlying item itself. An exception during the post-trigger execution fails the whole transaction. Anything committed is rolled back and an exception returned.</p>
+<h3 id="user-defined-functions">User-defined functions</h3>
+<p>The following sample creates a UDF to calculate income tax for various income brackets. This user-defined function would then be used inside a query. For the purposes of this example assume there's a container called "Incomes" with properties as follows:</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">   </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User One&quot;</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">   </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">   </span><span class="nt">&quot;income&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">70000</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The following code sample is a function definition to calculate income tax for various income brackets:</p>
+<div class="language-JavaScript highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">tax</span><span class="p">(</span><span class="nx">income</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">income</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="s1">&#39;no input&#39;</span><span class="p">;</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">income</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">income</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">income</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10000</span><span class="p">)</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">income</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">        </span><span class="k">else</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">income</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.4</span><span class="p">;</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="explore-change-feed-in-azure-cosmos-db">Explore change feed in Azure Cosmos DB</h2>
+<p>Change feed in Azure Cosmos DB is a persistent record of changes to a container in the order they occur. Change feed support in Azure Cosmos DB works by listening to an Azure Cosmos DB container for any changes. It then outputs the sorted list of documents that were changed in the order in which they were modified. The persisted changes can be processed asynchronously and incrementally, and the output can be distributed across one or more consumers for parallel processing.</p>
+<h3 id="change-feed-and-different-operations">Change feed and different operations</h3>
+<p>Today, you see all inserts and updates in the change feed. You can't filter the change feed for a specific type of operation. Currently change feed doesn't log delete operations. As a workaround, you can add a soft marker on the items that are being deleted. For example, you can add an attribute in the item called "deleted," set its value to "true," and then set a time-to-live (TTL) value on the item. Setting the TTL ensures that the item is automatically deleted.</p>
+<h3 id="reading-azure-cosmos-db-change-feed">Reading Azure Cosmos DB change feed</h3>
+<p>You can work with the Azure Cosmos DB change feed using either a push model or a pull model. With a push model, the change feed processor pushes work to a client that has business logic for processing this work. However, the complexity in checking for work and storing state for the last processed work is handled within the change feed processor.</p>
+<p>With a pull model, the client has to pull the work from the server. In this case, the client has business logic for processing work and also stores state for the last processed work. The client handles load balancing across multiple clients processing work in parallel, and handling errors.</p>
+<p>Note</p>
+<p>It is recommended to use the push model because you won't need to worry about polling the change feed for future changes, storing state for the last processed change, and other benefits.</p>
+<p>Most scenarios that use the Azure Cosmos DB change feed use one of the push model options. However, there are some scenarios where you might want the extra low level control of the pull model. The extra low-level control includes:</p>
+<ul>
+<li>Reading changes from a particular partition key</li>
+<li>Controlling the pace at which your client receives changes for processing</li>
+<li>Doing a one-time read of the existing data in the change feed (for example, to do a data migration)</li>
+</ul>
+<h3 id="reading-change-feed-with-a-push-model">Reading change feed with a push model</h3>
+<p>There are two ways you can read from the change feed with a push model: Azure Functions Azure Cosmos DB triggers, and the change feed processor library. Azure Functions uses the change feed processor behind the scenes, so these are both similar ways to read the change feed. Think of Azure Functions as simply a hosting platform for the change feed processor, not an entirely different way of reading the change feed. Azure Functions uses the change feed processor behind the scenes. It automatically parallelizes change processing across your container's partitions.</p>
+<h4 id="azure-functions">Azure Functions</h4>
+<p>You can create small reactive Azure Functions that are automatically triggered on each new event in your Azure Cosmos DB container's change feed. With the <a href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-trigger">Azure Functions trigger for Azure Cosmos DB</a>, you can use the Change Feed Processor's scaling and reliable event detection functionality without the need to maintain any worker infrastructure.</p>
+<p><img alt="Diagram showing the change feed triggering Azure Functions for processing." src="https://learn.microsoft.com/en-us/training/wwl-azure/work-with-cosmos-db/media/functions-change-feed.png" /></p>
+<h4 id="change-feed-processor">Change feed processor</h4>
+<p>The change feed processor is part of the Azure Cosmos DB <a href="https://github.com/Azure/azure-cosmos-dotnet-v3">.NET V3</a> and <a href="https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos/azure-cosmos">Java V4</a> SDKs. It simplifies the process of reading the change feed and distributes the event processing across multiple consumers effectively.</p>
+<p>There are four main components of implementing the change feed processor:</p>
+<ol>
+<li><strong>The monitored container</strong>: The monitored container has the data from which the change feed is generated. Any inserts and updates to the monitored container are reflected in the change feed of the container.</li>
+<li><strong>The lease container</strong>: The lease container acts as a state storage and coordinates processing the change feed across multiple workers. The lease container can be stored in the same account as the monitored container or in a separate account.</li>
+<li><strong>The compute instance</strong>: A compute instance hosts the change feed processor to listen for changes. Depending on the platform, it might represented by a VM, a kubernetes pod, an Azure App Service instance, an actual physical machine. It has a unique identifier referenced as the instance name throughout this article.</li>
+<li><strong>The delegate</strong>: The delegate is the code that defines what you, the developer, want to do with each batch of changes that the change feed processor reads.</li>
+</ol>
+<p>When implementing the change feed processor the point of entry is always the monitored container, from a <code>Container</code> instance you call <code>GetChangeFeedProcessorBuilder</code>:</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1">/// &lt;summary&gt;</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="c1">/// Start the Change Feed Processor to listen for changes and process them with the HandleChangesAsync implementation.</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="c1">/// &lt;/summary&gt;</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">ChangeFeedProcessor</span><span class="o">&gt;</span><span class="w"> </span><span class="n">StartChangeFeedProcessorAsync</span><span class="p">(</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="n">CosmosClient</span><span class="w"> </span><span class="n">cosmosClient</span><span class="p">,</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="n">IConfiguration</span><span class="w"> </span><span class="n">configuration</span><span class="p">)</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="p">{</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">databaseName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">configuration</span><span class="p">[</span><span class="s">&quot;SourceDatabaseName&quot;</span><span class="p">];</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">sourceContainerName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">configuration</span><span class="p">[</span><span class="s">&quot;SourceContainerName&quot;</span><span class="p">];</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">leaseContainerName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">configuration</span><span class="p">[</span><span class="s">&quot;LeasesContainerName&quot;</span><span class="p">];</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">    </span><span class="n">Container</span><span class="w"> </span><span class="n">leaseContainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cosmosClient</span><span class="p">.</span><span class="n">GetContainer</span><span class="p">(</span><span class="n">databaseName</span><span class="p">,</span><span class="w"> </span><span class="n">leaseContainerName</span><span class="p">);</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span><span class="n">ChangeFeedProcessor</span><span class="w"> </span><span class="n">changeFeedProcessor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cosmosClient</span><span class="p">.</span><span class="n">GetContainer</span><span class="p">(</span><span class="n">databaseName</span><span class="p">,</span><span class="w"> </span><span class="n">sourceContainerName</span><span class="p">)</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">        </span><span class="p">.</span><span class="n">GetChangeFeedProcessorBuilder</span><span class="o">&lt;</span><span class="n">ToDoItem</span><span class="o">&gt;</span><span class="p">(</span><span class="n">processorName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;changeFeedSample&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">onChangesDelegate</span><span class="p">:</span><span class="w"> </span><span class="n">HandleChangesAsync</span><span class="p">)</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">            </span><span class="p">.</span><span class="n">WithInstanceName</span><span class="p">(</span><span class="s">&quot;consoleHost&quot;</span><span class="p">)</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">            </span><span class="p">.</span><span class="n">WithLeaseContainer</span><span class="p">(</span><span class="n">leaseContainer</span><span class="p">)</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">            </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Starting Change Feed Processor...&quot;</span><span class="p">);</span>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">changeFeedProcessor</span><span class="p">.</span><span class="n">StartAsync</span><span class="p">();</span>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Change Feed Processor started.&quot;</span><span class="p">);</span>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">changeFeedProcessor</span><span class="p">;</span>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Where the first parameter is a distinct name that describes the goal of this processor and the second name is the delegate implementation that handles changes. Following is an example of a delegate:</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1">/// &lt;summary&gt;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="c1">/// The delegate receives batches of changes as they are generated in the change feed and can process them.</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="c1">/// &lt;/summary&gt;</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">HandleChangesAsync</span><span class="p">(</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="n">ChangeFeedProcessorContext</span><span class="w"> </span><span class="n">context</span><span class="p">,</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="n">IReadOnlyCollection</span><span class="o">&lt;</span><span class="n">ToDoItem</span><span class="o">&gt;</span><span class="w"> </span><span class="n">changes</span><span class="p">,</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="p">)</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="p">{</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Started handling changes for lease {context.LeaseToken}...&quot;</span><span class="p">);</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Change Feed request consumed {context.Headers.RequestCharge} RU.&quot;</span><span class="p">);</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">    </span><span class="c1">// SessionToken if needed to enforce Session consistency on another client instance</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;SessionToken ${context.Headers.Session}&quot;</span><span class="p">);</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">    </span><span class="c1">// We may want to track any operation&#39;s Diagnostics that took longer than some threshold</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">GetClientElapsedTime</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="m">1</span><span class="p">))</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Change Feed request took longer than expected. Diagnostics:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">ToDoItem</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">changes</span><span class="p">)</span>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Detected operation for item with id {item.id}, created at {item.creationTime}.&quot;</span><span class="p">);</span>
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span class="w">        </span><span class="c1">// Simulate some asynchronous operation</span>
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Finished handling changes.&quot;</span><span class="p">);</span>
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Afterwards, you define the compute instance name or unique identifier with <code>WithInstanceName</code>, this should be unique and different in each compute instance you're deploying, and finally, which is the container to maintain the lease state with <code>WithLeaseContainer</code>.</p>
+<p>Calling <code>Build</code> gives you the processor instance that you can start by calling <code>StartAsync</code>.</p>
+<p>The normal life cycle of a host instance is:</p>
+<ol>
+<li>Read the change feed.</li>
+<li>If there are no changes, sleep for a predefined amount of time (customizable with <code>WithPollInterval</code> in the <code>Builder</code>) and go to #1.</li>
+<li>If there are changes, send them to the delegate.</li>
+<li>When the delegate finishes processing the changes successfully, update the lease store with the latest processed point in time and go to #1.</li>
+</ol>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240802141136.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.path", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3712 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Azure%20204%20-%20Module%2005%20Revision/">
+      
+      
+        <link rel="next" href="../Azure%20204%20-%20Module%2007%20Revision/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>Azure 204 - Module 06 Revision - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implement-user-authentication-and-authorization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure 204 - Module 06 Revision
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Build%20Tools/Vite/001%20-%20CLI/" class="md-tabs__link">
+          
+  
+  Build Tools
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CI-CD/GitHub/001%20-%20Events/001%20-%20Pull%20Request/" class="md-tabs__link">
+          
+  
+  CI-CD
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Caching/Redis/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Caching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Azure%20204%20-%20Module%2001%20Revision/" class="md-tabs__link">
+          
+  
+  Cloud
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Containerization/Docker/001%20-%20Dockerfiles/001%20-%20Reference/" class="md-tabs__link">
+          
+  
+  Containerization
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Databases/Postgres/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Databases
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Frameworks/ASP.NET/01%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Frameworks
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-tabs__link">
+          
+  
+  Languages
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Libraries/JS-TS-Node/htmx/001%20-%20AJAX/001%20-%20Introduction/" class="md-tabs__link">
+          
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Package%20Management/Python/uv/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Package Management
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Projects/DockerLens/000%20-%20DockerLens%20outline/" class="md-tabs__link">
+          
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Proxies/Caddy/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Proxies
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Roles/Backend/001%20-%20Internet/001%20-%20How%20does%20the%20internet%20work/" class="md-tabs__link">
+          
+  
+  Roles
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Build%20Tools/Vite/001%20-%20CLI/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Build Tools
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../CI-CD/GitHub/001%20-%20Events/001%20-%20Pull%20Request/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    CI-CD
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Caching/Redis/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Caching
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure - 204
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Azure - 204
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2001%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 01 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2002%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 02 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2003%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 03 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2004%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 04 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2005%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 05 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 06 Revision
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 06 Revision
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explore-the-microsoft-identity-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore the microsoft identity platform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore the microsoft identity platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explore-service-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore service principals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore service principals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-principal-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service principal object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-between-application-objects-and-service-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relationship between application objects and service principals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discover-permissions-and-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discover permissions and consent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discover permissions and consent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consent-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consent types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Consent types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-user-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static user consent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incremental-and-dynamic-user-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incremental and dynamic user consent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin consent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-individual-user-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requesting individual user consent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discover-conditional-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discover conditional access
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discover conditional access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-conditional-access-impact-an-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does Conditional Access impact an app?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-access-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Access examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-authentication-by-using-the-microsoft-authentication-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement authentication by using the Microsoft Authentication Library
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement authentication by using the Microsoft Authentication Library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explore-the-microsoft-authentication-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore the Microsoft Authentication Library
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-types-and-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application types and scenarios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-client-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialize client applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initialize client applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initializing-public-and-confidential-client-applications-from-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initializing public and confidential client applications from code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#builder-modifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Builder modifiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifiers-common-to-public-and-confidential-client-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifiers common to public and confidential client applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-interactive-authentication-by-using-msalnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement interactive authentication by using MSAL.NET
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement interactive authentication by using MSAL.NET">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-a-new-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register a new application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-console-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the console application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-the-console-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build the console app
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build the console app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-packages-and-using-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add packages and using statements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-code-for-the-interactive-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add code for the interactive authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-completed-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review completed application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-shared-access-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement shared access signatures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement shared access signatures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-shared-access-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of shared access signatures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-shared-access-signatures-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How shared access signatures work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-when-to-use-shared-access-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose when to use shared access signatures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-stored-access-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore stored access policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore stored access policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-stored-access-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a stored access policy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifying-or-revoking-a-stored-access-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifying or revoking a stored access policy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-microsoft-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Microsoft Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Microsoft Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discover-microsoft-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discover Microsoft Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-microsoft-graph-by-using-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Microsoft Graph by using REST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query Microsoft Graph by using REST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call-a-rest-api-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call a REST API method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-microsoft-graph-by-using-sdks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Microsoft Graph by using SDKs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query Microsoft Graph by using SDKs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-microsoft-graph-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Microsoft Graph client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-information-from-microsoft-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read information from Microsoft Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-a-list-of-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve a list of entities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-an-entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete an entity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a new entity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-best-practices-to-microsoft-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply best practices to Microsoft Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apply best practices to Microsoft Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consent-and-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consent and authorization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-responses-effectively" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handle responses effectively
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storing-data-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storing data locally
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2007%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 07 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2008%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 08 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2009%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 09 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2010%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 10 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2011%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 11 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2012%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 12 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Containerization/Docker/001%20-%20Dockerfiles/001%20-%20Reference/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Containerization
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Databases/Postgres/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Frameworks/ASP.NET/01%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Frameworks
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Languages
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Libraries/JS-TS-Node/htmx/001%20-%20AJAX/001%20-%20Introduction/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Libraries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Package%20Management/Python/uv/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Package Management
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Projects/DockerLens/000%20-%20DockerLens%20outline/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Proxies/Caddy/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Proxies
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Roles/Backend/001%20-%20Internet/001%20-%20How%20does%20the%20internet%20work/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Roles
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explore-the-microsoft-identity-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore the microsoft identity platform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore the microsoft identity platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explore-service-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore service principals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore service principals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-principal-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service principal object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-between-application-objects-and-service-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relationship between application objects and service principals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discover-permissions-and-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discover permissions and consent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discover permissions and consent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consent-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consent types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Consent types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-user-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static user consent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incremental-and-dynamic-user-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incremental and dynamic user consent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin consent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-individual-user-consent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requesting individual user consent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discover-conditional-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discover conditional access
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discover conditional access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-conditional-access-impact-an-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does Conditional Access impact an app?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-access-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Access examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-authentication-by-using-the-microsoft-authentication-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement authentication by using the Microsoft Authentication Library
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement authentication by using the Microsoft Authentication Library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explore-the-microsoft-authentication-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore the Microsoft Authentication Library
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-types-and-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application types and scenarios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-client-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialize client applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initialize client applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initializing-public-and-confidential-client-applications-from-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initializing public and confidential client applications from code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#builder-modifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Builder modifiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifiers-common-to-public-and-confidential-client-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifiers common to public and confidential client applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-interactive-authentication-by-using-msalnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement interactive authentication by using MSAL.NET
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement interactive authentication by using MSAL.NET">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-a-new-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register a new application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-console-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the console application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-the-console-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build the console app
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build the console app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-packages-and-using-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add packages and using statements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-code-for-the-interactive-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add code for the interactive authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-completed-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review completed application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-shared-access-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement shared access signatures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implement shared access signatures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-shared-access-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of shared access signatures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-shared-access-signatures-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How shared access signatures work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-when-to-use-shared-access-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose when to use shared access signatures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-stored-access-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore stored access policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore stored access policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-stored-access-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a stored access policy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifying-or-revoking-a-stored-access-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifying or revoking a stored access policy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-microsoft-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Microsoft Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Microsoft Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discover-microsoft-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discover Microsoft Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-microsoft-graph-by-using-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Microsoft Graph by using REST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query Microsoft Graph by using REST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call-a-rest-api-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call a REST API method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-microsoft-graph-by-using-sdks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Microsoft Graph by using SDKs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query Microsoft Graph by using SDKs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-microsoft-graph-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Microsoft Graph client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-information-from-microsoft-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read information from Microsoft Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-a-list-of-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve a list of entities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-an-entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete an entity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-entity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a new entity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-best-practices-to-microsoft-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply best practices to Microsoft Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apply best practices to Microsoft Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consent-and-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consent and authorization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-responses-effectively" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handle responses effectively
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storing-data-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storing data locally
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="implement-user-authentication-and-authorization">Implement user authentication and authorization</h1>
+<h2 id="explore-the-microsoft-identity-platform">Explore the microsoft identity platform</h2>
+<ul>
+<li>Identify the components of the Microsoft identity platform</li>
+<li>Describe the three types of service principals and how they relate to application objects</li>
+<li>Explain how permissions and user consent operate, and how conditional access impacts your application</li>
+</ul>
+<p>The Microsoft identity platform for developers is a set of tools that includes authentication service, open-source libraries, and application management tools.</p>
+<ul>
+<li><strong>OAuth 2.0 and OpenID Connect standard-compliant authentication service</strong> enabling developers to authenticate several identity types, including:<ul>
+<li>Work or school accounts, provisioned through Microsoft Entra ID</li>
+<li>Personal Microsoft account, like Skype, Xbox, and Outlook.com</li>
+<li>Social or local accounts, by using Azure Active Directory B2C</li>
+<li>Social or local customer accounts, by using Microsoft Entra External ID</li>
+</ul>
+</li>
+<li><strong>Open-source libraries</strong>: Microsoft Authentication Libraries (MSAL) and support for other standards-compliant libraries</li>
+<li><strong>Microsoft identity platform endpoint</strong>: Works with the Microsoft Authentication Libraries (MSAL) or any other standards-compliant library. It implements human readable scopes, in accordance with industry standards.</li>
+<li><strong>Application management portal</strong>: A registration and configuration experience in the Azure portal, along with the other Azure management capabilities.</li>
+<li><strong>Application configuration API and PowerShell</strong>: Programmatic configuration of your applications through the Microsoft Graph API and PowerShell so you can automate your DevOps tasks.</li>
+</ul>
+<p>For developers, the Microsoft identity platform offers integration of modern innovations in the identity and security space like passwordless authentication, step-up authentication, and Conditional Access. You don’t need to implement such functionality yourself: applications integrated with the Microsoft identity platform natively take advantage of such innovations.</p>
+<h3 id="explore-service-principals">Explore service principals</h3>
+<p>To delegate Identity and Access Management functions to Microsoft Entra ID, an application must be registered with a Microsoft Entra tenant. When you register your application with Microsoft Entra ID, you're creating an identity configuration for your application that allows it to integrate with Microsoft Entra ID. When you register an app in the Azure portal, you choose whether it is:</p>
+<ul>
+<li><strong>Single tenant</strong>: only accessible in your tenant</li>
+<li><strong>Multi-tenant</strong>: accessible in other tenants</li>
+</ul>
+<p>If you register an application in the portal, an application object (the globally unique instance of the app) and a service principal object are automatically created in your home tenant. You also have a globally unique ID for your app (the app or client ID). In the portal, you can then add secrets or certificates and scopes to make your app work, customize the branding of your app in the sign-in dialog, and more.</p>
+<h4 id="application-object">Application object</h4>
+<p>A Microsoft Entra application is scoped to its one and only application object. The application object resides in the Microsoft Entra tenant where the application was registered (known as the application's "home" tenant). An application object is used as a template or blueprint to create one or more service principal objects. A service principal is created in every tenant where the application is used. Similar to a class in object-oriented programming, the application object has some static properties that are applied to all the created service principals (or application instances).</p>
+<p>The application object describes three aspects of an application:</p>
+<ul>
+<li>How the service can issue tokens in order to access the application.</li>
+<li>Resources that the application might need to access.</li>
+<li>The actions that the application can take.</li>
+</ul>
+<h4 id="service-principal-object">Service principal object</h4>
+<p>There are three types of service principal:</p>
+<ul>
+<li><strong>Application</strong> - This type of service principal is the local representation, or application instance, of a global application object in a single tenant or directory. A service principal is created in each tenant where the application is used, and references the globally unique app object. The service principal object defines what the app can actually do in the specific tenant, who can access the app, and what resources the app can access.</li>
+<li><strong>Managed identity</strong> - This type of service principal is used to represent a <a href="https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview">managed identity</a>. Managed identities provide an identity for applications to use when connecting to resources that support Microsoft Entra authentication. When a managed identity is enabled, a service principal representing that managed identity is created in your tenant. Service principals representing managed identities can be granted access and permissions, but can't be updated or modified directly.</li>
+<li><strong>Legacy</strong> - This type of service principal represents a legacy app, which is an app created before app registrations were introduced or an app created through legacy experiences. A legacy service principal can have:<ul>
+<li>credentials</li>
+<li>service principal names</li>
+<li>reply URLs</li>
+<li>and other properties that an authorized user can edit, but doesn't have an associated app registration.</li>
+</ul>
+</li>
+</ul>
+<h4 id="relationship-between-application-objects-and-service-principals">Relationship between application objects and service principals</h4>
+<p>The application object is the <em>global</em> representation of your application for use across all tenants, and the service principal is the <em>local</em> representation for use in a specific tenant. The application object serves as the template from which common and default properties are <em>derived</em> for use in creating corresponding service principal objects.</p>
+<p>An application object has:</p>
+<ul>
+<li>A one to one relationship with the software application, and</li>
+<li>A one to many relationships with its corresponding service principal objects.</li>
+</ul>
+<p>A service principal must be created in each tenant where the application is used to establish an identity for sign-in and/or access to resources being secured by the tenant. A single-tenant application has only one service principal (in its home tenant), created and consented for use during application registration. A multi-tenant application also has a service principal created in each tenant where a user from that tenant consented to its use.</p>
+<h3 id="discover-permissions-and-consent">Discover permissions and consent</h3>
+<p>The Microsoft identity platform implements the <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols">OAuth 2.0</a> authorization protocol. OAuth 2.0 is a method through which a third-party app can access web-hosted resources on behalf of a user. Any web-hosted resource that integrates with the Microsoft identity platform has a resource identifier, or <em>application ID URI</em>.</p>
+<p>Here are some examples of Microsoft web-hosted resources:</p>
+<ul>
+<li>Microsoft Graph: <code>https://graph.microsoft.com</code></li>
+<li>Microsoft 365 Mail API: <code>https://outlook.office.com</code></li>
+<li>Azure Key Vault: <code>https://vault.azure.net</code></li>
+</ul>
+<p>The same is true for any third-party resources that are integrated with the Microsoft identity platform. Any of these resources also can define a set of permissions that can be used to divide the functionality of that resource into smaller chunks. When a resource's functionality is chunked into small permission sets, third-party apps can be built to request only the permissions that they need to perform their function. Users and administrators can know what data the app can access.</p>
+<p>In OAuth 2.0, these types of permission sets are called <em>scopes</em>. They're also often referred to as <em>permissions</em>. In the Microsoft identity platform, a permission is represented as a string value. An app requests the permissions it needs by specifying the permission in the <code>scope</code> query parameter. Identity platform supports several well-defined <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes">OpenID Connect scopes</a> and resource-based permissions (each permission is indicated by appending the permission value to the resource's identifier or application ID URI). For example, the permission string <code>https://graph.microsoft.com/Calendars.Read</code> is used to request permission to read users calendars in Microsoft Graph.</p>
+<p>An app most commonly requests these permissions by specifying the scopes in requests to the Microsoft identity platform authorize endpoint. However, some high-privilege permissions can be granted only through administrator consent. They can be requested or granted by using the <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#admin-restricted-permissions">administrator consent endpoint</a></p>
+<h4 id="permission-types">Permission types</h4>
+<p>The Microsoft identity platform supports two types of permissions: <em>delegated access</em> and <em>app-only access</em>.</p>
+<ul>
+<li><strong>Delegated access</strong> are used by apps that have a signed-in user present. For these apps, either the user or an administrator consents to the permissions that the app requests. The app is delegated with the permission to act as a signed-in user when it makes calls to the target resource.</li>
+<li><strong>App-only access permissions</strong> are used by apps that run without a signed-in user present, for example, apps that run as background services or daemons. Only an administrator can consent to app-only access permissions.</li>
+</ul>
+<h4 id="consent-types">Consent types</h4>
+<p>Applications in Microsoft identity platform rely on consent in order to gain access to necessary resources or APIs. There are many kinds of consent that your app might need to know about in order to be successful. If you're defining permissions, you'll also need to understand how your users gain access to your app or API.</p>
+<p>There are three consent types: <em>static user consent</em>, <em>incremental and dynamic user consent</em>, and <em>admin consent</em>.</p>
+<h5 id="static-user-consent">Static user consent</h5>
+<p>In the static user consent scenario, you must specify all the permissions it needs in the app's configuration in the Azure portal. If the user (or administrator, as appropriate) hasn't granted consent for this app, then Microsoft identity platform prompts the user to provide consent at this time. Static permissions also enable administrators to consent on behalf of all users in the organization.</p>
+<p>While static permissions of the app defined in the Azure portal keep the code nice and simple, it presents some possible issues for developers:</p>
+<ul>
+<li>The app needs to request all the permissions it would ever need upon the user's first sign-in. This can lead to a long list of permissions that discourages end users from approving the app's access on initial sign-in.</li>
+<li>The app needs to know all of the resources it would ever access ahead of time. It's difficult to create apps that could access an arbitrary number of resources.</li>
+</ul>
+<h5 id="incremental-and-dynamic-user-consent">Incremental and dynamic user consent</h5>
+<p>With the Microsoft identity platform endpoint, you can ignore the static permissions defined in the app registration information in the Azure portal and request permissions incrementally instead. You can ask for a minimum set of permissions upfront and request more over time as the customer uses more app features.</p>
+<p>To do so, you can specify the scopes your app needs at any time by including the new scopes in the <code>scope</code> parameter when requesting an access token - without the need to predefine them in the application registration information. If the user hasn't yet consented to new scopes added to the request, they're prompted to consent only to the new permissions. Incremental, or dynamic consent, only applies to delegated permissions and not to app-only access permissions.</p>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240819094856.png" /></p>
+<h5 id="admin-consent">Admin consent</h5>
+<p>Admin consent is required when your app needs access to certain high-privilege permissions. Admin consent ensures that administrators have some other controls before authorizing apps or users to access highly privileged data from the organization.</p>
+<p>Admin consent done on behalf of an organization still requires the static permissions registered for the app. Set those permissions for apps in the app registration portal if you need an admin to give consent on behalf of the entire organization. This reduces the cycles required by the organization admin to set up the application.</p>
+<h4 id="requesting-individual-user-consent">Requesting individual user consent</h4>
+<p>In an OpenID Connect or OAuth 2.0 authorization request, an app can request the permissions it needs by using the scope query parameter. For example, when a user signs in to an app, the app sends a request like the following example. Line breaks are added for legibility.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>&amp;response_type=code
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>&amp;redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>&amp;response_mode=query
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>&amp;scope=
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>https%3A%2F%2Fgraph.microsoft.com%2Fcalendars.read%20
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>https%3A%2F%2Fgraph.microsoft.com%2Fmail.send
+</span></code></pre></div>
+<p>The <code>scope</code> parameter is a space-separated list of delegated permissions that the app is requesting. Each permission is indicated by appending the permission value to the resource's identifier (the application ID URI). In the request example, the app needs permission to read the user's calendar and send mail as the user.</p>
+<p>After the user enters their credentials, the Microsoft identity platform checks for a matching record of <em>user consent</em>. If the user hasn't consented to any of the requested permissions in the past, and if the administrator hasn't consented to these permissions on behalf of the entire organization, the Microsoft identity platform asks the user to grant the requested permissions.</p>
+<h3 id="discover-conditional-access">Discover conditional access</h3>
+<p>The Conditional Access feature in Microsoft Entra ID offers one of several ways that you can use to secure your app and protect a service. Conditional Access enables developers and enterprise customers to protect services in a multitude of ways including:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks">Multifactor authentication</a></li>
+<li>Allowing only Intune enrolled devices to access specific services</li>
+<li>Restricting user locations and IP ranges</li>
+</ul>
+<h4 id="how-does-conditional-access-impact-an-app">How does Conditional Access impact an app?</h4>
+<p>In most common cases, Conditional Access doesn't change an app's behavior or require any changes from the developer. Only in certain cases when an app indirectly or silently requests a token for a service does an app require code changes to handle Conditional Access challenges. It may be as simple as performing an interactive sign-in request.</p>
+<p>Specifically, the following scenarios require code to handle Conditional Access challenges:</p>
+<ul>
+<li>Apps performing the on-behalf-of flow</li>
+<li>Apps accessing multiple services/resources</li>
+<li>Single-page apps using MSAL.js</li>
+<li>Web apps calling a resource</li>
+</ul>
+<p>Conditional Access policies can be applied to the app and also a web API your app accesses. Depending on the scenario, an enterprise customer can apply and remove Conditional Access policies at any time. For your app to continue functioning when a new policy is applied, implement challenge handling.</p>
+<h4 id="conditional-access-examples">Conditional Access examples</h4>
+<p>Some scenarios require code changes to handle Conditional Access whereas others work as is. Here are a few scenarios using Conditional Access to do multi-factor authentication that gives some insight into the difference.</p>
+<ul>
+<li>You're building a single-tenant iOS app and apply a Conditional Access policy. The app signs in a user and doesn't request access to an API. When the user signs in, the policy is automatically invoked and the user needs to perform multi-factor authentication.</li>
+<li>You're building an app that uses a middle tier service to access a downstream API. An enterprise customer at the company using this app applies a policy to the downstream API. When an end user signs in, the app requests access to the middle tier and sends the token. The middle tier performs on-behalf-of flow to request access to the downstream API. At this point, a claims "challenge" is presented to the middle tier. The middle tier sends the challenge back to the app, which needs to comply with the Conditional Access policy.</li>
+</ul>
+<h2 id="implement-authentication-by-using-the-microsoft-authentication-library">Implement authentication by using the Microsoft Authentication Library</h2>
+<ul>
+<li>Explain the benefits of using MSAL and the application types and scenarios it supports</li>
+<li>Instantiate both public and confidential client apps from code</li>
+<li>Register an app with the Microsoft identity platform</li>
+<li>Create an app that retrieves a token by using the MSAL.NET library</li>
+</ul>
+<h3 id="explore-the-microsoft-authentication-library">Explore the Microsoft Authentication Library</h3>
+<p>MSAL gives you many ways to get tokens, with a consistent API for many platforms. Using MSAL provides the following benefits:</p>
+<ul>
+<li>No need to directly use the OAuth libraries or code against the protocol in your application.</li>
+<li>Acquires tokens on behalf of a user or on behalf of an application (when applicable to the platform).</li>
+<li>Maintains a token cache and refreshes tokens for you when they're close to expire. You don't need to handle token expiration on your own.</li>
+<li>Helps you specify which audience you want your application to sign in.</li>
+<li>Helps you set up your application from configuration files.</li>
+<li>Helps you troubleshoot your app by exposing actionable exceptions, logging, and telemetry.</li>
+</ul>
+<h3 id="application-types-and-scenarios">Application types and scenarios</h3>
+<p>Within MSAL, a token can be acquired from many application types: web applications, web APIs, single-page apps (JavaScript), mobile and native applications, and daemons and server-side applications. MSAL currently supports the platforms and frameworks listed in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Supported platforms and frameworks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/AzureAD/microsoft-authentication-library-for-android">MSAL for Android</a></td>
+<td>Android</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular">MSAL Angular</a></td>
+<td>Single-page apps with Angular and Angular.js frameworks</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AzureAD/microsoft-authentication-library-for-objc">MSAL for iOS and macOS</a></td>
+<td>iOS and macOS</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AzureAD/microsoft-authentication-library-for-go">MSAL Go (Preview)</a></td>
+<td>Windows, macOS, Linux</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AzureAD/microsoft-authentication-library-for-java">MSAL Java</a></td>
+<td>Windows, macOS, Linux</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser">MSAL.js</a></td>
+<td>JavaScript/TypeScript frameworks such as Vue.js, Ember.js, or Durandal.js</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AzureAD/microsoft-authentication-library-for-dotnet">MSAL.NET</a></td>
+<td>.NET Framework, .NET, .NET MAUI, WINUI, Xamarin Android, Xamarin iOS, Universal Windows Platform</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node">MSAL Node</a></td>
+<td>Web apps with Express, desktop apps with Electron, Cross-platform console apps</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AzureAD/microsoft-authentication-library-for-python">MSAL Python</a></td>
+<td>Windows, macOS, Linux</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react">MSAL React</a></td>
+<td>Single-page apps with React and React-based libraries (Next.js, Gatsby.js)</td>
+</tr>
+<tr>
+<td>### Authentication flows</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The following table shows some of the different authentication flows provided by Microsoft Authentication Library (MSAL). These flows can be used in various application scenarios.</p>
+<table>
+<thead>
+<tr>
+<th>Authentication flow</th>
+<th></th>
+<th>Supported application types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization code</td>
+<td>User sign-in and access to web APIs on behalf of the user.</td>
+<td>Desktop, Mobile, Single-page app (SPA) (requires PKCE), Web</td>
+</tr>
+<tr>
+<td>Client credentials</td>
+<td>Access to web APIs by using the identity of the application itself. Typically used for server-to-server communication and automated scripts requiring no user interaction.</td>
+<td>Daemon</td>
+</tr>
+<tr>
+<td>Device code</td>
+<td>User sign-in and access to web APIs on behalf of the user on input-constrained devices like smart TVs and IoT devices. Also used by command line interface (CLI) applications.</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>Implicit grant</td>
+<td>User sign-in and access to web APIs on behalf of the user. <em>The implicit grant flow is no longer recommended - use authorization code with PKCE instead.</em></td>
+<td>Single-page app (SPA), Web</td>
+</tr>
+<tr>
+<td>On-behalf-of (OBO)</td>
+<td>Access from an "upstream" web API to a "downstream" web API on behalf of the user. The user's identity and delegated permissions are passed through to the downstream API from the upstream API.</td>
+<td>Web API</td>
+</tr>
+<tr>
+<td>Username/password (ROPC)</td>
+<td>Allows an application to sign in the user by directly handling their password. <em>The ROPC flow is NOT recommended.</em></td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>Integrated Windows authentication (IWA)</td>
+<td>Allows applications on domain or Microsoft Entra joined computers to acquire a token silently (without any UI interaction from the user).</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>### Public client and confidential client applications</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>When examining the public or confidential nature of a given client, we're evaluating the ability of that client to prove its identity to the authorization server. This is important because the authorization server must be able to trust the identity of the client in order to issue access tokens.</p>
+<ul>
+<li><strong>Public client applications</strong> run on devices, such as desktop, browserless APIs, mobile or client-side browser apps. They can't be trusted to safely keep application secrets, so they can only access web APIs on behalf of the user. Anytime the source, or compiled bytecode of a given app, is transmitted anywhere it can be read, disassembled, or otherwise inspected by untrusted parties. As they also only support public client flows and can't hold configuration-time secrets, they can't have client secrets.</li>
+<li><strong>Confidential client applications</strong> run on servers, such as web apps, web API apps, or service/daemon apps. They're considered difficult to access by users or attackers, and therefore can adequately hold configuration-time secrets to assert proof of its identity. The client ID is exposed through the web browser, but the secret is passed only in the back channel and never directly exposed.</li>
+</ul>
+<h2 id="initialize-client-applications">Initialize client applications</h2>
+<p>With MSAL.NET 3.x, the recommended way to instantiate an application is by using the application builders: <code>PublicClientApplicationBuilder</code> and <code>ConfidentialClientApplicationBuilder</code>. They offer a powerful mechanism to configure the application either from the code, or from a configuration file, or even by mixing both approaches.</p>
+<p>Before initializing an application, you first need to register it so that your app can be integrated with the Microsoft identity platform. After registration, you may need the following information (which can be found in the Azure portal):</p>
+<ul>
+<li><strong>Application (client) ID</strong> - This is a string representing a GUID.</li>
+<li><strong>Directory (tenant) ID</strong> - Provides identity and access management (IAM) capabilities to applications and resources used by your organization. It can specify if you're writing a line of business application solely for your organization (also named single-tenant application).</li>
+<li>The identity provider URL (named the <strong>instance</strong>) and the sign-in audience for your application. These two parameters are collectively known as the authority.</li>
+<li><strong>Client credentials</strong> - which can take the form of an application secret (client secret string) or certificate (of type <code>X509Certificate2</code>) if it's a confidential client app.</li>
+<li>For web apps, and sometimes for public client apps (in particular when your app needs to use a broker), you need to set the <strong>Redirect URI</strong> where the identity provider will contact back your application with the security tokens.</li>
+</ul>
+<h3 id="initializing-public-and-confidential-client-applications-from-code">Initializing public and confidential client applications from code</h3>
+<p>The following code instantiates a public client application, signing-in users in the Microsoft Azure public cloud, with their work and school accounts, or their personal Microsoft accounts.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">IPublicClientApplication</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PublicClientApplicationBuilder</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">clientId</span><span class="p">).</span><span class="n">Build</span><span class="p">();</span>
+</span></code></pre></div>
+<p>In the same way, the following code instantiates a confidential application (a Web app located at <code>https://myapp.azurewebsites.net</code>) handling tokens from users in the Microsoft Azure public cloud, with their work and school accounts, or their personal Microsoft accounts. The application is identified with the identity provider by sharing a client secret:</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">redirectUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://myapp.azurewebsites.net&quot;</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">IConfidentialClientApplication</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConfidentialClientApplicationBuilder</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">clientId</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="p">.</span><span class="n">WithClientSecret</span><span class="p">(</span><span class="n">clientSecret</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">.</span><span class="n">WithRedirectUri</span><span class="p">(</span><span class="n">redirectUri</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</span></code></pre></div>
+<h3 id="builder-modifiers">Builder modifiers</h3>
+<p>In the code snippets using application builders, <code>.With</code> methods can be applied as modifiers (for example, <code>.WithAuthority</code> and <code>.WithRedirectUri</code>).</p>
+<ul>
+<li><code>.WithAuthority</code> modifier: The <code>.WithAuthority</code> modifier sets the application default authority to a Microsoft Entra authority, with the possibility of choosing the Azure Cloud, the audience, the tenant (tenant ID or domain name), or providing directly the authority URI.</li>
+</ul>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">IPublicClientApplication</span><span class="w"> </span><span class="n">app</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PublicClientApplicationBuilder</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">clientId</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">.</span><span class="n">WithAuthority</span><span class="p">(</span><span class="n">AzureCloudInstance</span><span class="p">.</span><span class="n">AzurePublic</span><span class="p">,</span><span class="w"> </span><span class="n">tenantId</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</span></code></pre></div>
+<ul>
+<li><code>.WithRedirectUri</code> modifier: The <code>.WithRedirectUri</code> modifier overrides the default redirect URI.</li>
+</ul>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">IPublicClientApplication</span><span class="w"> </span><span class="n">app</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PublicClientApplicationBuilder</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">client_id</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">.</span><span class="n">WithAuthority</span><span class="p">(</span><span class="n">AzureCloudInstance</span><span class="p">.</span><span class="n">AzurePublic</span><span class="p">,</span><span class="w"> </span><span class="n">tenant_id</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">.</span><span class="n">WithRedirectUri</span><span class="p">(</span><span class="s">&quot;http://localhost&quot;</span><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</span></code></pre></div>
+<h3 id="modifiers-common-to-public-and-confidential-client-applications">Modifiers common to public and confidential client applications</h3>
+<p>The table below lists some of the modifiers you can set on a public, or confidential client.</p>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.WithAuthority()</code></td>
+<td>Sets the application default authority to a Microsoft Entra authority, with the possibility of choosing the Azure Cloud, the audience, the tenant (tenant ID or domain name), or providing directly the authority URI.</td>
+</tr>
+<tr>
+<td><code>.WithTenantId(string tenantId)</code></td>
+<td>Overrides the tenant ID, or the tenant description.</td>
+</tr>
+<tr>
+<td><code>.WithClientId(string)</code></td>
+<td>Overrides the client ID.</td>
+</tr>
+<tr>
+<td><code>.WithRedirectUri(string redirectUri)</code></td>
+<td>Overrides the default redirect URI. This is useful for scenarios requiring a broker.</td>
+</tr>
+<tr>
+<td><code>.WithComponent(string)</code></td>
+<td>Sets the name of the library using MSAL.NET (for telemetry reasons).</td>
+</tr>
+<tr>
+<td><code>.WithDebugLoggingCallback()</code></td>
+<td>If called, the application calls <code>Debug.Write</code> simply enabling debugging traces.</td>
+</tr>
+<tr>
+<td><code>.WithLogging()</code></td>
+<td>If called, the application calls a callback with debugging traces.</td>
+</tr>
+<tr>
+<td><code>.WithTelemetry(TelemetryCallback telemetryCallback)</code></td>
+<td>Sets the delegate used to send telemetry.</td>
+</tr>
+<tr>
+<td>### Modifiers specific to confidential client applications</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The modifiers specific to a confidential client application builder can be found in the <code>ConfidentialClientApplicationBuilder</code> class. The different methods can be found in the <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder">Azure SDK for .NET documentation</a>.</p>
+<p>Modifiers such as <code>.WithCertificate(X509Certificate2 certificate)</code> and <code>.WithClientSecret(string clientSecret)</code> are mutually exclusive. If you provide both, MSAL throws a meaningful exception.</p>
+<h2 id="implement-interactive-authentication-by-using-msalnet">Implement interactive authentication by using MSAL.NET</h2>
+<p>In this exercise you learn how to perform the following actions:</p>
+<ul>
+<li>Register an application with the Microsoft identity platform</li>
+<li>Use the <code>PublicClientApplicationBuilder</code> class in MSAL.NET</li>
+<li>Acquire a token interactively in a console application</li>
+</ul>
+<h3 id="register-a-new-application">Register a new application</h3>
+<ul>
+<li>Sign in to the portal: <a href="https://portal.azure.com">https://portal.azure.com</a></li>
+<li>Search for and select <strong>Microsoft Entra ID</strong>.</li>
+<li>Under <strong>Manage</strong>, select <strong>App registrations</strong> &gt; <strong>New registration</strong>.</li>
+<li>When the <strong>Register an application</strong> page appears, enter your application's registration information:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><code>az204appreg</code></td>
+</tr>
+<tr>
+<td><strong>Supported account types</strong></td>
+<td>Select <strong>Accounts in this organizational directory only</strong></td>
+</tr>
+<tr>
+<td><strong>Redirect URI (optional)</strong></td>
+<td>Select <strong>Public client/native (mobile &amp; desktop)</strong> and enter <code>http://localhost</code> in the box to the right.</td>
+</tr>
+<tr>
+<td>- Select <strong>Register</strong>.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Microsoft Entra ID assigns a unique application (client) ID to your app, and you're taken to your application's <strong>Overview</strong> page.</p>
+<h3 id="set-up-the-console-application">Set up the console application</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>md az204-auth
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>cd az204-auth
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>dotnet new console
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>code . -r
+</span></code></pre></div>
+<h3 id="build-the-console-app">Build the console app</h3>
+<h4 id="add-packages-and-using-statements">Add packages and using statements</h4>
+<ul>
+<li>Add the <code>Microsoft.Identity.Client</code> package to the project in a terminal in Visual Studio Code.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>dotnet add package Microsoft.Identity.Client
+</span></code></pre></div>
+<ul>
+<li>Open the <em>Program.cs</em> file and add <code>using</code> statements to include <code>Microsoft.Identity.Client</code> and to enable async operations.</li>
+</ul>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.Identity.Client</span><span class="p">;</span>
+</span></code></pre></div>
+<ul>
+<li>Change the Main method to enable async.</li>
+</ul>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="add-code-for-the-interactive-authentication">Add code for the interactive authentication</h4>
+<ul>
+<li>You need two variables to hold the Application (client) and Directory (tenant) IDs. You can copy those values from the portal. Add the following code and replace the string values with the appropriate values from the portal.</li>
+</ul>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">_clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;APPLICATION_CLIENT_ID&quot;</span><span class="p">;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">_tenantId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;DIRECTORY_TENANT_ID&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<ul>
+<li>Use the <code>PublicClientApplicationBuilder</code> class to build out the authorization context.</li>
+</ul>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PublicClientApplicationBuilder</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">_clientId</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="p">.</span><span class="n">WithAuthority</span><span class="p">(</span><span class="n">AzureCloudInstance</span><span class="p">.</span><span class="n">AzurePublic</span><span class="p">,</span><span class="w"> </span><span class="n">_tenantId</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">.</span><span class="n">WithRedirectUri</span><span class="p">(</span><span class="s">&quot;http://localhost&quot;</span><span class="p">)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.Create</code></td>
+<td>Creates a <code>PublicClientApplicationBuilder</code> from a clientID.</td>
+</tr>
+<tr>
+<td><code>.WithAuthority</code></td>
+<td>Adds a known Authority corresponding to an ADFS server. In the code we're specifying the Public cloud, and using the tenant for the app we registered.</td>
+</tr>
+<tr>
+<td>#### Acquire a token</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>When you registered the <em>az204appreg</em> app, it automatically generated an API permission <code>user.read</code> for Microsoft Graph. You use that permission to acquire a token.</p>
+<ul>
+<li>Set the permission scope for the token request. Add the following code below the <code>PublicClientApplicationBuilder</code>.</li>
+</ul>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;user.read&quot;</span><span class="w"> </span><span class="p">};</span>
+</span></code></pre></div>
+<ul>
+<li>Add code to request the token and write the result out to the console.</li>
+</ul>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">AuthenticationResult</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">AcquireTokenInteractive</span><span class="p">(</span><span class="n">scopes</span><span class="p">).</span><span class="n">ExecuteAsync</span><span class="p">();</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Token:\t{result.AccessToken}&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="review-completed-application">Review completed application</h3>
+<p>The contents of the <em>Program.cs</em> file should resemble the following example:</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.Identity.Client</span><span class="p">;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">az204_auth</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">{</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">_clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;APPLICATION_CLIENT_ID&quot;</span><span class="p">;</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">_tenantId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;DIRECTORY_TENANT_ID&quot;</span><span class="p">;</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PublicClientApplicationBuilder</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">                </span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">_clientId</span><span class="p">)</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">                </span><span class="p">.</span><span class="n">WithAuthority</span><span class="p">(</span><span class="n">AzureCloudInstance</span><span class="p">.</span><span class="n">AzurePublic</span><span class="p">,</span><span class="w"> </span><span class="n">_tenantId</span><span class="p">)</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">                </span><span class="p">.</span><span class="n">WithRedirectUri</span><span class="p">(</span><span class="s">&quot;http://localhost&quot;</span><span class="p">)</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">                </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span><span class="w"> </span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">            </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;user.read&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">            </span><span class="n">AuthenticationResult</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">AcquireTokenInteractive</span><span class="p">(</span><span class="n">scopes</span><span class="p">).</span><span class="n">ExecuteAsync</span><span class="p">();</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Token:\t{result.AccessToken}&quot;</span><span class="p">);</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="implement-shared-access-signatures">Implement shared access signatures</h2>
+<p>After completing this module, you'll be able to:</p>
+<ul>
+<li>Identify the three types of shared access signatures</li>
+<li>Explain when to implement shared access signatures</li>
+<li>Create a stored access policy</li>
+</ul>
+<p>A shared access signature (SAS) is a signed URI that points to one or more storage resources and includes a token that contains a special set of query parameters. The token indicates how the resources might be accessed by the client. One of the query parameters, the signature, is constructed from the SAS parameters and signed with the key that was used to create the SAS. This signature is used by Azure Storage to authorize access to the storage resource.</p>
+<h3 id="types-of-shared-access-signatures">Types of shared access signatures</h3>
+<p>Azure Storage supports three types of shared access signatures:</p>
+<ul>
+<li><strong>User delegation SAS</strong>: A user delegation SAS is secured with Microsoft Entra credentials and also by the permissions specified for the SAS. A user delegation SAS applies to Blob storage only.</li>
+<li><strong>Service SAS</strong>: A service SAS is secured with the storage account key. A service SAS delegates access to a resource in the following Azure Storage services: Blob storage, Queue storage, Table storage, or Azure Files.</li>
+<li><strong>Account SAS</strong>: An account SAS is secured with the storage account key. An account SAS delegates access to resources in one or more of the storage services. All of the operations available via a service or user delegation SAS are also available via an account SAS.</li>
+</ul>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240819105537.png" /></p>
+<h3 id="how-shared-access-signatures-work">How shared access signatures work</h3>
+<p>When you use a SAS to access data stored in Azure Storage, you need two components. The first is a URI to the resource you want to access. The second part is a SAS token that you've created to authorize access to that resource.</p>
+<p>In a single URI, such as <code>https://medicalrecords.blob.core.windows.net/patient-images/patient-116139-nq8z7f.jpg?sp=r&amp;st=2020-01-20T11:42:32Z&amp;se=2020-01-20T19:42:32Z&amp;spr=https&amp;sv=2019-02-02&amp;sr=b&amp;sig=SrW1HZ5Nb6MbRzTbXCaPm%2BJiSEn15tC91Y4umMPwVZs%3D</code>, you can separate the URI from the SAS token as follows:</p>
+<ul>
+<li><strong>URI:</strong> <code>https://medicalrecords.blob.core.windows.net/patient-images/patient-116139-nq8z7f.jpg?</code></li>
+<li><strong>SAS token:</strong> <code>sp=r&amp;st=2020-01-20T11:42:32Z&amp;se=2020-01-20T19:42:32Z&amp;spr=https&amp;sv=2019-02-02&amp;sr=b&amp;sig=SrW1HZ5Nb6MbRzTbXCaPm%2BJiSEn15tC91Y4umMPwVZs%3D</code></li>
+</ul>
+<p>The SAS token itself is made up of several components.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sp=r</code></td>
+<td>Controls the access rights. The values can be <code>a</code> for add, <code>c</code> for create, <code>d</code> for delete, <code>l</code> for list, <code>r</code> for read, or <code>w</code> for write. This example is read only. The example <code>sp=acdlrw</code> grants all the available rights.</td>
+</tr>
+<tr>
+<td><code>st=2020-01-20T11:42:32Z</code></td>
+<td>The date and time when access starts.</td>
+</tr>
+<tr>
+<td><code>se=2020-01-20T19:42:32Z</code></td>
+<td>The date and time when access ends. This example grants eight hours of access.</td>
+</tr>
+<tr>
+<td><code>sv=2019-02-02</code></td>
+<td>The version of the storage API to use.</td>
+</tr>
+<tr>
+<td><code>sr=b</code></td>
+<td>The kind of storage being accessed. In this example, b is for blob.</td>
+</tr>
+<tr>
+<td><code>sig=SrW1HZ5Nb6MbRzTbXCaPm%2BJiSEn15tC91Y4umMPwVZs%3D</code></td>
+<td>The cryptographic signature.</td>
+</tr>
+<tr>
+<td>### Best practices</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>To reduce the potential risks of using a SAS, Microsoft provides some guidance:</p>
+<ul>
+<li>To securely distribute a SAS and prevent man-in-the-middle attacks, always use HTTPS.</li>
+<li>The most secure SAS is a user delegation SAS. Use it wherever possible because it removes the need to store your storage account key in code. You must use Microsoft Entra ID to manage credentials. This option might not be possible for your solution.</li>
+<li>Try to set your expiration time to the smallest useful value. If a SAS key becomes compromised, it can be exploited for only a short time.</li>
+<li>Apply the rule of minimum-required privileges. Only grant the access that's required. For example, in your app, read-only access is sufficient.</li>
+<li>There are some situations where a SAS isn't the correct solution. When there's an unacceptable risk of using a SAS, create a middle-tier service to manage users and their access to storage.</li>
+</ul>
+<h3 id="choose-when-to-use-shared-access-signatures">Choose when to use shared access signatures</h3>
+<p>Use a SAS when you want to provide secure access to resources in your storage account to any client who doesn't otherwise have permissions to those resources.</p>
+<p>A common scenario where a SAS is useful is a service where users read and write their own data to your storage account. In a scenario where a storage account stores user data, there are two typical design patterns:</p>
+<ul>
+<li>Clients upload and download data via a front-end proxy service, which performs authentication. This front-end proxy service has the advantage of allowing validation of business rules, but for large amounts of data or high-volume transactions, creating a service that can scale to match demand may be expensive or difficult.</li>
+</ul>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240819110244.png" /></p>
+<ul>
+<li>A lightweight service authenticates the client as needed and then generates a SAS. Once the client application receives the SAS, they can access storage account resources directly with the permissions defined by the SAS and for the interval allowed by the SAS. The SAS mitigates the need for routing all data through the front-end proxy service.</li>
+</ul>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240819110337.png" />
+Many real-world services might use a hybrid of these two approaches. For example, some data might be processed and validated via the front-end proxy, while other data is saved and/or read directly using SAS.</p>
+<p>Additionally, a SAS is required to authorize access to the source object in a copy operation in certain scenarios:</p>
+<ul>
+<li>When you copy a blob to another blob that resides in a different storage account, you must use a SAS to authorize access to the source blob. You can optionally use a SAS to authorize access to the destination blob as well.</li>
+<li>When you copy a file to another file that resides in a different storage account, you must use a SAS to authorize access to the source file. You can optionally use a SAS to authorize access to the destination file as well.</li>
+<li>When you copy a blob to a file, or a file to a blob, you must use a SAS to authorize access to the source object, even if the source and destination objects reside within the same storage account.</li>
+</ul>
+<h3 id="explore-stored-access-policies">Explore stored access policies</h3>
+<p>A stored access policy provides an extra level of control over service-level shared access signatures (SAS) on the server side. Establishing a stored access policy groups SAS and provides more restrictions for signatures that bound by the policy. You can use a stored access policy to change the start time, expiry time, or permissions for a signature, or to revoke it after it is issued.</p>
+<p>The following storage resources support stored access policies:</p>
+<ul>
+<li>Blob containers</li>
+<li>File shares</li>
+<li>Queues</li>
+<li>Tables</li>
+</ul>
+<h4 id="creating-a-stored-access-policy">Creating a stored access policy</h4>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240819110800.png" /></p>
+<h4 id="modifying-or-revoking-a-stored-access-policy">Modifying or revoking a stored access policy</h4>
+<p>To modify the parameters of the stored access policy you can call the access control list operation for the resource type to replace the existing policy. For example, if your existing policy grants read and write permissions to a resource, you can modify it to grant only read permissions for all future requests.</p>
+<p>To revoke a stored access policy you can delete it, rename it by changing the signed identifier, or change the expiry time to a value in the past. Changing the signed identifier breaks the associations between any existing signatures and the stored access policy. Changing the expiry time to a value in the past causes any associated signatures to expire. Deleting or modifying the stored access policy immediately affects all of the SAS associated with it.</p>
+<p>To remove a single access policy, call the resource's <code>Set ACL</code> operation, passing in the set of signed identifiers that you wish to maintain on the container. To remove all access policies from the resource, call the <code>Set ACL</code> operation with an empty request body.</p>
+<h2 id="explore-microsoft-graph">Explore Microsoft Graph</h2>
+<p>After completing this module, you'll be able to:</p>
+<ul>
+<li>Explain the benefits of using Microsoft Graph</li>
+<li>Perform operations on Microsoft Graph by using REST and SDKs</li>
+<li>Apply best practices to help your applications get the most out of Microsoft Graph</li>
+</ul>
+<h3 id="discover-microsoft-graph">Discover Microsoft Graph</h3>
+<p>Microsoft Graph is the gateway to data and intelligence in Microsoft 365. It provides a unified programmability model that you can use to access the tremendous amount of data in Microsoft 365, Windows 10, and Enterprise Mobility + Security.</p>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240819112657.png" /></p>
+<p>In the Microsoft 365 platform, three main components facilitate the access and flow of data:</p>
+<ul>
+<li>The Microsoft Graph API offers a single endpoint, <code>https://graph.microsoft.com</code>. You can use REST APIs or SDKs to access the endpoint. Microsoft Graph also includes a powerful set of services that manage user and device identity, access, compliance, security, and help protect organizations from data leakage or loss.</li>
+<li><a href="https://learn.microsoft.com/en-us/microsoftsearch/connectors-overview">Microsoft Graph connectors</a> work in the incoming direction, <strong>delivering data external to the Microsoft cloud into Microsoft Graph services and applications</strong>, to enhance Microsoft 365 experiences such as Microsoft Search. Connectors exist for many commonly used data sources such as Box, Google Drive, Jira, and Salesforce.</li>
+<li><a href="https://learn.microsoft.com/en-us/graph/overview#access-microsoft-graph-data-at-scale-using-microsoft-graph-data-connect">Microsoft Graph Data Connect</a> provides a set of tools to streamline secure and scalable <strong>delivery of Microsoft Graph data to popular Azure data stores</strong>. The cached data serves as data sources for Azure development tools that you can use to build intelligent applications.</li>
+</ul>
+<h3 id="query-microsoft-graph-by-using-rest">Query Microsoft Graph by using REST</h3>
+<p>Microsoft Graph is a RESTful web API that enables you to access Microsoft Cloud service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the Microsoft Graph API.</p>
+<p>The Microsoft Graph API defines most of its resources, methods, and enumerations in the OData namespace, <code>microsoft.graph</code>, in the <a href="https://learn.microsoft.com/en-us/graph/traverse-the-graph#microsoft-graph-api-metadata">Microsoft Graph metadata</a>. A few API sets are defined in their sub-namespaces, such as the <a href="https://learn.microsoft.com/en-us/graph/api/resources/callrecords-api-overview">call records API</a> which defines resources like <a href="https://learn.microsoft.com/en-us/graph/api/resources/callrecords-callrecord">callRecord</a> in <code>microsoft.graph.callRecords</code>.</p>
+<p>Unless explicitly specified in the corresponding topic, assume types, methods, and enumerations are part of the <code>microsoft.graph</code> namespace.</p>
+<h4 id="call-a-rest-api-method">Call a REST API method</h4>
+<p>To read from or write to a resource such as a user or an email message, construct a request that looks like the following:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>{HTTP method} https://graph.microsoft.com/{version}/{resource}?{query-parameters}
+</span></code></pre></div>
+<p>The components of a request include:</p>
+<ul>
+<li><code>{HTTP method}</code> - The HTTP method used on the request to Microsoft Graph.</li>
+<li><code>{version}</code> - The version of the Microsoft Graph API your application is using.</li>
+<li><code>{resource}</code> - The resource in Microsoft Graph that you're referencing.</li>
+<li><code>{query-parameters}</code> - Optional OData query options or REST method parameters that customize the response.</li>
+</ul>
+<p>After you make a request, a response is returned that includes:</p>
+<ul>
+<li>Status code - An HTTP status code that indicates success or failure.</li>
+<li>Response message - The data that you requested or the result of the operation. The response message can be empty for some operations.</li>
+<li><code>nextLink</code> - If your request returns numerous data, you need to page through it by using the URL returned in <code>@odata.nextLink</code>.</li>
+</ul>
+<h4 id="version">Version</h4>
+<p>Microsoft Graph currently supports two versions: <code>v1.0</code> and <code>beta</code>.</p>
+<ul>
+<li><code>v1.0</code> includes generally available APIs. Use the v1.0 version for all production apps.</li>
+<li><code>beta</code> includes APIs that are currently in preview. Because we might introduce breaking changes to our beta APIs, we recommend that you use the beta version only to test apps that are in development; don't use beta APIs in your production apps.</li>
+</ul>
+<h4 id="resource">Resource</h4>
+<p>A resource can be an entity or complex type, commonly defined with properties. Entities differ from complex types by always including an <strong>id</strong> property.</p>
+<p>Your URL includes the resource you're interacting with in the request, such as <code>me</code>, <strong>user</strong>, <strong>group</strong>, <strong>drive</strong>, and <strong>site</strong>. Often, top-level resources also include <em>relationships</em>, which you can use to access other resources, like <code>me/messages</code> or <code>me/drive</code>. You can also interact with resources using <em>methods</em>; for example, to send an email, use <code>me/sendMail</code>.</p>
+<p>Each resource might require different permissions to access it. You often need a higher level of permissions to create or update a resource than to read it. For details about required permissions, see the method reference topic.</p>
+<h4 id="query-parameters">Query parameters</h4>
+<p>Query parameters can be OData system query options, or other strings that a method accepts to customize its response.</p>
+<p>You can use optional OData system query options to include more or fewer properties than the default response, filter the response for items that match a custom query, or provide another parameters for a method.</p>
+<p>For example, adding the following <code>filter</code> parameter restricts the messages returned to only those with the <code>emailAddress</code> property of <code>jon@contoso.com</code>.</p>
+<div class="language-HTTP highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="err">GET https://graph.microsoft.com/v1.0/me/messages?filter=emailAddress eq &#39;jon@contoso.com&#39;</span>
+</span></code></pre></div>
+<h3 id="query-microsoft-graph-by-using-sdks">Query Microsoft Graph by using SDKs</h3>
+<h4 id="create-a-microsoft-graph-client">Create a Microsoft Graph client</h4>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">scopes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;User.Read&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1">// Multi-tenant apps can use &quot;common&quot;,</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1">// single-tenant apps must use the tenant ID from the Azure portal</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="kt">var</span><span class="w"> </span><span class="n">tenantId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;common&quot;</span><span class="p">;</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1">// Value from app registration</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="kt">var</span><span class="w"> </span><span class="n">clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;YOUR_CLIENT_ID&quot;</span><span class="p">;</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="c1">// using Azure.Identity;</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="kt">var</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TokenCredentialOptions</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="p">{</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">    </span><span class="n">AuthorityHost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AzureAuthorityHosts</span><span class="p">.</span><span class="n">AzurePublicCloud</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="p">};</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="c1">// Callback function that receives the user prompt</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="c1">// Prompt contains the generated device code that you must</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="c1">// enter during the auth process in the browser</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="n">Func</span><span class="o">&lt;</span><span class="n">DeviceCodeInfo</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="p">,</span><span class="w"> </span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">cancellation</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">code</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="p">};</span>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="c1">// /dotnet/api/azure.identity.devicecodecredential</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="kt">var</span><span class="w"> </span><span class="n">deviceCodeCredential</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DeviceCodeCredential</span><span class="p">(</span>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="w">    </span><span class="n">callback</span><span class="p">,</span><span class="w"> </span><span class="n">tenantId</span><span class="p">,</span><span class="w"> </span><span class="n">clientId</span><span class="p">,</span><span class="w"> </span><span class="n">options</span><span class="p">);</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="kt">var</span><span class="w"> </span><span class="n">graphClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GraphServiceClient</span><span class="p">(</span><span class="n">deviceCodeCredential</span><span class="p">,</span><span class="w"> </span><span class="n">scopes</span><span class="p">);</span>
+</span></code></pre></div>
+<h4 id="read-information-from-microsoft-graph">Read information from Microsoft Graph</h4>
+<p>To read information from Microsoft Graph, you first need to create a request object and then run the <code>GET</code> method on the request.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">// GET https://graph.microsoft.com/v1.0/me</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">graphClient</span><span class="p">.</span><span class="n">Me</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="p">.</span><span class="n">GetAsync</span><span class="p">();</span>
+</span></code></pre></div>
+<h4 id="retrieve-a-list-of-entities">Retrieve a list of entities</h4>
+<p>Retrieving a list of entities is similar to retrieving a single entity except there are other options for configuring the request. The <code>$filter</code> query parameter can be used to reduce the result set to only those rows that match the provided condition. The <code>$orderBy</code> query parameter requests that the server provides the list of entities sorted by the specified properties.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">// GET https://graph.microsoft.com/v1.0/me/messages?$select=subject,sender&amp;$filter=&lt;some condition&gt;&amp;orderBy=receivedDateTime</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="kt">var</span><span class="w"> </span><span class="n">messages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">graphClient</span><span class="p">.</span><span class="n">Me</span><span class="p">.</span><span class="n">Messages</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="p">.</span><span class="n">Request</span><span class="p">()</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">        </span><span class="n">m</span><span class="p">.</span><span class="n">Subject</span><span class="p">,</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">        </span><span class="n">m</span><span class="p">.</span><span class="n">Sender</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="p">.</span><span class="n">Filter</span><span class="p">(</span><span class="s">&quot;&lt;filter condition&gt;&quot;</span><span class="p">)</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="p">.</span><span class="n">OrderBy</span><span class="p">(</span><span class="s">&quot;receivedDateTime&quot;</span><span class="p">)</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="p">.</span><span class="n">GetAsync</span><span class="p">();</span>
+</span></code></pre></div>
+<h4 id="delete-an-entity">Delete an entity</h4>
+<p>Delete requests are constructed in the same way as requests to retrieve an entity, but use a <code>DELETE</code> request instead of a <code>GET</code>.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1">// DELETE https://graph.microsoft.com/v1.0/me/messages/{message-id}</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kt">string</span><span class="w"> </span><span class="n">messageId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;AQMkAGUy...&quot;</span><span class="p">;</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="kt">var</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">graphClient</span><span class="p">.</span><span class="n">Me</span><span class="p">.</span><span class="n">Messages</span><span class="p">[</span><span class="n">messageId</span><span class="p">]</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="p">.</span><span class="n">Request</span><span class="p">()</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="p">.</span><span class="n">DeleteAsync</span><span class="p">();</span>
+</span></code></pre></div>
+<h4 id="create-a-new-entity">Create a new entity</h4>
+<p>For SDKs that support a fluent style, new items can be added to collections with an <code>Add</code> method. For template-based SDKs, the request object exposes a <code>post</code> method.</p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1">// POST https://graph.microsoft.com/v1.0/me/calendars</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kt">var</span><span class="w"> </span><span class="n">calendar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Calendar</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p">{</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Volunteer&quot;</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p">};</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="kt">var</span><span class="w"> </span><span class="n">newCalendar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">graphClient</span><span class="p">.</span><span class="n">Me</span><span class="p">.</span><span class="n">Calendars</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">    </span><span class="p">.</span><span class="n">Request</span><span class="p">()</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">    </span><span class="p">.</span><span class="n">AddAsync</span><span class="p">(</span><span class="n">calendar</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="apply-best-practices-to-microsoft-graph">Apply best practices to Microsoft Graph</h3>
+<h4 id="authentication">Authentication</h4>
+<p>To access the data in Microsoft Graph, your application needs to acquire an OAuth 2.0 access token, and presents it to Microsoft Graph in either of the following methods:</p>
+<ul>
+<li>The HTTP <em>Authorization</em> request header, as a <em>Bearer</em> token</li>
+<li>The graph client constructor, when using a Microsoft Graph client library</li>
+</ul>
+<p>Use the Microsoft Authentication Library API, <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-libraries">MSAL</a> to acquire the access token to Microsoft Graph.</p>
+<h4 id="consent-and-authorization">Consent and authorization</h4>
+<p>Apply the following best practices for consent and authorization in your app:</p>
+<ul>
+<li><strong>Use least privilege</strong>. Only request permissions that are necessary, and only when you need them. For the APIs, your application calls check the permissions section in the method topics. For example, see <a href="https://learn.microsoft.com/en-us/graph/api/user-post-users">creating a user</a> and choose the least privileged permissions.</li>
+<li><strong>Use the correct permission type based on scenarios</strong>. If you're building an interactive application where a signed in user is present, your application should use <em>delegated</em> permissions. If, however, your application runs without a signed-in user, such as a background service or daemon, your application should use application permissions.</li>
+<li><strong>Consider the end user and admin experience</strong>. Directly affects end user and admin experiences. For example:<ul>
+<li>Consider who will be consenting to your application, either end users or administrators, and configure your application to <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent">request permissions appropriately</a>.</li>
+<li>Ensure that you understand the difference between <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#consent-types">static, dynamic and incremental consent</a>.</li>
+</ul>
+</li>
+<li><strong>Consider multi-tenant applications</strong>. Expect customers to have various application and consent controls in different states. For example:<ul>
+<li>Tenant administrators can disable the ability for end users to consent to applications. In this case, an administrator would need to consent on behalf of their users.</li>
+<li>Tenant administrators can set custom authorization policies such as blocking users from reading other user's profiles, or limiting self-service group creation to a limited set of users. In this case, your application should expect to handle 403 error response when acting on behalf of a user.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="An image" src="../../../Assets/Pasted%20image%2020240819133320.png" /></p>
+<h4 id="handle-responses-effectively">Handle responses effectively</h4>
+<p>The following are some of the most important practices to follow to ensure that your application behaves reliably and predictably for your end users. For example:</p>
+<ul>
+<li><strong>Pagination</strong>: When querying resource collections, you should expect that Microsoft Graph returns the result set in multiple pages, due to server-side page size limits. Your application should <strong>always</strong> handle the possibility that the responses are paged in nature, and use the <code>@odata.nextLink</code> property to obtain the next paged set of results, until all pages of the result set are read. The final page doesn't include an <code>@odata.nextLink</code> property. For more information, visit <a href="https://learn.microsoft.com/en-us/graph/paging">paging</a>.</li>
+<li><strong>Evolvable enumerations</strong>: Adding members to existing enumerations can break applications already using these enums. Evolvable enums are a mechanism that Microsoft Graph API uses to add new members to existing enumerations without causing a breaking change for applications. By default, a GET operation returns only known members for properties of evolvable enum types and your application needs to handle only the known members. If you design your application to handle unknown members as well, you can opt in to receive those members by using an HTTP <code>Prefer</code> request header.</li>
+</ul>
+<h4 id="storing-data-locally">Storing data locally</h4>
+<p>Your application should ideally make calls to Microsoft Graph to retrieve data in real time as necessary. You should only cache or store data locally necessary for a specific scenario, and if that use case is covered by your terms of use and privacy policy, and doesn't violate the <a href="https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use?context=/graph/context">Microsoft APIs Terms of Use</a>. Your application should also implement proper retention and deletion policies.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.path", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

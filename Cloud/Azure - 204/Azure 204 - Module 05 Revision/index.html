@@ -1,0 +1,3371 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Azure%20204%20-%20Module%2004%20Revision/">
+      
+      
+        <link rel="next" href="../Azure%20204%20-%20Module%2006%20Revision/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>Azure 204 - Module 05 Revision - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implement-containerized-solutions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure 204 - Module 05 Revision
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Build%20Tools/Vite/001%20-%20CLI/" class="md-tabs__link">
+          
+  
+  Build Tools
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CI-CD/GitHub/001%20-%20Events/001%20-%20Pull%20Request/" class="md-tabs__link">
+          
+  
+  CI-CD
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Caching/Redis/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Caching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Azure%20204%20-%20Module%2001%20Revision/" class="md-tabs__link">
+          
+  
+  Cloud
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Containerization/Docker/001%20-%20Dockerfiles/001%20-%20Reference/" class="md-tabs__link">
+          
+  
+  Containerization
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Databases/Postgres/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Databases
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Frameworks/ASP.NET/01%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Frameworks
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-tabs__link">
+          
+  
+  Languages
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Libraries/JS-TS-Node/htmx/001%20-%20AJAX/001%20-%20Introduction/" class="md-tabs__link">
+          
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Package%20Management/Python/uv/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Package Management
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Projects/DockerLens/000%20-%20DockerLens%20outline/" class="md-tabs__link">
+          
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Proxies/Caddy/001%20-%20Getting%20Started/" class="md-tabs__link">
+          
+  
+  Proxies
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Roles/Backend/001%20-%20Internet/001%20-%20How%20does%20the%20internet%20work/" class="md-tabs__link">
+          
+  
+  Roles
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Build%20Tools/Vite/001%20-%20CLI/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Build Tools
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../CI-CD/GitHub/001%20-%20Events/001%20-%20Pull%20Request/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    CI-CD
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Caching/Redis/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Caching
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure - 204
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Azure - 204
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2001%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 01 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2002%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 02 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2003%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 03 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2004%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 04 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 05 Revision
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 05 Revision
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Container Registry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Container Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-container-registry-service-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Container Registry service tiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-task-on-source-code-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger task on source code update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-on-base-image-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger on base image update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schedule a task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-step-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-step tasks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image platforms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Container Instances
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Container Instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container groups
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Container groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource allocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common scenarios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-restart-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container restart policy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Container restart policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specify-a-restart-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specify a restart policy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-to-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run to completion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Env Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Env Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secure-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounting-file-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mounting file share
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mounting file share">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-container-and-mount-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy container and mount volume
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-container-and-mount-volume-yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy container and mount volume - YAML
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount-multiple-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mount multiple volumes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Container Apps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Container Apps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-container-apps-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Container Apps environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microservices-with-azure-container-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microservices with Azure Container Apps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dapr-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dapr integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-a-container-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy a container app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-containers-in-azure-container-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore containers in Azure Container Apps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore containers in Azure Container Apps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple containers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-registries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container registries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and Authorization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication and Authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity providers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-revisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing revisions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing revisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-your-container-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating your container app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-secrets-in-azure-container-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage secrets in Azure Container Apps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining secrets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dapr" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAPR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2006%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 06 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2007%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 07 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2008%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 08 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2009%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 09 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2010%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 10 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2011%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 11 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure%20204%20-%20Module%2012%20Revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure 204 - Module 12 Revision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Exam%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Containerization/Docker/001%20-%20Dockerfiles/001%20-%20Reference/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Containerization
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Databases/Postgres/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Frameworks/ASP.NET/01%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Frameworks
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Languages/C/01%20-%20Fundamentals/01%20-%20Hello%20World/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Languages
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Libraries/JS-TS-Node/htmx/001%20-%20AJAX/001%20-%20Introduction/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Libraries
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Package%20Management/Python/uv/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Package Management
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Projects/DockerLens/000%20-%20DockerLens%20outline/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../../Proxies/Caddy/001%20-%20Getting%20Started/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Proxies
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    
+  
+  
+    <a href="../../../Roles/Backend/001%20-%20Internet/001%20-%20How%20does%20the%20internet%20work/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Roles
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Container Registry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Container Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-container-registry-service-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Container Registry service tiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-task-on-source-code-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger task on source code update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-on-base-image-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger on base image update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schedule a task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-step-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-step tasks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image platforms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Container Instances
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Container Instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container groups
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Container groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource allocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common scenarios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-restart-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container restart policy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Container restart policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specify-a-restart-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specify a restart policy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-to-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run to completion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Env Values
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Env Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secure-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounting-file-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mounting file share
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mounting file share">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-container-and-mount-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy container and mount volume
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-container-and-mount-volume-yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy container and mount volume - YAML
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount-multiple-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mount multiple volumes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Container Apps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Container Apps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-container-apps-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Azure Container Apps environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microservices-with-azure-container-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microservices with Azure Container Apps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dapr-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dapr integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-a-container-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy a container app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-containers-in-azure-container-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore containers in Azure Container Apps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore containers in Azure Container Apps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple containers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-registries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container registries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and Authorization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication and Authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity providers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-revisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing revisions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing revisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-your-container-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating your container app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-secrets-in-azure-container-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage secrets in Azure Container Apps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining secrets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dapr" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAPR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="implement-containerized-solutions">Implement containerized solutions</h1>
+<p>After completing this module, you'll be able to:</p>
+<ul>
+<li>Explain the features and benefits Azure Container Registry offers</li>
+<li>Describe how to use ACR Tasks to automate builds and deployments</li>
+<li>Explain the elements in a Dockerfile</li>
+<li>Build and run an image in the ACR by using Azure CLI</li>
+<li>Describe the benefits of Azure Container Instances and how resources are grouped</li>
+<li>Deploy a container instance in Azure by using the Azure CLI</li>
+<li>Start and stop containers using policies</li>
+<li>Set environment variables in your container instances</li>
+<li>Mount file shares in your container instances</li>
+<li>Describe the features benefits of Azure Container Apps</li>
+<li>Deploy container app in Azure by using the Azure CLI</li>
+<li>Utilize Azure Container Apps built-in authentication and authorization</li>
+<li>Create revisions and implement app secrets</li>
+</ul>
+<h2 id="azure-container-registry">Azure Container Registry</h2>
+<p>Azure Container Registry (ACR) is a managed, private Docker registry service based on the open-source Docker Registry 2.0. Create and maintain Azure container registries to store and manage your private Docker container images.</p>
+<p>Azure Container Registry (ACR) is a managed registry service based on the open-source Docker Registry 2.0. Create and maintain Azure container registries to store and manage your container images and related artifacts.</p>
+<p>Use the ACR service with your existing container development and deployment pipelines, or use Azure Container Registry Tasks to build container images in Azure. Build on demand, or fully automate builds with triggers such as source code commits and base image updates.</p>
+<h3 id="use-cases">Use cases</h3>
+<p>Pull images from an Azure container registry to various deployment targets:</p>
+<ul>
+<li><strong>Scalable orchestration systems</strong> that manage containerized applications across clusters of hosts, including Kubernetes, DC/OS, and Docker Swarm.</li>
+<li><strong>Azure services</strong> that support building and running applications at scale, including Azure Kubernetes Service (AKS), App Service, Batch, and Service Fabric.</li>
+</ul>
+<p>Developers can also push to a container registry as part of a container development workflow. For example, target a container registry from a continuous integration and delivery tool such as Azure Pipelines or Jenkins.</p>
+<p>Configure ACR Tasks to automatically rebuild application images when their base images are updated, or automate image builds when your team commits code to a Git repository. Create multi-step tasks to automate building, testing, and patching multiple container images in parallel in the cloud.</p>
+<h3 id="azure-container-registry-service-tiers">Azure Container Registry service tiers</h3>
+<p>Azure Container Registry is available in multiple service tiers. These tiers provide predictable pricing and several options for aligning to the capacity and usage patterns of your private Docker registry in Azure.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic</td>
+<td>A cost-optimized entry point for developers learning about Azure Container Registry. Basic registries have the same programmatic capabilities as Standard and Premium (such as Microsoft Entra authentication integration, image deletion, and webhooks). However, the included storage and image throughput are most appropriate for lower usage scenarios.</td>
+</tr>
+<tr>
+<td>Standard</td>
+<td>Standard registries offer the same capabilities as Basic, with increased included storage and image throughput. Standard registries should satisfy the needs of most production scenarios.</td>
+</tr>
+<tr>
+<td>Premium</td>
+<td>Premium registries provide the highest amount of included storage and concurrent operations, enabling high-volume scenarios. In addition to higher image throughput, Premium adds features such as: geo-replication for managing a single registry across multiple regions, content trust for image tag signing, and private link with private endpoints to restrict access to the registry.</td>
+</tr>
+<tr>
+<td>### Explore storage capabilities</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>All Azure Container Registry tiers benefit from advanced Azure storage features like encryption-at-rest for image data security and geo-redundancy for image data protection.</p>
+<ul>
+<li><strong>Encryption-at-rest:</strong> All container images and other artifacts in your registry are encrypted at rest. Azure automatically encrypts an image before storing it, and decrypts it on-the-fly when you or your applications and services pull the image. Optionally apply an extra encryption layer with a customer-managed key.</li>
+<li><strong>Regional storage:</strong> Azure Container Registry stores data in the region where the registry is created, to help customers meet data residency and compliance requirements. In all regions except Brazil South and Southeast Asia, Azure might also store registry data in a paired region in the same geography. In the Brazil South and Southeast Asia regions, registry data is always confined to the region, to accommodate data residency requirements for those regions. If a regional outage occurs, the registry data might become unavailable and isn't automatically recovered. Customers who wish to have their registry data stored in multiple regions for better performance across different geographies, or who wish to have resiliency in a regional outage event, should enable geo-replication.</li>
+<li><strong>Geo-replication:</strong> For scenarios requiring high-availability assurance, consider using the geo-replication feature of Premium registries. Geo-replication helps guard against losing access to your registry in a regional failure event. Geo-replication provides other benefits, too, like network-close image storage for faster pushes and pulls in distributed development or deployment scenarios.</li>
+<li><strong>Zone redundancy:</strong> A feature of the Premium service tier, zone redundancy uses Azure availability zones to replicate your registry to a minimum of three separate zones in each enabled region.</li>
+<li><strong>Scalable storage:</strong> Azure Container Registry allows you to create as many repositories, images, layers, or tags as you need, up to the registry <a href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus#service-tier-features-and-limits">storage limit</a>. High numbers of repositories and tags can impact the performance of your registry. Periodically delete unused repositories, tags, and images as part of your registry maintenance routine. Deleted registry resources like repositories, images, and tags <em>can't</em> be recovered after deletion.</li>
+</ul>
+<h3 id="task-scenarios">Task scenarios</h3>
+<p>ACR Tasks supports several scenarios to build and maintain container images and other artifacts.</p>
+<ul>
+<li><strong>Quick task</strong> - Build and push a single container image to a container registry on-demand, in Azure, without needing a local Docker Engine installation. Think <code>docker build</code>, <code>docker push</code> in the cloud.</li>
+<li><strong>Automatically triggered tasks</strong> - Enable one or more <em>triggers</em> to build an image:<ul>
+<li>Trigger on source code update</li>
+<li>Trigger on base image update</li>
+<li>Trigger on a schedule</li>
+</ul>
+</li>
+<li><strong>Multi-step task</strong> - Extend the single image build-and-push capability of ACR Tasks with multi-step, multi-container-based workflows.</li>
+</ul>
+<p>Each ACR Task has an associated source code context - the location of a set of source files used to build a container image or other artifact. Example contexts include a Git repository or a local filesystem.</p>
+<h4 id="quick-task">Quick Task</h4>
+<p>Using the familiar <code>docker build</code> format, the <a href="https://learn.microsoft.com/en-us/cli/azure/acr#az-acr-build">az acr build</a> command in the Azure CLI takes a context (the set of files to build), sends it to ACR Tasks and, by default, pushes the built image to its registry upon completion.</p>
+<h4 id="trigger-task-on-source-code-update">Trigger task on source code update</h4>
+<p>Trigger a container image build or multi-step task when code is committed, or a pull request is made or updated, to a Git repository in GitHub or Azure DevOps Services. For example, configure a build task with the Azure CLI command <code>az acr task create</code> by specifying a Git repository and optionally a branch and Dockerfile. When your team updates code in the repository, an ACR Tasks-created webhook triggers a build of the container image defined in the repo.</p>
+<h4 id="trigger-on-base-image-update">Trigger on base image update</h4>
+<p>You can set up an ACR task to track a dependency on a base image when it builds an application image. When the updated base image is pushed to your registry, or a base image is updated in a public repo such as in Docker Hub, ACR Tasks can automatically build any application images based on it.</p>
+<h4 id="schedule-a-task">Schedule a task</h4>
+<p>Optionally schedule a task by setting up one or more timer triggers when you create or update the task. Scheduling a task is useful for running container workloads on a defined schedule, or running maintenance operations or tests on images pushed regularly to your registry.</p>
+<h4 id="multi-step-tasks">Multi-step tasks</h4>
+<p>Multi-step tasks, defined in a <a href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-reference-yaml">YAML file</a> specify individual build and push operations for container images or other artifacts. They can also define the execution of one or more containers, with each step using the container as its execution environment. For example, you can create a multi-step task that automates the following:</p>
+<ol>
+<li>Build a web application image</li>
+<li>Run the web application container</li>
+<li>Build a web application test image</li>
+<li>Run the web application test container, which performs tests against the running application container</li>
+<li>If the tests pass, build a Helm chart archive package</li>
+<li>Perform a <code>helm upgrade</code> using the new Helm chart archive package</li>
+</ol>
+<h3 id="image-platforms">Image platforms</h3>
+<p>By default, ACR Tasks builds images for the Linux OS and the amd64 architecture. Specify the <code>--platform</code> tag to build Windows images or Linux images for other architectures. Specify the OS and optionally a supported architecture in OS/architecture format (for example, <code>--platform Linux/arm</code>). For ARM architectures, optionally specify a variant in OS/architecture/variant format (for example, <code>--platform Linux/arm64/v8</code>):</p>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Architecture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td>AMD64  <br>Arm  <br>Arm64  <br>386</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>AMD64</td>
+</tr>
+</tbody>
+</table>
+<h2 id="azure-container-instances">Azure Container Instances</h2>
+<p>Azure Container Instances (ACI) offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.</p>
+<p>Azure Container Instances (ACI) is a great solution for any scenario that can operate in isolated containers, including simple applications, task automation, and build jobs. Here are some of the benefits:</p>
+<ul>
+<li><strong>Fast startup</strong>: ACI can start containers in Azure in seconds, without the need to provision and manage a virtual machine (VM)</li>
+<li><strong>Container access</strong>: ACI enables exposing your container groups directly to the internet with an IP address and a fully qualified domain name (FQDN)</li>
+<li><strong>Hypervisor-level security</strong>: Isolate your application as completely as it would be in a VM</li>
+<li><strong>Customer data</strong>: The ACI service stores the minimum customer data required to ensure your container groups are running as expected</li>
+<li><strong>Custom sizes</strong>: ACI provides optimum utilization by allowing exact specifications of CPU cores and memory</li>
+<li><strong>Persistent storage</strong>: Mount Azure Files shares directly to a container to retrieve and persist state</li>
+<li><strong>Linux and Windows</strong>: Schedule both Windows and Linux containers using the same API.</li>
+</ul>
+<p>For scenarios where you need full container orchestration, including service discovery across multiple containers, automatic scaling, and coordinated application upgrades, we recommend <a href="https://learn.microsoft.com/en-us/azure/aks/">Azure Kubernetes Service (AKS)</a>.</p>
+<h3 id="container-groups">Container groups</h3>
+<p>The top-level resource in Azure Container Instances is the <em>container group</em>. A container group is a collection of containers that get scheduled on the same host machine. The containers in a container group share a lifecycle, resources, local network, and storage volumes. It's similar in concept to a <em>pod</em> in Kubernetes.</p>
+<p>The following diagram shows an example of a container group that includes multiple containers:</p>
+<p><img alt="Example container group with two containers, one listening on port 80 and the other listening on port 5000." src="https://learn.microsoft.com/en-us/training/wwl-azure/create-run-container-images-azure-container-instances/media/container-groups-example.png" /></p>
+<p>This example container group:</p>
+<ul>
+<li>Is scheduled on a single host machine.</li>
+<li>Is assigned a DNS name label.</li>
+<li>Exposes a single public IP address, with one exposed port.</li>
+<li>Consists of two containers. One container listens on port 80, while the other listens on port 5000.</li>
+<li>Includes two Azure file shares as volume mounts, and each container mounts one of the shares locally.</li>
+</ul>
+<h4 id="deployment">Deployment</h4>
+<p>There are two common ways to deploy a multi-container group: use a Resource Manager template or a YAML file. A Resource Manager template is recommended when you need to deploy more Azure service resources (for example, an Azure Files share) when you deploy the container instances. Due to the YAML format's more concise nature, a YAML file is recommended when your deployment includes only container instances.</p>
+<h4 id="resource-allocation">Resource allocation</h4>
+<p>Azure Container Instances allocates resources such as CPUs, memory, and optionally GPUs (preview) to a container group by adding the resource requests of the instances in the group. Using CPU resources as an example, if you create a container group with two instances, each requesting one CPU, then the container group is allocated two CPUs.</p>
+<h4 id="networking">Networking</h4>
+<p>Container groups share an IP address and a port namespace on that IP address. To enable external clients to reach a container within the group, you must expose the port on the IP address and from the container. Because containers within the group share a port namespace, port mapping isn't supported. Containers within a group can reach each other via localhost on the ports that they exposed, even if those ports aren't exposed externally on the group's IP address.</p>
+<h4 id="storage">Storage</h4>
+<p>You can specify external volumes to mount within a container group. You can map those volumes into specific paths within the individual containers in a group. Supported volumes include:</p>
+<ul>
+<li>Azure file share</li>
+<li>Secret</li>
+<li>Empty directory</li>
+<li>Cloned git repo</li>
+</ul>
+<h4 id="common-scenarios">Common scenarios</h4>
+<p>Multi-container groups are useful in cases where you want to divide a single functional task into a few container images. These images might be delivered by different teams and have separate resource requirements.</p>
+<p>Example usage could include:</p>
+<ul>
+<li>A container serving a web application and a container pulling the latest content from source control.</li>
+<li>An application container and a logging container. The logging container collects the logs and metrics output by the main application and writes them to long-term storage.</li>
+<li>An application container and a monitoring container. The monitoring container periodically makes a request to the application to ensure that it's running and responding correctly, and raises an alert if it's not.</li>
+<li>A front-end container and a back-end container. The front end might serve a web application, with the back end running a service to retrieve data.</li>
+</ul>
+<h3 id="container-restart-policy">Container restart policy</h3>
+<p>When you create a container group in Azure Container Instances, you can specify one of three restart policy settings.</p>
+<table>
+<thead>
+<tr>
+<th>Restart policy</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Always</code></td>
+<td>Containers in the container group are always restarted. This is the <strong>default</strong> setting applied when no restart policy is specified at container creation.</td>
+</tr>
+<tr>
+<td><code>Never</code></td>
+<td>Containers in the container group are never restarted. The containers run at most once.</td>
+</tr>
+<tr>
+<td><code>OnFailure</code></td>
+<td>Containers in the container group are restarted only when the process executed in the container fails (when it terminates with a nonzero exit code). The containers are run at least once.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="specify-a-restart-policy">Specify a restart policy</h4>
+<p>Specify the <code>--restart-policy</code> parameter when you call <code>az container create</code>.</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>az<span class="w"> </span>container<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>--resource-group<span class="w"> </span>myResourceGroup<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>--name<span class="w"> </span>mycontainer<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>--image<span class="w"> </span>mycontainerimage<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>--restart-policy<span class="w"> </span>OnFailure
+</span></code></pre></div>
+<h4 id="run-to-completion">Run to completion</h4>
+<p>Azure Container Instances starts the container, and then stops it when its application, or script, exits. When Azure Container Instances stops a container whose restart policy is <code>Never</code> or <code>OnFailure</code>, the container's status is set to <strong>Terminated</strong>.</p>
+<h3 id="env-values">Env Values</h3>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>az<span class="w"> </span>container<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>--resource-group<span class="w"> </span>myResourceGroup<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span>--name<span class="w"> </span>mycontainer2<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>--image<span class="w"> </span>mcr.microsoft.com/azuredocs/aci-wordcount:latest<span class="w"> </span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span>--restart-policy<span class="w"> </span>OnFailure<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span>--environment-variables<span class="w"> </span><span class="s1">&#39;NumWords&#39;</span><span class="o">=</span><span class="s1">&#39;5&#39;</span><span class="w"> </span><span class="s1">&#39;MinLength&#39;</span><span class="o">=</span><span class="s1">&#39;8&#39;</span><span class="se">\</span>
+</span></code></pre></div>
+<h4 id="secure-values">Secure values</h4>
+<p>Objects with secure values are intended to hold sensitive information like passwords or keys for your application. Using secure values for environment variables is both safer and more flexible than including it in your container's image.</p>
+<p>Environment variables with secure values aren't visible in your container's properties. Their values can be accessed only from within the container. For example, container properties viewed in the Azure portal or Azure CLI display only a secure variable's name, not its value.</p>
+<p>Set a secure environment variable by specifying the <code>secureValue</code> property instead of the regular <code>value</code> for the variable's type. The two variables defined in the following YAML demonstrate the two variable types.</p>
+<div class="language-YAML highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-10-01</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eastus</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">securetest</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">properties</span><span class="p">:</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mycontainer</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">properties</span><span class="p">:</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nt">environmentVariables</span><span class="p">:</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;NOTSECRET&#39;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;my-exposed-value&#39;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;SECRET&#39;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">          </span><span class="nt">secureValue</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;my-secret-value&#39;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">      </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">      </span><span class="nt">resources</span><span class="p">:</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="nt">requests</span><span class="p">:</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">          </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">          </span><span class="nt">memoryInGB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.5</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span><span class="nt">osType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Linux</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Always</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Microsoft.ContainerInstance/containerGroups</span>
+</span></code></pre></div>
+<p>You would run the following command to deploy the container group with YAML:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>az<span class="w"> </span>container<span class="w"> </span>create<span class="w"> </span>--resource-group<span class="w"> </span>myResourceGroup<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>--file<span class="w"> </span>secure-env.yaml<span class="w"> </span><span class="se">\</span>
+</span></code></pre></div>
+<h3 id="mounting-file-share">Mounting file share</h3>
+<h4 id="limitations">Limitations</h4>
+<ul>
+<li>You can only mount Azure Files shares to Linux containers.</li>
+<li>Azure file share volume mount requires the Linux container run as <em>root</em>.</li>
+<li>Azure File share volume mounts are limited to CIFS support.</li>
+</ul>
+<h4 id="deploy-container-and-mount-volume">Deploy container and mount volume</h4>
+<p>To mount an Azure file share as a volume in a container by using the Azure CLI, specify the share and volume mount point when you create the container with <code>az container create</code>. Following is an example of the command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>az<span class="w"> </span>container<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>--resource-group<span class="w"> </span><span class="nv">$ACI_PERS_RESOURCE_GROUP</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>--name<span class="w"> </span>hellofiles<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span>--image<span class="w"> </span>mcr.microsoft.com/azuredocs/aci-hellofiles<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span>--dns-name-label<span class="w"> </span>aci-demo<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span>--ports<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span>--azure-file-volume-account-name<span class="w"> </span><span class="nv">$ACI_PERS_STORAGE_ACCOUNT_NAME</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span>--azure-file-volume-account-key<span class="w"> </span><span class="nv">$STORAGE_KEY</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span>--azure-file-volume-share-name<span class="w"> </span><span class="nv">$ACI_PERS_SHARE_NAME</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span>--azure-file-volume-mount-path<span class="w"> </span>/aci/logs/
+</span></code></pre></div>
+<p>The <code>--dns-name-label</code> value must be unique within the Azure region where you create the container instance. Update the value in the preceding command if you receive a <strong>DNS name label</strong> error message when you execute the command.</p>
+<h4 id="deploy-container-and-mount-volume-yaml">Deploy container and mount volume - YAML</h4>
+<p>You can also deploy a container group and mount a volume in a container with the Azure CLI and a YAML template. Deploying by YAML template is the preferred method when deploying container groups consisting of multiple containers.</p>
+<p>The following YAML template defines a container group with one container created with the <code>aci-hellofiles</code> image. The container mounts the Azure file share <em>acishare</em> created previously as a volume. Following is an example YAML file.</p>
+<div class="language-YAML highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2019-12-01&#39;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eastus</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">file-share-demo</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nt">properties</span><span class="p">:</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hellofiles</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">properties</span><span class="p">:</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="nt">environmentVariables</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mcr.microsoft.com/azuredocs/aci-hellofiles</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">      </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="nt">resources</span><span class="p">:</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="nt">requests</span><span class="p">:</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">          </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">          </span><span class="nt">memoryInGB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.5</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">      </span><span class="nt">volumeMounts</span><span class="p">:</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/aci/logs/</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">filesharevolume</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">  </span><span class="nt">osType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Linux</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">  </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Always</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="nt">ipAddress</span><span class="p">:</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Public</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="nt">dnsNameLabel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aci-demo</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">filesharevolume</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">    </span><span class="nt">azureFile</span><span class="p">:</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">      </span><span class="nt">sharename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">acishare</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">      </span><span class="nt">storageAccountName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Storage account name&gt;</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">      </span><span class="nt">storageAccountKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Storage account key&gt;</span>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Microsoft.ContainerInstance/containerGroups</span>
+</span></code></pre></div>
+<h4 id="mount-multiple-volumes">Mount multiple volumes</h4>
+<p>To mount multiple volumes in a container instance, you must deploy using an Azure Resource Manager template or a YAML file. To use a template or YAML file, provide the share details and define the volumes by populating the <code>volumes</code> array in the <code>properties</code> section of the template.</p>
+<p>For example, if you created two Azure Files shares named <em>share1</em> and <em>share2</em> in storage account <em>myStorageAccount</em>, the <code>volumes</code> array in a Resource Manager template would appear similar to the following:</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&quot;volumes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myvolume1&quot;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;azureFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;shareName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;share1&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&quot;storageAccountName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myStorageAccount&quot;</span><span class="p">,</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">&quot;storageAccountKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;storage-account-key&gt;&quot;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">},</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">{</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myvolume2&quot;</span><span class="p">,</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">  </span><span class="nt">&quot;azureFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nt">&quot;shareName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;share2&quot;</span><span class="p">,</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="nt">&quot;storageAccountName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myStorageAccount&quot;</span><span class="p">,</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="nt">&quot;storageAccountKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;storage-account-key&gt;&quot;</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="p">}]</span>
+</span></code></pre></div>
+<p>Next, for each container in the container group in which you'd like to mount the volumes, populate the <code>volumeMounts</code> array in the <code>properties</code> section of the container definition. For example, this mounts the two volumes, <em>myvolume1</em> and <em>myvolume2</em>, previously defined:</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&quot;volumeMounts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myvolume1&quot;</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">&quot;mountPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/mnt/share1/&quot;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">},</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">{</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myvolume2&quot;</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">&quot;mountPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/mnt/share2/&quot;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">}]</span>
+</span></code></pre></div>
+<h2 id="azure-container-apps">Azure Container Apps</h2>
+<p>Azure Container Apps enables you to run microservices and containerized applications on a serverless platform that runs on top of Azure Kubernetes Service. Common uses of Azure Container Apps include:</p>
+<ul>
+<li>Deploying API endpoints</li>
+<li>Hosting background processing applications</li>
+<li>Handling event-driven processing</li>
+<li>Running microservices</li>
+</ul>
+<p>Applications built on Azure Container Apps can dynamically scale based on: HTTP traffic, event-driven processing, CPU or memory load, and any <a href="https://keda.sh/docs/scalers/">KEDA-supported scaler</a>.</p>
+<p>With Azure Container Apps, you can:</p>
+<ul>
+<li>Run multiple container revisions and manage the container app's application lifecycle.</li>
+<li>Autoscale your apps based on any KEDA-supported scale trigger. Most applications can scale to zero. (Applications that scale on CPU or memory load can't scale to zero.)</li>
+<li>Enable HTTPS ingress without having to manage other Azure infrastructure.</li>
+<li>Split traffic across multiple versions of an application for Blue/Green deployments and A/B testing scenarios.</li>
+<li>Use internal ingress and service discovery for secure internal-only endpoints with built-in DNS-based service discovery.</li>
+<li>Build microservices with <a href="https://docs.dapr.io/concepts/overview/">Dapr</a> and access its rich set of APIs.</li>
+<li>Run containers from any registry, public or private, including Docker Hub and Azure Container Registry (ACR).</li>
+<li>Use the Azure CLI extension, Azure portal or ARM templates to manage your applications.</li>
+<li>Provide an existing virtual network when creating an environment for your container apps.</li>
+<li>Securely manage secrets directly in your application.</li>
+<li>Monitor logs using Azure Log Analytics.</li>
+</ul>
+<h3 id="azure-container-apps-environments">Azure Container Apps environments</h3>
+<p>Individual container apps are deployed to a single Container Apps environment, which acts as a secure boundary around groups of container apps. Container Apps in the same environment are deployed in the same virtual network and write logs to the same Log Analytics workspace. You might provide an existing virtual network when you create an environment.</p>
+<p>Reasons to deploy container apps to the same environment include situations when you need to:</p>
+<ul>
+<li>Manage related services</li>
+<li>Deploy different applications to the same virtual network</li>
+<li>Instrument <a href="https://docs.dapr.io/concepts/overview/">Dapr</a> applications that communicate via the Dapr service invocation API</li>
+<li>Have applications to share the same Dapr configuration</li>
+<li>Have applications share the same log analytics workspace</li>
+</ul>
+<p>Reasons to deploy container apps to different environments include situations when you want to ensure:</p>
+<ul>
+<li>Two applications never share the same compute resources</li>
+<li>Two Dapr applications can't communicate via the Dapr service invocation API</li>
+</ul>
+<h3 id="microservices-with-azure-container-apps">Microservices with Azure Container Apps</h3>
+<p>Microservice architectures allow you to independently develop, upgrade, version, and scale core areas of functionality in an overall system. Azure Container Apps provides the foundation for deploying microservices featuring:</p>
+<ul>
+<li>Independent scaling, versioning, and upgrades</li>
+<li>Service discovery</li>
+<li>Native <a href="https://docs.dapr.io/concepts/overview/">Dapr</a> integration</li>
+</ul>
+<h3 id="dapr-integration">Dapr integration</h3>
+<p>When you implement a system composed of microservices, function calls are spread across the network. To support the distributed nature of microservices, you need to account for failures, retries, and timeouts. While Container Apps features the building blocks for running microservices, use of Dapr provides an even richer microservices programming model. Dapr includes features like observability, pub/sub, and service-to-service invocation with mutual TLS, retries, and more.</p>
+<h3 id="deploy-a-container-app">Deploy a container app</h3>
+<p>Install the Azure Container Apps extension for the CLI.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>az<span class="w"> </span>extension<span class="w"> </span>add<span class="w"> </span>--name<span class="w"> </span>containerapp<span class="w"> </span>--upgrade
+</span></code></pre></div>
+<p>Register the <code>Microsoft.App</code> namespace.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>az<span class="w"> </span>provider<span class="w"> </span>register<span class="w"> </span>--namespace<span class="w"> </span>Microsoft.App
+</span></code></pre></div>
+<p>Register the <code>Microsoft.OperationalInsights</code> provider for the Azure Monitor Log Analytics workspace if you haven't used it before.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>az<span class="w"> </span>provider<span class="w"> </span>register<span class="w"> </span>--namespace<span class="w"> </span>Microsoft.OperationalInsights
+</span></code></pre></div>
+<p>Set env values</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>myRG=az204-appcont-rg
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>myLocation=&lt;location&gt;
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>myAppContEnv=az204-env-$RANDOM
+</span></code></pre></div>
+<p>Create the resource group for your container app.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>az<span class="w"> </span>group<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span>--name<span class="w"> </span><span class="nv">$myRG</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span>--location<span class="w"> </span><span class="nv">$myLocation</span>
+</span></code></pre></div>
+<p>Create environment</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>az<span class="w"> </span>containerapp<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span>--name<span class="w"> </span><span class="nv">$myAppContEnv</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span>--resource-group<span class="w"> </span><span class="nv">$myRG</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span>--location<span class="w"> </span><span class="nv">$myLocation</span>
+</span></code></pre></div>
+<p>Deploy a sample app container image by using the <code>containerapp create</code> command.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>az<span class="w"> </span>containerapp<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span>--name<span class="w"> </span>my-container-app<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span>--resource-group<span class="w"> </span><span class="nv">$myRG</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span>--environment<span class="w"> </span><span class="nv">$myAppContEnv</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span>--image<span class="w"> </span>mcr.microsoft.com/azuredocs/containerapps-helloworld:latest<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span>--target-port<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span>--ingress<span class="w"> </span><span class="s1">&#39;external&#39;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span>--query<span class="w"> </span>properties.configuration.ingress.fqdn
+</span></code></pre></div>
+<h3 id="explore-containers-in-azure-container-apps">Explore containers in Azure Container Apps</h3>
+<p>Azure Container Apps manages the details of Kubernetes and container orchestration for you. Containers in Azure Container Apps can use any runtime, programming language, or development stack of your choice.</p>
+<p><img alt="Diagram showing how containers for an Azure Container App are grouped together in pods inside revision snapshots." src="https://learn.microsoft.com/en-us/training/wwl-azure/implement-azure-container-apps/media/azure-container-apps-containers.png" /></p>
+<p>Azure Container Apps supports any Linux-based x86-64 (<code>linux/amd64</code>) container image. There's no required base container image, and if a container crashes it automatically restarts.</p>
+<h4 id="configuration">Configuration</h4>
+<p>The following code is an example of the <code>containers</code> array in the <code>properties.template</code> section of a container app resource template. The excerpt shows some of the available configuration options when setting up a container when using Azure Resource Manager (ARM) templates. Changes to the template ARM configuration section trigger a new container app revision.</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&quot;containers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">       </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">       </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[parameters(&#39;container_image&#39;)]&quot;</span><span class="p">,</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTP_PORT&quot;</span><span class="p">,</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;80&quot;</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SECRET_VAL&quot;</span><span class="p">,</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">        </span><span class="nt">&quot;secretRef&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mysecret&quot;</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="nt">&quot;resources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">      </span><span class="nt">&quot;cpu&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">      </span><span class="nt">&quot;memory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1Gi&quot;</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span><span class="nt">&quot;volumeMounts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="w">        </span><span class="nt">&quot;mountPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/myfiles&quot;</span><span class="p">,</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">        </span><span class="nt">&quot;volumeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;azure-files-volume&quot;</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">    </span><span class="nt">&quot;probes&quot;</span><span class="p">:[</span>
+</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;liveness&quot;</span><span class="p">,</span>
+</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="w">            </span><span class="nt">&quot;httpGet&quot;</span><span class="p">:{</span>
+</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="s2">&quot;/health&quot;</span><span class="p">,</span>
+</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="w">            </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="mi">8080</span><span class="p">,</span>
+</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="w">            </span><span class="nt">&quot;httpHeaders&quot;</span><span class="p">:[</span>
+</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="w">                </span><span class="p">{</span>
+</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Custom-Header&quot;</span><span class="p">,</span>
+</span><span id="__span-15-34"><a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="w">                    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;liveness probe&quot;</span>
+</span><span id="__span-15-35"><a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="w">                </span><span class="p">}]</span>
+</span><span id="__span-15-36"><a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-15-37"><a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a><span class="w">            </span><span class="nt">&quot;initialDelaySeconds&quot;</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span>
+</span><span id="__span-15-38"><a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a><span class="w">            </span><span class="nt">&quot;periodSeconds&quot;</span><span class="p">:</span><span class="mi">3</span>
+</span><span id="__span-15-39"><a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a><span class="c1">// file is truncated for brevity</span>
+</span></code></pre></div>
+<h4 id="multiple-containers">Multiple containers</h4>
+<p>You can define multiple containers in a single container app to implement the <a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/sidecar">sidecar pattern</a>. The containers in a container app share hard disk and network resources and experience the same application lifecycle.</p>
+<p>Examples of sidecar containers include:</p>
+<ul>
+<li>An agent that reads logs from the primary app container on a shared volume and forwards them to a logging service.</li>
+<li>A background process that refreshes a cache used by the primary app container in a shared volume.</li>
+</ul>
+<p>Running multiple containers in a single container app is an advanced use case. In most situations where you want to run multiple containers, such as when implementing a microservice architecture, deploy each service as a separate container app.</p>
+<p>To run multiple containers in a container app, add more than one container in the containers array of the container app template.</p>
+<h4 id="container-registries">Container registries</h4>
+<p>You can deploy images hosted on private registries by providing credentials in the Container Apps configuration.</p>
+<p>To use a container registry, you define the required fields in registries array in the properties.configuration section of the container app resource template. The passwordSecretRef field identifies the name of the secret in the secrets array name where you defined the password.</p>
+<div class="language-JSON highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="err">...</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="nt">&quot;registries&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">&quot;server&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;docker.io&quot;</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my-registry-user-name&quot;</span><span class="p">,</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nt">&quot;passwordSecretRef&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my-password-secret-name&quot;</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">  </span><span class="p">}]</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>With the registry information added, the saved credentials can be used to pull a container image from the private registry when your app is deployed.</p>
+<h4 id="limitations_1">Limitations</h4>
+<p>Azure Container Apps has the following limitations:</p>
+<ul>
+<li><strong>Privileged containers</strong>: Azure Container Apps can't run privileged containers. If your program attempts to run a process that requires root access, the application inside the container experiences a runtime error.</li>
+<li><strong>Operating system</strong>: Linux-based (<code>linux/amd64</code>) container images are required.</li>
+</ul>
+<h3 id="authentication-and-authorization">Authentication and Authorization</h3>
+<p>Azure Container Apps provides built-in authentication and authorization features to secure your external ingress-enabled container app with minimal or no code. The built-in authentication feature for Container Apps can save you time and effort by providing out-of-the-box authentication with federated identity providers, allowing you to focus on the rest of your application.</p>
+<ul>
+<li>Azure Container Apps provides access to various built-in authentication providers.</li>
+<li>The built-in auth features don’t require any particular language, SDK, security expertise, or even any code that you have to write.</li>
+</ul>
+<p>This feature should only be used with HTTPS. Ensure <code>allowInsecure</code> is disabled on your container app's ingress configuration. You can configure your container app for authentication with or without restricting access to your site content and APIs.</p>
+<ul>
+<li>To restrict app access only to authenticated users, set its <em>Restrict access</em> setting to <strong>Require authentication</strong>.</li>
+<li>To authenticate but not restrict access, set its <em>Restrict access</em> setting to <strong>Allow unauthenticated</strong> access.</li>
+</ul>
+<h4 id="identity-providers">Identity providers</h4>
+<p>Container Apps uses federated identity, in which a third-party identity provider manages the user identities and authentication flow for you. The following identity providers are available by default:</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Sign-in endpoint</th>
+<th>How-To guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft Identity Platform</td>
+<td><code>/.auth/login/aad</code></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/container-apps/authentication-azure-active-directory">Microsoft Identity Platform</a></td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td><code>/.auth/login/facebook</code></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/container-apps/authentication-facebook">Facebook</a></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td><code>/.auth/login/github</code></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/container-apps/authentication-github">GitHub</a></td>
+</tr>
+<tr>
+<td>Google</td>
+<td><code>/.auth/login/google</code></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/container-apps/authentication-google">Google</a></td>
+</tr>
+<tr>
+<td>Twitter</td>
+<td><code>/.auth/login/twitter</code></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/container-apps/authentication-twitter">Twitter</a></td>
+</tr>
+<tr>
+<td>Any OpenID Connect provider</td>
+<td><code>/.auth/login/&lt;providerName&gt;</code></td>
+<td><a href="https://learn.microsoft.com/en-us/azure/container-apps/authentication-openid">OpenID Connect</a></td>
+</tr>
+</tbody>
+</table>
+<p>When you use one of these providers, the sign-in endpoint is available for user authentication and authentication token validation from the provider. You can provide your users with any number of these provider options.</p>
+<h4 id="feature-architecture">Feature architecture</h4>
+<p>The authentication and authorization middleware component is a feature of the platform that runs as a sidecar container on each replica in your application. When enabled, every incoming HTTP request passes through the security layer before being handled by your application.</p>
+<p><img alt="Diagram showing requests being intercepted by a sidecar container interacting with identity providers before allowing traffic to the app container." src="https://learn.microsoft.com/en-us/training/wwl-azure/implement-azure-container-apps/media/container-apps-authorization-architecture.png" /></p>
+<p>The platform middleware handles several things for your app:</p>
+<ul>
+<li>Authenticates users and clients with the specified identity providers</li>
+<li>Manages the authenticated session</li>
+<li>Injects identity information into HTTP request headers</li>
+</ul>
+<p>The authentication and authorization module runs in a separate container, isolated from your application code. As the security container doesn't run in-process, no direct integration with specific language frameworks is possible. However, relevant information your app needs is provided in request headers.</p>
+<h4 id="authentication-flow">Authentication flow</h4>
+<p>The authentication flow is the same for all providers, but differs depending on whether you want to sign in with the provider's SDK:</p>
+<ul>
+<li><strong>Without provider SDK</strong> (server-directed flow or server flow): The application delegates federated sign-in to Container Apps. Delegation is typically the case with browser apps, which presents the provider's sign-in page to the user.</li>
+<li><strong>With provider SDK</strong> (client-directed flow or client flow): The application signs users in to the provider manually and then submits the authentication token to Container Apps for validation. This approach is typical for browser-less apps that don't present the provider's sign-in page to the user. An example is a native mobile app that signs users in using the provider's SDK.</li>
+</ul>
+<h3 id="managing-revisions">Managing revisions</h3>
+<p>By default, Container Apps creates a unique revision name with a suffix consisting of a semi-random string of alphanumeric characters. For example, for a container app named <em>album-api</em>, setting the revision suffix name to <em>1st-revision</em> would create a revision with the name <em>album-api--1st-revision</em>. You can set the revision suffix in the ARM template, through the Azure CLI <code>az containerapp create</code> and <code>az containerapp update</code> commands, or when creating a revision via the Azure portal.</p>
+<h4 id="updating-your-container-app">Updating your container app</h4>
+<p>With the <code>az containerapp update</code> command you can modify environment variables, compute resources, scale parameters, and deploy a different image. If your container app update includes <a href="https://learn.microsoft.com/en-us/azure/container-apps/revisions#revision-scope-changes">revision-scope changes</a>, a new revision is generated.</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>az<span class="w"> </span>containerapp<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span>--name<span class="w"> </span>&lt;APPLICATION_NAME&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span>--resource-group<span class="w"> </span>&lt;RESOURCE_GROUP_NAME&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span>--image<span class="w"> </span>&lt;IMAGE_NAME&gt;
+</span></code></pre></div>
+<p>You can list all revisions associated with your container app with the <code>az containerapp revision list</code> command.</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>az<span class="w"> </span>containerapp<span class="w"> </span>revision<span class="w"> </span>list<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span>--name<span class="w"> </span>&lt;APPLICATION_NAME&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span>--resource-group<span class="w"> </span>&lt;RESOURCE_GROUP_NAME&gt;<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span>-o<span class="w"> </span>table
+</span></code></pre></div>
+<h4 id="manage-secrets-in-azure-container-apps">Manage secrets in Azure Container Apps</h4>
+<p>Azure Container Apps allows your application to securely store sensitive configuration values. Once secrets are defined at the application level, secured values are available to container apps. Specifically, you can reference secured values inside scale rules.</p>
+<ul>
+<li>Secrets are scoped to an application, outside of any specific revision of an application.</li>
+<li>Adding, removing, or changing secrets doesn't generate new revisions.</li>
+<li>Each application revision can reference one or more secrets.</li>
+<li>Multiple revisions can reference the same secrets.</li>
+</ul>
+<p>An updated or deleted secret doesn't automatically affect existing revisions in your app. When a secret is updated or deleted, you can respond to changes in one of two ways:</p>
+<ol>
+<li>Deploy a new revision.</li>
+<li>Restart an existing revision.</li>
+</ol>
+<p>Before you delete a secret, deploy a new revision that no longer references the old secret. Then deactivate all revisions that reference the secret.</p>
+<h4 id="defining-secrets">Defining secrets</h4>
+<p>When you create a container app, secrets are defined using the <code>--secrets</code> parameter.</p>
+<ul>
+<li>The parameter accepts a space-delimited set of name/value pairs.</li>
+<li>Each pair is delimited by an equals sign.</li>
+</ul>
+<p>In the example below, a connection string to a queue storage account is declared in the <code>--secrets</code> parameter. The value for queue-connection-string comes from an environment variable named <code>$CONNECTION_STRING</code>.</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>az<span class="w"> </span>containerapp<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span>--resource-group<span class="w"> </span><span class="s2">&quot;my-resource-group&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span>--name<span class="w"> </span>queuereader<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span>--environment<span class="w"> </span><span class="s2">&quot;my-environment-name&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span>--image<span class="w"> </span>demos/queuereader:v1<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span>--secrets<span class="w"> </span><span class="s2">&quot;queue-connection-string=</span><span class="nv">$CONNECTION_STRING</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<p>After declaring secrets at the application level, you can reference them in environment variables when you create a new revision in your container app. When an environment variable references a secret, its value is populated with the value defined in the secret. To reference a secret in an environment variable in the Azure CLI, set its value to <code>secretref:</code>, followed by the name of the secret.</p>
+<p>The following example shows an application that declares a connection string at the application level. This connection is referenced in a container environment variable.</p>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>az<span class="w"> </span>containerapp<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span>--resource-group<span class="w"> </span><span class="s2">&quot;my-resource-group&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span>--name<span class="w"> </span>myQueueApp<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">  </span>--environment<span class="w"> </span><span class="s2">&quot;my-environment-name&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span>--image<span class="w"> </span>demos/myQueueApp:v1<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">  </span>--secrets<span class="w"> </span><span class="s2">&quot;queue-connection-string=</span><span class="nv">$CONNECTIONSTRING</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span>--env-vars<span class="w"> </span><span class="s2">&quot;QueueName=myqueue&quot;</span><span class="w"> </span><span class="s2">&quot;ConnectionString=secretref:queue-connection-string&quot;</span>
+</span></code></pre></div>
+<h3 id="dapr">DAPR</h3>
+<p>Please view: https://learn.microsoft.com/en-us/training/modules/implement-azure-container-apps/7-explore-distributed-application-runtime</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.path", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
